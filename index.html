@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de información y recursos para operadores C4.">
+    <title>Operadores C4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #001f77;
+            color: white;
+            padding: 24px 8%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 65vh;
+            padding: 80px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #001f77, #2563eb);
+            color: white;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #001f77;
+            padding: 13px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #e5e7eb;
+        }
+
+        .section {
+            padding: 64px 8%;
+        }
+
+        .section h2 {
+            color: #001f77;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .card {
+            background: white;
+            padding: 26px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h3 {
+            color: #001f77;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 24px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 6%;
+            }
+
+            .hero, .section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            nav {
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">Operadores C4</div>
+
+            <nav aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#acerca">Acerca de</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h1>Bienvenido a la plataforma de Operadores C4</h1>
+
+            <p>
+                Un espacio digital para organizar información, compartir
+                recursos y facilitar el acceso a contenidos de interés
+                para los operadores.
+            </p>
+
+            <a class="button" href="#recursos">Explorar recursos</a>
+        </section>
+
+        <section id="acerca" class="section">
+            <h2>Acerca de la plataforma</h2>
+
+            <p>
+                Este sitio web está diseñado para centralizar información
+                y facilitar la consulta de contenidos relacionados con
+                las actividades de los operadores C4.
+            </p>
+        </section>
+
+        <section id="recursos" class="section">
+            <h2>Recursos</h2>
+
+            <p>
+                Consulta los espacios disponibles en la plataforma.
+                En las siguientes etapas incorporaremos los enlaces
+                y documentos específicos del proyecto.
+            </p>
+
+            <div class="cards">
+                <article class="card">
+                    <h3>Documentación</h3>
+                    <p>Espacio para consultar manuales, guías y documentos.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Material de apoyo</h3>
+                    <p>Recursos de consulta para apoyar las actividades.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Información de interés</h3>
+                    <p>Contenido y enlaces útiles para los usuarios.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+
+            <p>
+                Próximamente incorporaremos los canales de contacto
+                correspondientes al proyecto.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Operadores C4</p>
+    </footer>
+
+</body>
+</html>
