@@ -4,90 +4,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal de formación y capacitación para operadores C4.">
-    <meta name="theme-color" content="#001F77">
+    <meta name="description" content="Portal de formación, capacitación y recursos para operadores, instructores y coordinadores C4.">
+    <meta name="theme-color" content="#071A3D">
+
     <title>Portal de Formación | Operadores C4</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-    
+
 <body>
 
+    <!-- ENCABEZADO -->
     <header>
         <div class="navbar">
-            <div class="logo">Operadores C4</div>
 
-            <nav aria-label="Navegación principal">
+            <a class="logo" href="#inicio" aria-label="Ir al inicio">
+                <span class="logo-mark" aria-hidden="true">C4</span>
+                <span>Portal Operadores C4</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Navegación principal">
                 <a href="#inicio">Inicio</a>
-                <a href="#acerca">Acerca de</a>
+                <a href="#formacion">Capacitación</a>
                 <a href="#recursos">Recursos</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#busqueda">Buscar</a>
+                <a class="nav-cta" href="#contacto">Soporte</a>
             </nav>
+
         </div>
     </header>
 
     <main>
+
+        <!-- PRESENTACIÓN -->
         <section id="inicio" class="hero">
-            <h1>Bienvenido a la plataforma de Operadores C4</h1>
 
-            <p>
-                Un espacio digital para organizar información, compartir
-                recursos y facilitar el acceso a contenidos de interés
-                para los operadores.
-            </p>
+            <div class="hero-inner">
 
-            <a class="button" href="#recursos">Explorar recursos</a>
-        </section>
+                <div class="hero-content">
 
-        <section id="acerca" class="section">
-            <h2>Acerca de la plataforma</h2>
+                    <span class="eyebrow">FORMACIÓN · CONOCIMIENTO · OPERACIÓN</span>
 
-            <p>
-                Este sitio web está diseñado para centralizar información
-                y facilitar la consulta de contenidos relacionados con
-                las actividades de los operadores C4.
-            </p>
-        </section>
+                    <h1>Conocimiento y preparación para fortalecer la operación C4</h1>
 
-        <section id="recursos" class="section">
-            <h2>Recursos</h2>
+                    <p>
+                        Un espacio de formación y consulta para operadores,
+                        instructores y coordinadores. Accede a materiales
+                        de capacitación, documentación y recursos de interés
+                        desde un solo lugar.
+                    </p>
 
-            <p>
-                Consulta los espacios disponibles en la plataforma.
-                En las siguientes etapas incorporaremos los enlaces
-                y documentos específicos del proyecto.
-            </p>
+                    <div class="hero-actions">
+                        <a class="btn" href="#formacion">
+                            Explorar capacitación
+                            <span aria-hidden="true">→</span>
+                        </a>
 
-            <div class="cards">
-                <article class="card">
-                    <h3>Documentación</h3>
-                    <p>Espacio para consultar manuales, guías y documentos.</p>
-                </article>
+                        <a class="btn btn-outline" href="#recursos">
+                            Consultar recursos
+                        </a>
+                    </div>
 
-                <article class="card">
-                    <h3>Material de apoyo</h3>
-                    <p>Recursos de consulta para apoyar las actividades.</p>
-                </article>
+                </div>
 
-                <article class="card">
-                    <h3>Información de interés</h3>
-                    <p>Contenido y enlaces útiles para los usuarios.</p>
-                </article>
+                <aside class="hero-panel" aria-label="Accesos destacados">
+
+                    <p class="panel-label">Centro de conocimiento</p>
+
+                    <div class="panel-item">
+                        <span class="panel-icon" aria-hidden="true">01</span>
+                        <div>
+                            <strong>Formación continua</strong>
+                            <small>Materiales y contenidos de aprendizaje</small>
+                        </div>
+                    </div>
+
+                    <div class="panel-item">
+                        <span class="panel-icon" aria-hidden="true">02</span>
+                        <div>
+                            <strong>Biblioteca documental</strong>
+                            <small>Documentos y recursos de consulta</small>
+                        </div>
+                    </div>
+
+                    <div class="panel-item">
+                        <span class="panel-icon" aria-hidden="true">03</span>
+                        <div>
+                            <strong>Herramientas de apoyo</strong>
+                            <small>Enlaces de interés para los usuarios</small>
+                        </div>
+                    </div>
+
+                </aside>
+
             </div>
+
         </section>
 
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">APRENDIZAJE</span>
+                    <h2>Formación y capacitación</h2>
+                    <p>
+                        Encuentra los espacios de aprendizaje y los materiales
+                        que apoyan el desarrollo de conocimientos y competencias.
+                    </p>
+                </div>
+
+                <div class="resource-grid">
+
+                    <a class="resource-card" href="#recursos">
+                        <span class="resource-icon" aria-hidden="true">01</span>
+                        <h3>Materiales de capacitación</h3>
+                        <p>
+                            Presentaciones, guías y materiales utilizados
+                            en las actividades formativas.
+                        </p>
+                        <span class="card-link">Consultar materiales →</span>
+                    </a>
+
+                    <a class="resource-card" href="#recursos">
+                        <span class="resource-icon" aria-hidden="true">02</span>
+                        <h3>Guías de aprendizaje</h3>
+                        <p>
+                            Recursos para apoyar el estudio y la consulta
+                            de contenidos de formación.
+                        </p>
+                        <span class="card-link">Explorar guías →</span>
+                    </a>
+
+                    <a class="resource-card" href="#contacto">
+                        <span class="resource-icon" aria-hidden="true">03</span>
+                        <h3>Orientación formativa</h3>
+                        <p>
+                            Consulta los canales disponibles para resolver
+                            dudas sobre las actividades de capacitación.
+                        </p>
+                        <span class="card-link">Consultar soporte →</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RECURSOS -->
+        <section id="recursos" class="section" style="background: #FFFFFF;">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">CENTRO DOCUMENTAL</span>
+                    <h2>Biblioteca de recursos</h2>
+                    <p>
+                        Un espacio para organizar documentos, manuales,
+                        protocolos y otros materiales de consulta.
+                    </p>
+                </div>
+
+                <div class="resource-grid">
+
+                    <a class="resource-card" href="#busqueda">
+                        <span class="resource-icon" aria-hidden="true">PDF</span>
+                        <h3>Documentos y manuales</h3>
+                        <p>
+                            Accede a documentos de referencia y materiales
+                            documentales disponibles en el portal.
+                        </p>
+                        <span class="card-link">Buscar documentos →</span>
+                    </a>
+
+                    <a class="resource-card" href="#busqueda">
+                        <span class="resource-icon" aria-hidden="true">DOC</span>
+                        <h3>Protocolos y guías</h3>
+                        <p>
+                            Localiza guías y protocolos cuando sus enlaces
+                            hayan sido incorporados al catálogo.
+                        </p>
+                        <span class="card-link">Localizar recursos →</span>
+                    </a>
+
+                    <a class="resource-card" href="#enlaces">
+                        <span class="resource-icon" aria-hidden="true">WEB</span>
+                        <h3>Enlaces de interés</h3>
+                        <p>
+                            Consulta accesos a sistemas y plataformas
+                            externas autorizadas.
+                        </p>
+                        <span class="card-link">Ver enlaces →</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BUSCADOR -->
+        <section id="busqueda" class="search-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">CONSULTA RÁPIDA</span>
+                    <h2>¿Qué recurso necesitas?</h2>
+                    <p>
+                        El buscador estará disponible para localizar los
+                        recursos que incorporemos al catálogo del portal.
+                    </p>
+                </div>
+
+                <form class="search-box" id="searchForm" role="search">
+
+                    <label for="searchInput" style="position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%);">
+                        Buscar recursos
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        name="q"
+                        placeholder="Buscar documentos, guías o materiales..."
+                    >
+
+                    <button type="submit">Buscar</button>
+
+                </form>
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- ENLACES -->
+        <section id="enlaces" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">HERRAMIENTAS</span>
+                    <h2>Enlaces de interés</h2>
+                    <p>
+                        Este espacio reunirá accesos directos a plataformas
+                        y herramientas que se definan para el portal.
+                    </p>
+                </div>
+
+                <div class="resource-grid">
+
+                    <article class="resource-card">
+                        <span class="resource-icon" aria-hidden="true">01</span>
+                        <h3>Plataformas institucionales</h3>
+                        <p>
+                            Espacio para incorporar los enlaces institucionales
+                            autorizados.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <span class="resource-icon" aria-hidden="true">02</span>
+                        <h3>Herramientas de consulta</h3>
+                        <p>
+                            Accesos a herramientas útiles para las actividades
+                            de formación y consulta.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <span class="resource-icon" aria-hidden="true">03</span>
+                        <h3>Recursos complementarios</h3>
+                        <p>
+                            Enlaces adicionales que se incorporarán según
+                            las necesidades de los usuarios.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
         <section id="contacto" class="section">
-            <h2>Contacto</h2>
 
-            <p>
-                Próximamente incorporaremos los canales de contacto
-                correspondientes al proyecto.
-            </p>
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div>
+                        <h2>¿Necesitas orientación?</h2>
+                        <p>
+                            Consulta los canales de contacto definidos
+                            por el equipo responsable del portal.
+                        </p>
+                    </div>
+
+                    <a class="btn" href="https://github.com/equipocapacitacionc4/operadoresC4">
+                        Repositorio del proyecto →
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Operadores C4</p>
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <div class="footer-inner">
+            <p>Portal de Formación y Capacitación · Operadores C4</p>
+            <a href="#inicio">Volver al inicio ↑</a>
+        </div>
+
     </footer>
 
 </body>
