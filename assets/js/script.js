@@ -8,87 +8,130 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const normalizeText = (text) =>
+  const catalogPath = "assets/documentos/catalogo.json";
+
+  const normalizeText = (text = "") =>
     text
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toLocaleLowerCase("es")
       .trim();
 
-  const resourceCards = Array.from(
-    document.querySelectorAll(".resource-card")
-  );
+  let resources = [];
+  let catalogLoaded = false;
+  let catalogError = false;
 
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  const showMessage = (message) => {
+    searchResults.replaceChildren();
 
-    const query = normalizeText(searchInput.value);
+    const paragraph = document.createElement("p");
+    paragraph.textContent = message;
+
+    searchResults.appendChild(paragraph);
+  };
+
+  const loadCatalog = async () => {
+    try {
+      const response = await fetch(catalogPath);
+
+      if (!response.ok) {
+        throw new Error("No fue posible cargar el catálogo.");
+      }
+
+      const catalog = await response.json();
+
+      if (!Array.isArray(catalog.recursos)) {
+        throw new Error("El catálogo no tiene una lista válida.");
+      }
+
+      resources = catalog.recursos;
+      catalogLoaded = true;
+    } catch (error) {
+      catalogError = true;
+      console.error("Error al cargar el catálogo:", error);
+    }
+  };
+
+  const renderResults = (query) => {
     searchResults.replaceChildren();
 
     if (!query) {
-      searchResults.textContent =
-        "Escribe una palabra clave para buscar recursos.";
-      searchInput.focus();
+      showMessage("Escribe una palabra clave para buscar recursos.");
       return;
     }
 
-    const matches = resourceCards.filter((card) =>
-      normalizeText(card.textContent).includes(query)
-    );
+    if (catalogError || !catalogLoaded) {
+      showMessage(
+        "No fue posible cargar el catálogo. Intenta nuevamente más tarde."
+      );
+      return;
+    }
+
+    const normalizedQuery = normalizeText(query);
+
+    const matches = resources.filter((resource) => {
+      const searchableText = normalizeText(
+        [
+          resource.titulo,
+          resource.categoria,
+          resource.descripcion,
+          resource.tipo,
+          resource.disponibilidad
+        ].join(" ")
+      );
+
+      return searchableText.includes(normalizedQuery);
+    });
 
     if (matches.length === 0) {
-      const message = document.createElement("p");
-      message.textContent =
-        "No encontramos resultados. Prueba con otra palabra clave.";
-      searchResults.appendChild(message);
+      showMessage(
+        "No encontramos resultados. Prueba con otra palabra clave."
+      );
       return;
     }
 
     const heading = document.createElement("h3");
-    heading.textContent =
-      `Resultados encontrados: ${matches.length}`;
-
+    heading.textContent = `Resultados encontrados: ${matches.length}`;
     searchResults.appendChild(heading);
 
     const resultList = document.createElement("ul");
 
-    matches.forEach((card) => {
+    matches.forEach((resource) => {
       const item = document.createElement("li");
-      const title = card.querySelector("h2, h3, h4");
-      const description = card.querySelector("p");
-      const link = card.matches("a[href]")
-        ? card
-        : card.querySelector("a[href]");
 
-      const resultTitle = document.createElement("strong");
-      resultTitle.textContent =
-        title?.textContent.trim() || "Recurso del portal";
+      const title = document.createElement("strong");
+      title.textContent = resource.titulo || "Recurso sin título";
+      item.appendChild(title);
 
-      if (link) {
-        const resultLink = document.createElement("a");
-        resultLink.href = link.href;
-        resultLink.target = link.target || "_self";
+      const description = document.createElement("p");
+      description.textContent = resource.descripcion || "";
+      item.appendChild(description);
 
-        if (link.target === "_blank") {
-          resultLink.rel = "noopener noreferrer";
-        }
+      const status = document.createElement("p");
+      status.textContent =
+        `Categoría: ${resource.categoria || "Sin categoría"} · ` +
+        `Estado: ${resource.disponibilidad || "Sin información"}`;
+      item.appendChild(status);
 
-        resultLink.appendChild(resultTitle);
-        item.appendChild(resultLink);
-      } else {
-        item.appendChild(resultTitle);
-      }
+      if (resource.ruta && resource.disponibilidad === "Disponible") {
+        const link = document.createElement("a");
+        link.href = resource.ruta;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Abrir documento →";
 
-      if (description) {
-        const detail = document.createElement("p");
-        detail.textContent = description.textContent.trim();
-        item.appendChild(detail);
+        item.appendChild(link);
       }
 
       resultList.appendChild(item);
     });
 
     searchResults.appendChild(resultList);
+  };
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    renderResults(searchInput.value);
   });
 
   searchInput.addEventListener("input", () => {
@@ -96,4 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
       searchResults.replaceChildren();
     }
   });
+
+  loadCatalog();
 });
