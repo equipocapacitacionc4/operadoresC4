@@ -33,7 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createResourceCard = (resource) => {
     const card = document.createElement("article");
-    card.className = "resource-card";
+    const availability = resource.disponibilidad || "Pendiente";
+    
+    let statusClass = "status-pending";
+    
+    if (availability === "Disponible") {
+        statusClass = "status-available";
+    } else if (availability === "Próximamente") {
+        statusClass = "status-upcoming";
+    }
+    
+    card.className = `resource-card ${statusClass}`;
 
     const icon = document.createElement("span");
     icon.className = "resource-icon";
