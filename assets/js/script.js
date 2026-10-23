@@ -64,9 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
       `Categoría: ${resource.categoria || "Sin categoría"}`;
     card.appendChild(category);
 
+    const statusBadge = document.createElement("span");
+    statusBadge.className = `status-badge ${statusClass}`;
+    statusBadge.textContent = availability;
+    card.appendChild(statusBadge);
+    
     if (
       resource.ruta &&
-      resource.disponibilidad === "Disponible"
+      availability === "Disponible"
     ) {
       const link = document.createElement("a");
       link.className = "card-link";
@@ -75,12 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link.rel = "noopener noreferrer";
       link.textContent = "Abrir documento →";
       card.appendChild(link);
-    } else {
-      const status = document.createElement("span");
-      status.className = "card-link";
-      status.textContent =
-        resource.disponibilidad || "Pendiente";
-      card.appendChild(status);
     }
 
     return card;
