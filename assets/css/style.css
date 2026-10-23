@@ -7,7 +7,7 @@
 :root {
     --azul-oscuro: #071A3D;
     --azul: #123C82;
-    --azul-brillante: #2563EB;
+    --azul-brillante: #E60B61;
     --cian: #38BDF8;
     --fondo: #F3F6FB;
     --blanco: #FFFFFF;
@@ -15,7 +15,6 @@
     --texto-secundario: #64748B;
     --borde: #DFE7F1;
     --sombra: 0 12px 32px rgba(7, 26, 61, 0.08);
-}
 
 * {
     margin: 0;
