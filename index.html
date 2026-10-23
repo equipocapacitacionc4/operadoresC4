@@ -203,7 +203,21 @@
 
                 </div>
 
-               
+            <div class="library-filters">
+                <label for="filtroCategoria">Filtrar por categoría:</label>
+            
+                <select id="filtroCategoria" name="categoria">
+                    <option value="todas">Todas las categorías</option>
+                    <option value="Capacitación">Capacitación</option>
+                    <option value="Protocolos">Protocolos</option>
+                    <option value="Enlaces">Enlaces institucionales</option>
+                </select>
+            
+                <p id="resultadoFiltro" aria-live="polite">
+                    Mostrando todos los recursos.
+                </p>
+            </div>
+   
             <div
                 id="bibliotecaRecursos"
                 class="resource-grid"
