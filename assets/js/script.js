@@ -239,6 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (categoryFilter) {
     categoryFilter.addEventListener("change", renderLibrary);
+    if (orderSelect) {
+    orderSelect.addEventListener("change", renderLibrary);
+    }
   }
 
   if (searchForm && searchInput && searchResults) {
