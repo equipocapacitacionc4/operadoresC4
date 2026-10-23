@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.getElementById("searchForm");
   const searchInput = document.getElementById("searchInput");
   const searchResults = document.getElementById("searchResults");
+
   const libraryContainer = document.getElementById("bibliotecaRecursos");
+  const categoryFilter = document.getElementById("filtroCategoria");
+  const filterStatus = document.getElementById("resultadoFiltro");
 
   const catalogPath = "assets/documentos/catalogo.json";
 
@@ -76,11 +79,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const renderLibrary = () => {
     if (!libraryContainer) return;
 
+    const selectedCategory = categoryFilter?.value || "todas";
+
+    const filteredResources =
+      selectedCategory === "todas"
+        ? resources
+        : resources.filter(
+            (resource) =>
+              normalizeText(resource.categoria) ===
+              normalizeText(selectedCategory)
+          );
+
     libraryContainer.replaceChildren();
 
-    resources.forEach((resource) => {
-      libraryContainer.appendChild(createResourceCard(resource));
-    });
+    if (filteredResources.length === 0) {
+      showMessage(
+        libraryContainer,
+        "No hay recursos registrados en esta categoría."
+      );
+    } else {
+      filteredResources.forEach((resource) => {
+        libraryContainer.appendChild(createResourceCard(resource));
+      });
+    }
+
+    if (filterStatus) {
+      filterStatus.textContent =
+        `Mostrando ${filteredResources.length} de ${resources.length} recursos.`;
+    }
   };
 
   const renderSearchResults = (query) => {
@@ -89,7 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
     searchResults.replaceChildren();
 
     if (!query.trim()) {
-      showMessage(searchResults, "Escribe una palabra clave para buscar recursos.");
+      showMessage(
+        searchResults,
+        "Escribe una palabra clave para buscar recursos."
+      );
       return;
     }
 
@@ -190,8 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
         libraryContainer,
         "No fue posible cargar la biblioteca documental."
       );
+
+      if (filterStatus) {
+        filterStatus.textContent =
+          "No fue posible cargar los recursos.";
+      }
     }
   };
+
+  if (categoryFilter) {
+    categoryFilter.addEventListener("change", renderLibrary);
+  }
 
   if (searchForm && searchInput && searchResults) {
     searchForm.addEventListener("submit", (event) => {
