@@ -629,19 +629,19 @@ button:focus-visible {
 }
 
 .status-badge.status-available {
-    color: #166534;
-    background: #DCFCE7;
-    border-color: #86EFAC;
+    color: #8F0A40;
+    background: #FCE1EC;
+    border-color: #F5A8C7;
 }
 
 .status-badge.status-upcoming {
-    color: #92400E;
-    background: #FEF3C7;
-    border-color: #FDE68A;
+    color: #8F0A40;
+    background: #FBEAF1;
+    border-color: #F2C9D9;
 }
 
 .status-badge.status-pending {
-    color: #1E40AF;
-    background: #DBEAFE;
-    border-color: #BFDBFE;
+    color: #68495A;
+    background: #F5EFF2;
+    border-color: #E8D5DF;
 }
