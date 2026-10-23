@@ -596,3 +596,51 @@ button:focus-visible {
         min-width: 0;
     }
 }
+
+/* INDICADORES DE DISPONIBILIDAD DE RECURSOS */
+.resource-card.status-available {
+    border: 1px solid #86EFAC;
+    border-left: 4px solid #16A34A;
+}
+
+.resource-card.status-upcoming {
+    border: 1px solid #FDE68A;
+    border-left: 4px solid #D97706;
+}
+
+.resource-card.status-pending {
+    border: 1px solid #BFDBFE;
+    border-left: 4px solid #2563EB;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 12px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.status-badge.status-available {
+    color: #166534;
+    background: #DCFCE7;
+    border-color: #86EFAC;
+}
+
+.status-badge.status-upcoming {
+    color: #92400E;
+    background: #FEF3C7;
+    border-color: #FDE68A;
+}
+
+.status-badge.status-pending {
+    color: #1E40AF;
+    background: #DBEAFE;
+    border-color: #BFDBFE;
+}
