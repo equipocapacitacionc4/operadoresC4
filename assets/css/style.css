@@ -781,3 +781,23 @@ button:focus-visible {
     background: #F5EFF2;
     border-color: #E8D5DF;
 }
+/* CORRECCIÓN FINAL: PORTADA ROSA */
+.hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 92, 154, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(125deg, #3D0821, #8F0A40) !important;
+}
+
+.eyebrow,
+.panel-label {
+    color: #FF8DB8;
+}
+
+.panel-icon {
+    background: rgba(230, 11, 97, 0.18);
+    color: #FF8DB8;
+}
