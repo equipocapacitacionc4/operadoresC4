@@ -1,12 +1,27 @@
+
 {
   "titulo": "Biblioteca documental C4",
+  "categorias": [
+    {
+      "id": "capacitacion",
+      "nombre": "Capacitación"
+    },
+    {
+      "id": "protocolos",
+      "nombre": "Protocolos"
+    },
+    {
+      "id": "enlaces",
+      "nombre": "Enlaces institucionales"
+    }
+  ],
   "recursos": [
     {
       "id": "material-capacitacion-001",
       "titulo": "Presentación de capacitación",
       "categoria": "Capacitación",
       "descripcion": "Material formativo disponible para los operadores C4.",
-      "archivo": "Presentaci%C3%B3n_1.pdf",
+      "archivo": "Presentación_1.pdf",
       "ruta": "assets/documentos/Presentaci%C3%B3n_1.pdf",
       "tipo": "PDF",
       "disponibilidad": "Disponible"
