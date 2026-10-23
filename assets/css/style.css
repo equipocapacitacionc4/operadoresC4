@@ -801,3 +801,15 @@ button:focus-visible {
     background: rgba(230, 11, 97, 0.18);
     color: #FF8DB8;
 }
+
+/* Ajustar la sangría de las listas numeradas y con viñetas */
+.module-content-section ol,
+.module-content-section ul {
+    padding-left: 28px;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.module-content-section li {
+    padding-left: 4px;
+}
