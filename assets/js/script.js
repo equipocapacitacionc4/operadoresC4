@@ -8,34 +8,39 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const normalizeText = (text) =>
+    text
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLocaleLowerCase("es")
+      .trim();
+
   const resourceCards = Array.from(
-    document.querySelectorAll(
-      ".resource-card, .resource-grid article, .hero-panel .panel-item"
-    )
+    document.querySelectorAll(".resource-card")
   );
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const query = searchInput.value
-      .trim()
-      .toLocaleLowerCase("es");
-
+    const query = normalizeText(searchInput.value);
     searchResults.replaceChildren();
 
     if (!query) {
       searchResults.textContent =
         "Escribe una palabra clave para buscar recursos.";
+      searchInput.focus();
       return;
     }
 
     const matches = resourceCards.filter((card) =>
-      card.textContent.toLocaleLowerCase("es").includes(query)
+      normalizeText(card.textContent).includes(query)
     );
 
     if (matches.length === 0) {
-      searchResults.textContent =
-        "No encontramos coincidencias. Intenta con otra palabra clave.";
+      const message = document.createElement("p");
+      message.textContent =
+        "No encontramos resultados. Prueba con otra palabra clave.";
+      searchResults.appendChild(message);
       return;
     }
 
@@ -49,27 +54,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     matches.forEach((card) => {
       const item = document.createElement("li");
-      const link = card.querySelector("a[href]");
       const title = card.querySelector("h2, h3, h4");
+      const description = card.querySelector("p");
+      const link = card.matches("a[href]")
+        ? card
+        : card.querySelector("a[href]");
+
+      const resultTitle = document.createElement("strong");
+      resultTitle.textContent =
+        title?.textContent.trim() || "Recurso del portal";
 
       if (link) {
         const resultLink = document.createElement("a");
         resultLink.href = link.href;
-        resultLink.textContent =
-          title?.textContent.trim() ||
-          link.textContent.trim() ||
-          "Consultar recurso";
+        resultLink.target = link.target || "_self";
 
+        if (link.target === "_blank") {
+          resultLink.rel = "noopener noreferrer";
+        }
+
+        resultLink.appendChild(resultTitle);
         item.appendChild(resultLink);
       } else {
-        item.textContent =
-          title?.textContent.trim() ||
-          card.textContent.trim().slice(0, 120);
+        item.appendChild(resultTitle);
+      }
+
+      if (description) {
+        const detail = document.createElement("p");
+        detail.textContent = description.textContent.trim();
+        item.appendChild(detail);
       }
 
       resultList.appendChild(item);
     });
 
     searchResults.appendChild(resultList);
+  });
+
+  searchInput.addEventListener("input", () => {
+    if (!searchInput.value.trim()) {
+      searchResults.replaceChildren();
+    }
   });
 });
