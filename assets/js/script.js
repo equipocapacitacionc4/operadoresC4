@@ -86,38 +86,64 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   };
 
+  
   const renderLibrary = () => {
-    if (!libraryContainer) return;
-
-    const selectedCategory = categoryFilter?.value || "todas";
-
-    const filteredResources =
-      selectedCategory === "todas"
-        ? resources
-        : resources.filter(
-            (resource) =>
-              normalizeText(resource.categoria) ===
-              normalizeText(selectedCategory)
+      if (!libraryContainer) return;
+  
+      const selectedCategory = categoryFilter?.value || "todas";
+      const selectedOrder = orderSelect?.value || "original";
+  
+      let filteredResources =
+          selectedCategory === "todas"
+              ? [...resources]
+              : resources.filter(
+                  (resource) =>
+                      normalizeText(resource.categoria) ===
+                      normalizeText(selectedCategory)
+              );
+  
+      if (selectedOrder === "nombre") {
+          filteredResources.sort((a, b) =>
+              (a.titulo || "").localeCompare(
+                  b.titulo || "",
+                  "es",
+                  { sensitivity: "base" }
+              )
           );
-
-    libraryContainer.replaceChildren();
-
-    if (filteredResources.length === 0) {
-      showMessage(
-        libraryContainer,
-        "No hay recursos registrados en esta categoría."
-      );
-    } else {
-      filteredResources.forEach((resource) => {
-        libraryContainer.appendChild(createResourceCard(resource));
-      });
-    }
-
-    if (filterStatus) {
-      filterStatus.textContent =
-        `Mostrando ${filteredResources.length} de ${resources.length} recursos.`;
-    }
+      } else if (selectedOrder === "disponibilidad") {
+          const availabilityOrder = {
+              "Disponible": 1,
+              "Próximamente": 2,
+              "Pendiente de configuración": 3
+          };
+  
+          filteredResources.sort((a, b) =>
+              (availabilityOrder[a.disponibilidad] || 99) -
+              (availabilityOrder[b.disponibilidad] || 99)
+          );
+      }
+  
+      libraryContainer.replaceChildren();
+  
+      if (filteredResources.length === 0) {
+          showMessage(
+              libraryContainer,
+              "No hay recursos registrados en esta categoría."
+          );
+      } else {
+          filteredResources.forEach((resource) => {
+              libraryContainer.appendChild(
+                  createResourceCard(resource)
+              );
+          });
+      }
+  
+      if (filterStatus) {
+          filterStatus.textContent =
+              `Mostrando ${filteredResources.length} de ${resources.length} recursos.`;
+      }
   };
+
 
   const renderSearchResults = (query) => {
     if (!searchResults) return;
