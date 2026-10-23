@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const libraryContainer = document.getElementById("bibliotecaRecursos");
   const categoryFilter = document.getElementById("filtroCategoria");
+  const orderSelect = document.getElementById("ordenRecursos");
   const filterStatus = document.getElementById("resultadoFiltro");
 
   const catalogPath = "assets/documentos/catalogo.json";
