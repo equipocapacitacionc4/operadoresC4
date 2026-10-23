@@ -10,9 +10,257 @@
     <title>Familiarización con el sistema NUSE | Portal C4</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
 
+    <style>
+        :root {
+            --module-pink: #E60B61;
+            --module-dark: #252238;
+            --module-muted: #6B6878;
+            --module-border: #E8E5ED;
+            --module-background: #F8F7FA;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 30px;
+        }
+
+        body {
+            margin: 0;
+            padding-bottom: 76px;
+        }
+
+        .module-layout {
+            display: flex;
+            min-height: calc(100vh - 140px);
+        }
+
+        .module-sidebar {
+            width: 290px;
+            flex-shrink: 0;
+            padding: 28px 20px;
+            border-right: 1px solid var(--module-border);
+            background: var(--module-background);
+            transition: width .25s ease, padding .25s ease;
+        }
+
+        .module-sidebar h2 {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin: 0 0 22px;
+            color: var(--module-dark);
+        }
+
+        .module-sidebar nav {
+            display: grid;
+            gap: 7px;
+        }
+
+        .module-sidebar nav a {
+            display: block;
+            padding: 11px 12px;
+            border-radius: 8px;
+            color: var(--module-dark);
+            text-decoration: none;
+            font-size: .94rem;
+        }
+
+        .module-sidebar nav a:hover,
+        .module-sidebar nav a.active {
+            background: #FCE4EF;
+            color: var(--module-pink);
+        }
+
+        .module-main {
+            min-width: 0;
+            flex: 1;
+            padding: 38px clamp(20px, 5vw, 72px);
+        }
+
+        .module-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .module-toggle {
+            border: 1px solid var(--module-border);
+            background: white;
+            color: var(--module-dark);
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .module-toggle:hover {
+            border-color: var(--module-pink);
+        }
+
+        .module-label {
+            display: inline-block;
+            color: var(--module-pink);
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            margin-bottom: 12px;
+        }
+
+        .module-title {
+            color: var(--module-dark);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.2;
+            margin: 0 0 18px;
+        }
+
+        .module-intro {
+            color: var(--module-muted);
+            line-height: 1.8;
+            max-width: 780px;
+        }
+
+        .module-content-section {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--module-border);
+            scroll-margin-top: 24px;
+        }
+
+        .module-content-section h2 {
+            color: var(--module-dark);
+            font-size: 1.5rem;
+            margin: 0 0 16px;
+        }
+
+        .module-content-section p {
+            color: var(--module-muted);
+            line-height: 1.8;
+        }
+
+        .module-placeholder {
+            padding: 18px 20px;
+            border-left: 4px solid var(--module-pink);
+            background: var(--module-background);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .module-navigation {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 36px;
+            padding-top: 25px;
+        }
+
+        .module-navigation a,
+        .module-navigation button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 46px;
+            padding: 10px;
+            border: 1px solid var(--module-border);
+            border-radius: 9px;
+            background: white;
+            color: var(--module-dark);
+            text-decoration: none;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .module-navigation a:last-child {
+            background: var(--module-pink);
+            border-color: var(--module-pink);
+            color: white;
+        }
+
+        .module-navigation a[aria-disabled="true"] {
+            opacity: .45;
+            pointer-events: none;
+        }
+
+        .module-progress {
+            position: fixed;
+            z-index: 1000;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(680px, calc(100% - 32px));
+            padding: 12px 18px 14px;
+            border: 1px solid var(--module-border);
+            border-bottom: 0;
+            border-radius: 14px 14px 0 0;
+            background: rgba(255, 255, 255, .97);
+            box-shadow: 0 -4px 20px rgba(37, 34, 56, .08);
+        }
+
+        .module-progress-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+            color: var(--module-dark);
+            font-size: .85rem;
+        }
+
+        .module-progress-track {
+            height: 7px;
+            background: #EEEAF1;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .module-progress-fill {
+            width: 0;
+            height: 100%;
+            background: var(--module-pink);
+            border-radius: inherit;
+            transition: width .15s linear;
+        }
+
+        .module-sidebar-hidden .module-sidebar {
+            display: none;
+        }
+
+        .module-sidebar-hidden .module-main {
+            padding-left: clamp(20px, 8vw, 110px);
+            padding-right: clamp(20px, 8vw, 110px);
+        }
+
+        @media (max-width: 760px) {
+            .module-layout {
+                display: block;
+            }
+
+            .module-sidebar {
+                width: auto;
+                border-right: 0;
+                border-bottom: 1px solid var(--module-border);
+                padding: 20px;
+            }
+
+            .module-main {
+                padding: 25px 20px;
+            }
+
+            .module-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .module-sidebar-hidden .module-main {
+                padding: 25px 20px;
+            }
+
+            .module-progress {
+                width: calc(100% - 24px);
+            }
+        }
+    </style>
+</head>
+
+<body>
     <header>
         <div class="navbar">
             <a class="logo" href="../index.html" aria-label="Volver al Portal C4">
@@ -28,31 +276,157 @@
         </div>
     </header>
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="section-kicker">MÓDULO 01</span>
-                    <h2>Familiarización con el sistema NUSE</h2>
-                    <p>
-                        En este espacio se incorporarán los contenidos,
-                        materiales y actividades correspondientes al módulo.
-                    </p>
-                </div>
+    <div class="module-layout" id="moduleLayout">
+        <aside class="module-sidebar" id="moduleSidebar">
+            <h2>Familiarización con el sistema NUSE</h2>
 
-                <a class="btn" href="../index.html#formacion">
-                    ← Volver a los módulos
-                </a>
+            <nav aria-label="Apartados del módulo">
+                <a href="#objetivos" class="active">1. Objetivos</a>
+                <a href="#tematicas">2. Temáticas Abordadas</a>
+                <a href="#actividades">3. Actividades</a>
+                <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
+                <a href="#evaluacion">5. Evaluación</a>
+            </nav>
+        </aside>
+
+        <main class="module-main">
+            <div class="module-toolbar">
+                <button
+                    class="module-toggle"
+                    id="toggleSidebar"
+                    type="button"
+                    aria-controls="moduleSidebar"
+                    aria-expanded="true">
+                    ☰ Ocultar navegación
+                </button>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <p>Portal de Formación y Capacitación · Operadores C4</p>
-            <a href="../index.html">Volver al portal ↑</a>
+            <span class="module-label">MÓDULO 01</span>
+            <h1 class="module-title">Familiarización con el sistema NUSE</h1>
+
+            <p class="module-intro">
+                En este módulo se presentarán los contenidos y las actividades
+                de formación relacionados con la familiarización con el sistema
+                NUSE. Los materiales específicos se incorporarán en cada apartado.
+            </p>
+
+            <section class="module-content-section" id="objetivos">
+                <h2>1. Objetivos</h2>
+                <div class="module-placeholder">
+                    <p>En este apartado se presentarán el objetivo general y los objetivos específicos del módulo.</p>
+                </div>
+            </section>
+
+            <section class="module-content-section" id="tematicas">
+                <h2>2. Temáticas Abordadas</h2>
+                <div class="module-placeholder">
+                    <p>En este apartado se describirán los temas y conceptos que se desarrollarán durante el módulo.</p>
+                </div>
+            </section>
+
+            <section class="module-content-section" id="actividades">
+                <h2>3. Actividades</h2>
+                <div class="module-placeholder">
+                    <p>En este apartado se incorporarán las actividades de aprendizaje guiadas.</p>
+                </div>
+            </section>
+
+            <section class="module-content-section" id="trabajo-autonomo">
+                <h2>4. Actividades de Trabajo Autónomo</h2>
+                <div class="module-placeholder">
+                    <p>En este apartado se incluirán las actividades que cada participante realizará de manera autónoma.</p>
+                </div>
+            </section>
+
+            <section class="module-content-section" id="evaluacion">
+                <h2>5. Evaluación</h2>
+                <div class="module-placeholder">
+                    <p>En este apartado se presentarán los instrumentos y criterios de evaluación del módulo.</p>
+                </div>
+            </section>
+
+            <nav class="module-navigation" aria-label="Navegación entre módulos">
+                <a href="#" aria-disabled="true" tabindex="-1">← Módulo anterior</a>
+                <a href="../index.html">⌂ Inicio</a>
+                <a href="recepcion-gestion-incidentes.html">Módulo siguiente →</a>
+            </nav>
+        </main>
+    </div>
+
+    <div class="module-progress" aria-label="Progreso de lectura">
+        <div class="module-progress-heading">
+            <span>Avance del módulo</span>
+            <strong id="progressText">0%</strong>
         </div>
-    </footer>
+        <div
+            class="module-progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-label="Porcentaje de avance del módulo"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0">
+            <div class="module-progress-fill" id="progressFill"></div>
+        </div>
+    </div>
 
+    <script>
+        const layout = document.getElementById("moduleLayout");
+        const toggleButton = document.getElementById("toggleSidebar");
+        const progressText = document.getElementById("progressText");
+        const progressFill = document.getElementById("progressFill");
+        const progressTrack = document.getElementById("progressTrack");
+        const sections = document.querySelectorAll(".module-content-section");
+        const sectionLinks = document.querySelectorAll(".module-sidebar nav a");
+
+        toggleButton.addEventListener("click", () => {
+            const hidden = layout.classList.toggle("module-sidebar-hidden");
+            toggleButton.setAttribute("aria-expanded", String(!hidden));
+            toggleButton.textContent = hidden
+                ? "☰ Mostrar navegación"
+                : "☰ Ocultar navegación";
+        });
+
+        function updateProgress() {
+            const scrollableHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
+
+            const progress = scrollableHeight <= 0
+                ? 100
+                : Math.round((window.scrollY / scrollableHeight) * 100);
+
+            const boundedProgress = Math.max(0, Math.min(100, progress));
+
+            progressText.textContent = boundedProgress + "%";
+            progressFill.style.width = boundedProgress + "%";
+            progressTrack.setAttribute("aria-valuenow", boundedProgress);
+        }
+
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        window.addEventListener("load", updateProgress);
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionLinks.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: "-15% 0px -65% 0px" });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        sectionLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                sectionLinks.forEach(item => item.classList.remove("active"));
+                link.classList.add("active");
+            });
+        });
+    </script>
 </body>
 </html>
