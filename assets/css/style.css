@@ -543,3 +543,56 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+
+/* FILTROS DE LA BIBLIOTECA */
+.library-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 24px;
+    padding: 18px 20px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--fondo);
+}
+
+.library-filters label {
+    color: var(--azul-oscuro);
+    font-weight: 700;
+}
+
+.library-filters select {
+    min-width: 220px;
+    padding: 10px 36px 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--blanco);
+    color: var(--texto);
+    font: inherit;
+    cursor: pointer;
+}
+
+.library-filters select:focus-visible {
+    outline: 3px solid var(--cian);
+    outline-offset: 3px;
+}
+
+#resultadoFiltro {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .library-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .library-filters select {
+        width: 100%;
+        min-width: 0;
+    }
+}
