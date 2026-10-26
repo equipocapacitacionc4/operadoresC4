@@ -8,7 +8,6 @@
     <meta name="description" content="Módulo de gestión y recepción de incidentes para operadores C4.">
     <title>Gestión y recepción de incidentes | Portal C4</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-
     <style>
         :root {
             --module-pink: #E60B61;
@@ -17,373 +16,225 @@
             --module-border: #E8E5ED;
             --module-background: #F8F7FA;
         }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 30px;
-        }
-
-        body {
-            margin: 0;
-            padding-bottom: 76px;
-        }
-
-        .module-layout {
-            display: flex;
-            min-height: calc(100vh - 140px);
-        }
-
+        html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+        body { margin: 0; padding-bottom: 76px; }
+        .module-layout { display: flex; min-height: calc(100vh - 140px); }
         .module-sidebar {
-            width: 290px;
-            flex-shrink: 0;
-            padding: 28px 20px;
+            width: 290px; flex-shrink: 0; padding: 28px 20px;
             border-right: 1px solid var(--module-border);
             background: var(--module-background);
             transition: width .25s ease, padding .25s ease;
         }
-
         .module-sidebar h2 {
-            font-size: 1.15rem;
-            line-height: 1.4;
-            margin: 0 0 22px;
-            color: var(--module-dark);
+            font-size: 1.15rem; line-height: 1.4;
+            margin: 0 0 22px; color: var(--module-dark);
         }
-
-        .module-sidebar nav {
-            display: grid;
-            gap: 7px;
-        }
-
+        .module-sidebar nav { display: grid; gap: 7px; }
         .module-sidebar nav a {
-            display: block;
-            padding: 11px 12px;
-            border-radius: 8px;
-            color: var(--module-dark);
-            text-decoration: none;
-            font-size: .94rem;
+            display: block; padding: 11px 12px; border-radius: 8px;
+            color: var(--module-dark); text-decoration: none; font-size: .94rem;
         }
-
         .module-sidebar nav a:hover,
-        .module-sidebar nav a.active {
-            background: #FCE4EF;
-            color: var(--module-pink);
-        }
-
-        .module-main {
-            min-width: 0;
-            flex: 1;
-            padding: 38px clamp(20px, 5vw, 72px);
-        }
-
-        .module-toolbar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
+        .module-sidebar nav a.active { background: #FCE4EF; color: var(--module-pink); }
+        .module-main { min-width: 0; flex: 1; padding: 38px clamp(20px, 5vw, 72px); }
+        .module-toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; }
         .module-toggle {
-            border: 1px solid var(--module-border);
-            background: white;
-            color: var(--module-dark);
-            padding: 10px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            font: inherit;
+            border: 1px solid var(--module-border); background: white;
+            color: var(--module-dark); padding: 10px 14px;
+            border-radius: 8px; cursor: pointer; font: inherit;
         }
-
-        .module-toggle:hover {
-            border-color: var(--module-pink);
-        }
-
+        .module-toggle:hover { border-color: var(--module-pink); }
         .module-label {
-            display: inline-block;
-            color: var(--module-pink);
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            margin-bottom: 12px;
+            display: inline-block; color: var(--module-pink); font-size: .8rem;
+            font-weight: 700; letter-spacing: .08em; margin-bottom: 12px;
         }
-
         .module-title {
-            color: var(--module-dark);
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            line-height: 1.2;
-            margin: 0 0 18px;
+            color: var(--module-dark); font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.2; margin: 0 0 18px;
         }
-
-        .module-intro {
-            color: var(--module-muted);
-            line-height: 1.8;
-            max-width: 780px;
-        }
-
+        .module-intro { color: var(--module-muted); line-height: 1.8; max-width: 780px; }
         .module-content-section {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--module-border);
+            padding: 30px 0; border-bottom: 1px solid var(--module-border);
             scroll-margin-top: 24px;
         }
-
-        .module-content-section h2 {
-            color: var(--module-dark);
-            font-size: 1.5rem;
-            margin: 0 0 16px;
-        }
-
-        .module-content-section p {
-            color: var(--module-muted);
-            line-height: 1.8;
-        }
-
+        .module-content-section h2 { color: var(--module-dark); font-size: 1.5rem; margin: 0 0 16px; }
+        .module-content-section p { color: var(--module-muted); line-height: 1.8; }
         .module-placeholder {
-            padding: 18px 20px;
-            border-left: 4px solid var(--module-pink);
-            background: var(--module-background);
-            border-radius: 0 8px 8px 0;
+            padding: 18px 20px; border-left: 4px solid var(--module-pink);
+            background: var(--module-background); border-radius: 0 8px 8px 0;
         }
-
         .module-navigation {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-            margin-top: 36px;
-            padding-top: 25px;
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px; margin-top: 36px; padding-top: 25px;
         }
-
-        .module-navigation a,
-        .module-navigation button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 46px;
-            padding: 10px;
-            border: 1px solid var(--module-border);
-            border-radius: 9px;
-            background: white;
-            color: var(--module-dark);
-            text-decoration: none;
-            font: inherit;
-            cursor: pointer;
+        .module-navigation a, .module-navigation button {
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; min-height: 46px; padding: 10px;
+            border: 1px solid var(--module-border); border-radius: 9px;
+            background: white; color: var(--module-dark); text-decoration: none;
+            font: inherit; cursor: pointer;
         }
-
         .module-navigation a:last-child {
-            background: var(--module-pink);
-            border-color: var(--module-pink);
-            color: white;
+            background: var(--module-pink); border-color: var(--module-pink); color: white;
         }
-
-        .module-navigation a[aria-disabled="true"] {
-            opacity: .45;
-            pointer-events: none;
-        }
-
+        .module-navigation a[aria-disabled="true"] { opacity: .45; pointer-events: none; }
         .module-progress {
-            position: fixed;
-            z-index: 1000;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(680px, calc(100% - 32px));
-            padding: 12px 18px 14px;
-            border: 1px solid var(--module-border);
-            border-bottom: 0;
-            border-radius: 14px 14px 0 0;
+            position: fixed; z-index: 1000; bottom: 0; left: 50%;
+            transform: translateX(-50%); width: min(680px, calc(100% - 32px));
+            padding: 12px 18px 14px; border: 1px solid var(--module-border);
+            border-bottom: 0; border-radius: 14px 14px 0 0;
             background: rgba(255, 255, 255, .97);
             box-shadow: 0 -4px 20px rgba(37, 34, 56, .08);
         }
-
         .module-progress-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 8px;
-            color: var(--module-dark);
-            font-size: .85rem;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 12px; margin-bottom: 8px; color: var(--module-dark); font-size: .85rem;
         }
-
-        .module-progress-track {
-            height: 7px;
-            background: #EEEAF1;
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
+        .module-progress-track { height: 7px; background: #EEEAF1; border-radius: 99px; overflow: hidden; }
         .module-progress-fill {
-            width: 0;
-            height: 100%;
-            background: var(--module-pink);
-            border-radius: inherit;
-            transition: width .15s linear;
+            width: 0; height: 100%; background: var(--module-pink);
+            border-radius: inherit; transition: width .15s linear;
         }
-
-        .module-sidebar-hidden .module-sidebar {
-            display: none;
-        }
-
+        .module-sidebar-hidden .module-sidebar { display: none; }
         .module-sidebar-hidden .module-main {
             padding-left: clamp(20px, 8vw, 110px);
             padding-right: clamp(20px, 8vw, 110px);
         }
-
         @media (max-width: 760px) {
-            .module-layout {
-                display: block;
-            }
-
+            .module-layout { display: block; }
             .module-sidebar {
-                width: auto;
-                border-right: 0;
-                border-bottom: 1px solid var(--module-border);
-                padding: 20px;
+                width: auto; border-right: 0;
+                border-bottom: 1px solid var(--module-border); padding: 20px;
             }
-
-            .module-main {
-                padding: 25px 20px;
-            }
-
-            .module-navigation {
-                grid-template-columns: 1fr;
-            }
-
-            .module-sidebar-hidden .module-main {
-                padding: 25px 20px;
-            }
-
-            .module-progress {
-                width: calc(100% - 24px);
-            }
+            .module-main { padding: 25px 20px; }
+            .module-navigation { grid-template-columns: 1fr; }
+            .module-sidebar-hidden .module-main { padding: 25px 20px; }
+            .module-progress { width: calc(100% - 24px); }
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <div class="navbar">
-            <a class="logo" href="../index.html" aria-label="Volver al Portal C4">
-                <span class="logo-mark" aria-hidden="true">C4</span>
-                <span>Portal de Capacitación C4</span>
-            </a>
+<header>
+    <div class="navbar">
+        <a class="logo" href="../index.html" aria-label="Volver al Portal C4">
+            <span class="logo-mark" aria-hidden="true">C4</span>
+            <span>Portal de Capacitación C4</span>
+        </a>
+        <nav class="nav-links" aria-label="Navegación principal">
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#formacion">Módulos</a>
+            <a href="../index.html#recursos">Recursos</a>
+        </nav>
+    </div>
+</header>
 
-            <nav class="nav-links" aria-label="Navegación principal">
-                <a href="../index.html">Inicio</a>
-                <a href="../index.html#formacion">Módulos</a>
-                <a href="../index.html#recursos">Recursos</a>
-            </nav>
+<div class="module-layout" id="moduleLayout">
+    <aside class="module-sidebar" id="moduleSidebar">
+        <h2>Gestión y recepción de incidentes</h2>
+        <nav aria-label="Apartados del módulo">
+            <a href="#objetivos" class="active">1. Objetivos</a>
+            <a href="#tematicas">2. Temáticas Abordadas</a>
+            <a href="#actividades">3. Actividades</a>
+            <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
+            <a href="#evaluacion">5. Evaluación</a>
+        </nav>
+    </aside>
+
+    <main class="module-main">
+        <div class="module-toolbar">
+            <button class="module-toggle" id="toggleSidebar" type="button"
+                aria-controls="moduleSidebar" aria-expanded="true">
+                ☰ Ocultar navegación
+            </button>
         </div>
-    </header>
 
-    <div class="module-layout" id="moduleLayout">
-        <aside class="module-sidebar" id="moduleSidebar">
-            <h2>Gestión y recepción de incidentes</h2>
+        <span class="module-label">MÓDULO 02</span>
+        <h1 class="module-title">Gestión y recepción de incidentes</h1>
+        <div class="module-intro">
+            <p><strong>¡Bienvenidos y bienvenidas! Hoy desarrollarás el segundo módulo de formación del programa Operador de Recepción.</strong></p>
+            <p>En este módulo realizarás lecturas y actividades que te permitirán aproximarte a la gestión de incidentes y mantener los estándares de calidad para prestar un servicio adecuado a la ciudadanía.</p>
+        </div>
 
-            <nav aria-label="Apartados del módulo">
-                <a href="#objetivos" class="active">1. Objetivos</a>
-                <a href="#tematicas">2. Temáticas Abordadas</a>
-                <a href="#actividades">3. Actividades</a>
-                <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
-                <a href="#evaluacion">5. Evaluación</a>
-            </nav>
-        </aside>
-
-        <main class="module-main">
-            <div class="module-toolbar">
-                <button class="module-toggle" id="toggleSidebar"
-                    type="button" aria-controls="moduleSidebar"
-                    aria-expanded="true">
-                    ☰ Ocultar navegación
-                </button>
+        <section class="module-content-section" id="objetivos">
+            <h2>1. Objetivos</h2>
+            <div class="module-placeholder">
+                <ul>
+                    <li>Comprender el protocolo para atender una llamada en el marco de la operación de la Línea 123 de Bogotá.</li>
+                    <li>Reconocer las faltas por el no cumplimiento del protocolo para atender una llamada en el marco de la operación de la Línea 123 de Bogotá, como parte del seguimiento y la evaluación continua de la operación.</li>
+                </ul>
             </div>
+        </section>
 
-            <span class="module-label">MÓDULO 02</span>
-            <h1 class="module-title">Gestión y recepción de incidentes</h1>
-
-            <div class="module-intro">
-                <p><strong>¡Bienvenidos y bienvenidas! Hoy desarrollarás el segundo módulo de formación del programa Operador de Recepción.</strong></p>
-                <p>En este módulo realizarás lecturas y actividades que te permitirán aproximarte a la gestión de incidentes y mantener los estándares de calidad para prestar un servicio adecuado a la ciudadanía.</p>
+        <section class="module-content-section" id="tematicas">
+            <h2>2. Temáticas Abordadas</h2>
+            <div class="module-placeholder">
+                <p><strong>Atención a la ciudadanía y gestión de incidentes</strong></p>
+                <ul>
+                    <li>Recepción, recopilación de datos, documentación y finalización de la gestión de incidentes.</li>
+                    <li>Atención a la ciudadanía y gestión de incidentes.</li>
+                    <li>Aseguramiento de la calidad (árbol de decisión).</li>
+                </ul>
             </div>
+        </section>
 
-            <section class="module-content-section" id="objetivos">
-                <h2>1. Objetivos</h2>
-                <div class="module-placeholder">
-                    <ul>
-                        <li>Comprender el protocolo para atender una llamada en el marco de la operación de la Línea 123 de Bogotá.</li>
-                        <li>Reconocer las faltas por el no cumplimiento del protocolo para atender una llamada en el marco de la operación de la Línea 123 de Bogotá, como parte del seguimiento y la evaluación continua de la operación.</li>
-                    </ul>
+        <section class="module-content-section" id="actividades">
+            <h2>3. Actividades</h2>
+            <div class="module-placeholder">
+                <p>Antes de comenzar, ubícate en un lugar cómodo, vas a desarrollar varias lecturas. Consigue un cuaderno, lápiz o esfero, o alguna herramienta digital para tomar apuntes.</p>
+                <p><strong>¡Comencemos!</strong></p>
+
+                <h3>3.1 Gestión de incidentes</h3>
+                <p>La atención a la ciudadanía a través del canal telefónico no solo está enfocada en la recepción de llamadas. La información que proporciona la ciudadanía es organizada y sistematizada por operadores y operadoras de recepción, y genera una respuesta articulada entre las diferentes entidades, o agencias, como las llamamos en el sistema NUSE.</p>
+                <p>El Número Único de Seguridad y Emergencias (NUSE 123) no funciona solo como un call center, sino que es el primer eslabón de una cadena de acciones que realiza la ciudad para garantizar una respuesta eficiente y rápida ante las emergencias de la ciudadanía.</p>
+                <p>En la actividad 4 del módulo anterior, debiste haber identificado, como mínimo, los siguientes elementos en la gestión de incidentes:</p>
+
+                <div style="overflow-x:auto;margin:20px 0">
+                    <table style="width:100%;border-collapse:collapse;min-width:560px">
+                        <thead>
+                            <tr style="background:#E60B61;color:white">
+                                <th style="padding:12px">Sistema</th>
+                                <th style="padding:12px">S.U.R.</th>
+                                <th style="padding:12px">Entidades / agencias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:12px;border:1px solid #E8E5ED">NUSE</td>
+                                <td style="padding:12px;border:1px solid #E8E5ED">Ciudadanía; operadores de recepción; operadores de despacho</td>
+                                <td style="padding:12px;border:1px solid #E8E5ED">Unidades; operadores de despacho</td>
+                            </tr>
+                            <tr>
+                                <th style="padding:12px;border:1px solid #E8E5ED">Responsable</th>
+                                <td colspan="2" style="padding:12px;border:1px solid #E8E5ED">Ciudadanía, operadores y entidades/agencias involucradas</td>
+                            </tr>
+                            <tr>
+                                <th style="padding:12px;border:1px solid #E8E5ED">Acción</th>
+                                <td style="padding:12px;border:1px solid #E8E5ED">Inicio, tipificación, documentación, geolocalización y transferencia (si aplica)</td>
+                                <td style="padding:12px;border:1px solid #E8E5ED">Despacho de unidades y recursos; atención de incidentes; fin</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </section>
 
-            <section class="module-content-section" id="tematicas">
-                <h2>2. Temáticas Abordadas</h2>
-                <div class="module-placeholder">
-                    <p><strong>Atención a la ciudadanía y gestión de incidentes</strong></p>
-                    <ul>
-                        <li>Recepción, recopilación de datos, documentación y finalización de la gestión de incidentes.</li>
-                        <li>Atención a la ciudadanía y gestión de incidentes.</li>
-                        <li>Aseguramiento de la calidad (árbol de decisión).</li>
-                    </ul>
+                <p>Parte fundamental del inicio de gestión de un incidente es escuchar a la ciudadanía. Por tal razón, debes ser respetuoso, amable, empático, confiable, incluyente y oportuno.</p>
+
+                <div style="padding:18px;border-left:4px solid #E60B61;background:#F8F7FA;border-radius:0 8px 8px 0;margin:22px 0">
+                    <h4>Actividad 1</h4>
+                    <p>Tu primera actividad para este módulo consiste en leer el documento <a href="../assets/modulo2/Atencion_y_Servicio_a_la_Ciudadania.pdf" target="_blank" rel="noopener noreferrer"><strong>Atención a la ciudadanía</strong></a>.</p>
+                    <p>Si ya realizaste la lectura, responde las siguientes preguntas en tus apuntes:</p>
+                    <ol>
+                        <li>¿Cuál es el objetivo principal del Manual de Atención y Servicio a la Ciudadanía?</li>
+                        <li>¿Qué características debe tener una atención de calidad a la ciudadanía?</li>
+                        <li>¿Por qué es importante brindar información clara, consistente y oportuna a los ciudadanos?</li>
+                        <li>Teniendo en cuenta la triangulación del servicio, ¿cuál sería la triangulación del servicio específicamente para el caso de la Línea de Emergencias?</li>
+                    </ol>
                 </div>
-            </section>
 
-            <section class="module-content-section" id="actividades">
-                <h2>3. Actividades</h2>
-                <div class="module-placeholder">
-                    <p>Antes de comenzar, ubícate en un lugar cómodo, vas a desarrollar varias lecturas. Consigue un cuaderno, lápiz o esfero, o alguna herramienta digital para tomar apuntes.</p>
-                    <p><strong>¡Comencemos!</strong></p>
-
-                    <h3>3.1 Gestión de incidentes</h3>
-                    <p>La atención a la ciudadanía a través del canal telefónico no solo está enfocada en la recepción de llamadas. La información que proporciona la ciudadanía es organizada y sistematizada por operadores y operadoras de recepción, y genera una respuesta articulada entre las diferentes entidades, o agencias, como las llamamos en el sistema NUSE.</p>
-                    <p>El Número Único de Seguridad y Emergencias (NUSE 123) no funciona solo como un call center, sino que es el primer eslabón de una cadena de acciones que realiza la ciudad para garantizar una respuesta eficiente y rápida ante las emergencias de la ciudadanía.</p>
-                    <p>En la actividad 4 del módulo anterior, debiste haber identificado, como mínimo, los siguientes elementos en la gestión de incidentes:</p>
-
-                    <div style="overflow-x:auto;margin:20px 0">
-                        <table style="width:100%;border-collapse:collapse;min-width:560px">
-                            <thead>
-                                <tr style="background:#E60B61;color:white">
-                                    <th style="padding:12px">Sistema</th>
-                                    <th style="padding:12px">S.U.R.</th>
-                                    <th style="padding:12px">Entidades / agencias</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:12px;border:1px solid #E8E5ED">NUSE</td>
-                                    <td style="padding:12px;border:1px solid #E8E5ED">Ciudadanía; operadores de recepción; operadores de despacho</td>
-                                    <td style="padding:12px;border:1px solid #E8E5ED">Unidades; operadores de despacho</td>
-                                </tr>
-                                <tr>
-                                    <th style="padding:12px;border:1px solid #E8E5ED">Responsable</th>
-                                    <td colspan="2" style="padding:12px;border:1px solid #E8E5ED">Ciudadanía, operadores y entidades/agencias involucradas</td>
-                                </tr>
-                                <tr>
-                                    <th style="padding:12px;border:1px solid #E8E5ED">Acción</th>
-                                    <td style="padding:12px;border:1px solid #E8E5ED">Inicio, tipificación, documentación, geolocalización y transferencia (si aplica)</td>
-                                    <td style="padding:12px;border:1px solid #E8E5ED">Despacho de unidades y recursos; atención de incidentes; fin</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div style="margin:28px 0;padding:20px;background:#F8F7FA;border-radius:12px">
+                    <h4>Actividad 2</h4>
+                    <p>Aplica tus aprendizajes… Mira el siguiente video. ¿Puedes identificar la oportunidad de la atención en uno de los incidentes?</p>
+                    <div style="position:relative;width:100%;aspect-ratio:4/5;max-width:560px;margin:auto">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsecretariadeseguridadbogota%2Fvideos%2F746392530318826%2F&amp;show_text=true&amp;width=476&amp;t=0" title="Video sobre atención de incidentes" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-
-                    <p>Parte fundamental del inicio de gestión de un incidente es escuchar a la ciudadanía. Por tal razón, debes ser respetuoso, amable, empático, confiable, incluyente y oportuno.</p>
-
-                    <div style="padding:18px;border-left:4px solid #E60B61;background:#F8F7FA;border-radius:0 8px 8px 0;margin:22px 0">
-                        <h4>Actividad 1</h4>
-                        <p>Tu primera actividad para este módulo consiste en leer el documento <a href="../assets/modulo2/Atenci%C3%B3n_y_Servicio_a_la_Ciudadan%C3%ADa.pdf" target="_blank" rel="noopener noreferrer"><strong>Atención a la ciudadanía</strong></a>.</p>
-                        <p>Si ya realizaste la lectura, responde las siguientes preguntas en tus apuntes:</p>
-                        <ol>
-                            <li>¿Cuál es el objetivo principal del Manual de Atención y Servicio a la Ciudadanía?</li>
-                            <li>¿Qué características debe tener una atención de calidad a la ciudadanía?</li>
-                            <li>¿Por qué es importante brindar información clara, consistente y oportuna a los ciudadanos?</li>
-                            <li>Teniendo en cuenta la triangulación del servicio, ¿cuál sería la triangulación del servicio específicamente para el caso de la Línea de Emergencias?</li>
-                        </ol>
-                    </div>
-
-                    <div style="margin:28px 0;padding:20px;background:#F8F7FA;border-radius:12px">
-                        <h4>Actividad 2</h4>
-                        <p>Aplica tus aprendizajes… Mira el siguiente video. ¿Puedes identificar la oportunidad de la atención en uno de los incidentes?</p>
-                        <div style="position:relative;width:100%;aspect-ratio:4/5;max-width:560px;margin:auto">
-                            <iframe src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsecretariadeseguridadbogota%2Fvideos%2F746392530318826%2F&amp;show_text=true&amp;width=476&amp;t=0" title="Video sobre atención de incidentes" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <p style="text-align:center;margin-top:12px"><a href="https://www.facebook.com/secretariadeseguridadbogota/videos/746392530318826/" target="_blank" rel="noopener noreferrer">Si el video no se reproduce aquí, ábrelo en Facebook.</a></p>
-                    </div>
+                    <p style="text-align:center;margin-top:12px"><a href="https://www.facebook.com/secretariadeseguridadbogota/videos/746392530318826/" target="_blank" rel="noopener noreferrer">Si el video no se reproduce aquí, ábrelo en Facebook.</a></p>
+                </div>
