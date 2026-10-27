@@ -137,6 +137,27 @@
             line-height: 1.8;
         }
 
+        
+        /* Estilo uniforme de hipervínculos de contenido, igual al módulo 3 */
+        .module-content-section a,
+        .module-intro a {
+            color: var(--module-pink);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .module-content-section a strong,
+        .module-intro a strong {
+            color: inherit;
+            font-weight: inherit;
+        }
+
+        .module-content-section a:hover,
+        .module-intro a:hover {
+            color: #A90849;
+        }
+
         .module-placeholder {
             padding: 18px 20px;
             border-left: 4px solid var(--module-pink);
