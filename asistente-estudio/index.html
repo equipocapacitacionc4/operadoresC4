@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Asistente educativo gratuito para estudiar la Guía de Tipificación de Incidentes del C4.">
+  <title>Asistente de estudio C4</title>
+  <link rel="stylesheet" href="assets/css/asistente.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">OPERADORES C4 · RECURSO EDUCATIVO</div>
+      <h1>Asistente de estudio</h1>
+      <p>Practica los códigos, conceptos e instrucciones de la Guía de Tipificación de Incidentes.</p>
+      <div class="notice"><strong>Importante:</strong> herramienta de aprendizaje basada en los documentos suministrados. No sustituye los procedimientos institucionales ni sus actualizaciones vigentes.</div>
+    </header>
+    <nav class="tabs" aria-label="Actividades de estudio">
+      <button class="tab active" data-view="inicio">Inicio</button>
+      <button class="tab" data-view="tarjetas">Tarjetas</button>
+      <button class="tab" data-view="quiz">Cuestionario</button>
+      <button class="tab" data-view="explorar">Explorar códigos</button>
+    </nav>
+    <section id="view" aria-live="polite"><p class="loading">Cargando contenido de estudio…</p></section>
+    <footer><span>Contenido de referencia: Guía de Tipificación de Incidentes (PDF) y archivo Excel suministrados.</span><span id="progress"></span></footer>
+  </main>
+  <script src="assets/js/asistente.js" defer></script>
+</body>
+</html>
