@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#E60B61">
-    <meta name="description" content="Módulo 3: Geolocalización de incidentes. Portal de capacitación C4.">
     <title>Geolocalización de incidentes | Portal C4</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <style>
         :root {
-            --module-pink: #E60B61;
-            --module-dark: #252238;
-            --module-muted: #6B6878;
-            --module-border: #E8E5ED;
-            --module-background: #F8F7FA;
+            --pink: #E60B61;
+            --dark: #252238;
+            --muted: #6B6878;
+            --border: #E8E5ED;
+            --background: #F8F7FA;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 30px;
+            scroll-padding-top: 24px;
         }
 
         body {
             margin: 0;
-            padding-bottom: 76px;
+            padding-bottom: 82px;
         }
 
         .module-layout {
@@ -37,15 +36,15 @@
             width: 290px;
             flex-shrink: 0;
             padding: 28px 20px;
-            border-right: 1px solid var(--module-border);
-            background: var(--module-background);
+            border-right: 1px solid var(--border);
+            background: var(--background);
         }
 
         .module-sidebar h2 {
+            color: var(--dark);
             font-size: 1.15rem;
             line-height: 1.4;
             margin: 0 0 22px;
-            color: var(--module-dark);
         }
 
         .module-sidebar nav {
@@ -57,7 +56,7 @@
             display: block;
             padding: 11px 12px;
             border-radius: 8px;
-            color: var(--module-dark);
+            color: var(--dark);
             text-decoration: none;
             font-size: .94rem;
         }
@@ -65,7 +64,7 @@
         .module-sidebar nav a:hover,
         .module-sidebar nav a.active {
             background: #FCE4EF;
-            color: var(--module-pink);
+            color: var(--pink);
         }
 
         .module-main {
@@ -75,84 +74,97 @@
         }
 
         .module-toolbar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             margin-bottom: 25px;
         }
 
         .module-toggle {
-            border: 1px solid var(--module-border);
-            background: white;
-            color: var(--module-dark);
             padding: 10px 14px;
+            border: 1px solid var(--border);
             border-radius: 8px;
+            background: #FFFFFF;
+            color: var(--dark);
             cursor: pointer;
             font: inherit;
         }
 
         .module-label {
             display: inline-block;
-            color: var(--module-pink);
+            margin-bottom: 12px;
+            color: var(--pink);
             font-size: .8rem;
             font-weight: 700;
             letter-spacing: .08em;
-            margin-bottom: 12px;
         }
 
         .module-title {
-            color: var(--module-dark);
+            margin: 0 0 18px;
+            color: var(--dark);
             font-size: clamp(1.8rem, 4vw, 2.6rem);
             line-height: 1.2;
-            margin: 0 0 18px;
         }
 
         .module-intro {
-            color: var(--module-muted);
-            line-height: 1.8;
             max-width: 800px;
+            color: var(--muted);
+            line-height: 1.8;
         }
 
         .module-content-section {
             padding: 30px 0;
-            border-bottom: 1px solid var(--module-border);
+            border-bottom: 1px solid var(--border);
             scroll-margin-top: 24px;
         }
 
         .module-content-section h2 {
-            color: var(--module-dark);
-            font-size: 1.5rem;
             margin: 0 0 16px;
+            color: var(--dark);
+            font-size: 1.5rem;
         }
 
-        .module-content-section p {
-            color: var(--module-muted);
+        .module-content-section h3 {
+            margin-top: 30px;
+            color: var(--dark);
+        }
+
+        .module-content-section p,
+        .module-content-section li {
+            color: var(--muted);
             line-height: 1.8;
         }
 
         .module-content-section li {
-            line-height: 1.8;
             margin-bottom: 7px;
         }
 
         .module-placeholder {
             padding: 18px 20px;
-            border-left: 4px solid var(--module-pink);
-            background: var(--module-background);
+            border-left: 4px solid var(--pink);
             border-radius: 0 8px 8px 0;
+            background: var(--background);
         }
 
         .activity-card {
             margin: 26px 0;
             padding: 22px;
-            background: var(--module-background);
             border-radius: 12px;
+            background: var(--background);
         }
 
         .activity-card h3,
         .activity-card h4 {
-            color: var(--module-dark);
             margin-top: 0;
+            color: var(--dark);
+        }
+
+        .module-link {
+            color: var(--pink);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .module-link:hover {
+            color: #A90849;
         }
 
         .module-image {
@@ -160,19 +172,32 @@
             width: 100%;
             max-width: 680px;
             height: auto;
-            margin: 22px auto;
-            border-radius: 10px;
+            margin: 24px auto;
+            border-radius: 8px;
         }
 
         .module-caption {
-            text-align: center;
-            font-size: .88rem;
-            color: var(--module-muted);
             margin-top: -12px;
+            color: var(--muted);
+            font-size: .88rem;
+            text-align: center;
+        }
+
+        .module-callout {
+            margin: 22px 0;
+            padding: 18px;
+            border-left: 5px solid var(--pink);
+            border-radius: 0 8px 8px 0;
+            background: #FFFFFF;
+        }
+
+        .module-callout p {
+            margin: 8px 0;
+            color: var(--dark);
+            text-align: center;
         }
 
         .module-video {
-            position: relative;
             width: 100%;
             max-width: 605px;
             margin: 20px auto;
@@ -181,64 +206,40 @@
         .module-video iframe {
             display: block;
             width: 100%;
-            min-height: 520px;
+            min-height: 500px;
             border: 0;
             border-radius: 10px;
         }
 
         .module-table-wrap {
             width: 100%;
-            overflow-x: auto;
             margin: 22px 0;
+            overflow-x: auto;
         }
 
         .module-table {
             width: 100%;
-            min-width: 520px;
+            min-width: 420px;
             border-collapse: collapse;
-            color: var(--module-dark);
+            color: var(--dark);
         }
 
         .module-table th {
-            background: var(--module-pink);
-            color: #FFFFFF;
-            border: 1px solid #D8D4DE;
             padding: 11px;
+            border: 1px solid var(--border);
+            background: var(--pink);
+            color: #FFFFFF;
             text-align: left;
         }
 
         .module-table td {
-            background: #FFFFFF;
-            border: 1px solid #D8D4DE;
             padding: 11px;
-            vertical-align: top;
+            border: 1px solid var(--border);
+            background: #FFFFFF;
         }
 
         .module-table tbody tr:nth-child(even) td {
-            background: var(--module-background);
-        }
-
-        .module-callout {
-            margin: 22px 0;
-            padding: 18px;
-            border-left: 5px solid var(--module-pink);
-            background: #FFFFFF;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .module-callout strong {
-            color: var(--module-dark);
-        }
-
-        .module-link {
-            color: var(--module-pink);
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .module-link:hover {
-            color: #A90849;
+            background: var(--background);
         }
 
         .module-navigation {
@@ -253,20 +254,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             min-height: 46px;
             padding: 10px;
-            border: 1px solid var(--module-border);
+            border: 1px solid var(--border);
             border-radius: 9px;
-            background: white;
-            color: var(--module-dark);
+            background: #FFFFFF;
+            color: var(--dark);
+            text-align: center;
             text-decoration: none;
         }
 
         .module-navigation a:last-child {
-            background: var(--module-pink);
-            border-color: var(--module-pink);
-            color: white;
+            border-color: var(--pink);
+            background: var(--pink);
+            color: #FFFFFF;
         }
 
         .module-progress {
@@ -274,38 +275,37 @@
             z-index: 1000;
             bottom: 0;
             left: 50%;
-            transform: translateX(-50%);
             width: min(680px, calc(100% - 32px));
             padding: 12px 18px 14px;
-            border: 1px solid var(--module-border);
+            transform: translateX(-50%);
+            border: 1px solid var(--border);
             border-bottom: 0;
             border-radius: 14px 14px 0 0;
-            background: rgba(255, 255, 255, .97);
-            box-shadow: 0 -4px 20px rgba(37, 34, 56, .08);
+            background: rgba(255,255,255,.97);
+            box-shadow: 0 -4px 20px rgba(37,34,56,.08);
         }
 
         .module-progress-heading {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             gap: 12px;
             margin-bottom: 8px;
-            color: var(--module-dark);
+            color: var(--dark);
             font-size: .85rem;
         }
 
         .module-progress-track {
             height: 7px;
-            background: #EEEAF1;
-            border-radius: 99px;
             overflow: hidden;
+            border-radius: 99px;
+            background: #EEEAF1;
         }
 
         .module-progress-fill {
             width: 0;
             height: 100%;
-            background: var(--module-pink);
             border-radius: inherit;
+            background: var(--pink);
             transition: width .15s linear;
         }
 
@@ -314,8 +314,8 @@
         }
 
         .module-sidebar-hidden .module-main {
-            padding-left: clamp(20px, 8vw, 110px);
             padding-right: clamp(20px, 8vw, 110px);
+            padding-left: clamp(20px, 8vw, 110px);
         }
 
         @media (max-width: 760px) {
@@ -325,9 +325,9 @@
 
             .module-sidebar {
                 width: auto;
-                border-right: 0;
-                border-bottom: 1px solid var(--module-border);
                 padding: 20px;
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
             }
 
             .module-main {
@@ -343,7 +343,7 @@
             }
 
             .module-video iframe {
-                min-height: 480px;
+                min-height: 420px;
             }
         }
     </style>
@@ -369,9 +369,9 @@
         <h2>Geolocalización de incidentes</h2>
         <nav aria-label="Apartados del módulo">
             <a href="#objetivos" class="active">1. Objetivos</a>
-            <a href="#tematicas">2. Temáticas abordadas</a>
+            <a href="#tematicas">2. Temáticas Abordadas</a>
             <a href="#actividades">3. Actividades</a>
-            <a href="#trabajo-autonomo">4. Trabajo autónomo</a>
+            <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
             <a href="#evaluacion">5. Evaluación</a>
         </nav>
     </aside>
@@ -389,7 +389,7 @@
         <h1 class="module-title">Geolocalización de incidentes</h1>
 
         <div class="module-intro">
-            <p><strong>¡Bienvenidos y bienvenidas! Hoy desarrollarás el tercer módulo de formación del programa Operador de Recepción.</strong></p>
+            <p>¡Bienvenidos y bienvenidas! Hoy desarrollarás el tercer módulo de formación del programa Operador de Recepción.</p>
             <p>En este módulo realizarás lecturas y actividades que te permitirán adquirir los conocimientos básicos de geolocalización y utilizar herramientas de ubicación geográfica, para contribuir a la precisión y la efectividad en la atención de incidentes en Bogotá.</p>
         </div>
 
@@ -397,7 +397,7 @@
             <h2>1. Objetivos</h2>
             <div class="module-placeholder">
                 <ul>
-                    <li>Identificar las localidades de Bogotá y su numeración.</li>
+                    <li>Identificar las localidades de Bogotá y su numeración</li>
                     <li>Comprender la estructura del sistema vial y nomenclatura de la ciudad.</li>
                 </ul>
             </div>
@@ -407,8 +407,8 @@
             <h2>2. Temáticas Abordadas</h2>
             <div class="module-placeholder">
                 <ul>
-                    <li>Conceptos básicos de geolocalización.</li>
-                    <li>Aplicaciones y herramientas para la geolocalización.</li>
+                    <li>Conceptos básicos de geolocalización</li>
+                    <li>Aplicaciones y herramientas para la geolocalización</li>
                 </ul>
             </div>
         </section>
@@ -436,19 +436,31 @@
                             style="max-width:605px;min-width:325px;margin:0 auto;">
                             <section>
                                 <a target="_blank" rel="noopener noreferrer"
-                                   title="@elprofejordi"
                                    href="https://www.tiktok.com/@elprofejordi?refer=embed">@elprofejordi</a>
-                                <p>¿Cómo ubicarme en Bogotá? 🌎🗺 Si la escuela es el lugar por excelencia para conocer el mundo en el que vivimos, esta clase no puede faltar.</p>
+                                <p>¿Cómo ubicarme en Bogotá? 🌎🗺 Si la escuela es el lugar por excelencia para conocer el mundo en el que vivimos, esta clase no puede faltar. Yo esto de las direcciones lo supe muy tarde, ¿ustedes ya lo sabían? 🤔</p>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/colegio?refer=embed">#colegio</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/escuela?refer=embed">#escuela</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/soyprofe?refer=embed">#soyprofe</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/maestras?refer=embed">#maestras</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/maestros?refer=embed">#maestros</a>
                                 <a target="_blank" rel="noopener noreferrer"
                                    href="https://www.tiktok.com/tag/bogota?refer=embed">#bogota</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href="https://www.tiktok.com/tag/elprofejordi?refer=embed">#elprofejordi</a>
                             </section>
                         </blockquote>
                     </div>
                     <script async src="https://www.tiktok.com/embed.js"></script>
                     <p style="text-align:center">
-                        <a class="module-link" href="https://www.tiktok.com/@elprofejordi/video/7482020604091321605"
+                        <a class="module-link"
+                           href="https://www.tiktok.com/@elprofejordi/video/7482020604091321605"
                            target="_blank" rel="noopener noreferrer">
-                            Si el video no se reproduce, ábrelo directamente en TikTok.
+                            Abrir el video directamente en TikTok
                         </a>
                     </p>
 
@@ -461,7 +473,7 @@
 
                     <p>Recuerda al gestionar un incidente, deberás formular las preguntas establecidas en el documento Guiones, para para indagar sobre la ubicación:</p>
 
-                    <div class="module-callout" style="text-align:center">
+                    <div class="module-callout">
                         <p><strong>Señor./Señora ¿Dónde se ubica?</strong></p>
                         <p><strong>Bríndeme la dirección</strong></p>
                         <p><strong>Deme un punto de referencia</strong></p>
@@ -469,111 +481,63 @@
 
                     <figure>
                         <img class="module-image"
-                             src="../assets/img_modulo3/modulo3-personal-c4.png"
-                             alt="Personal del C4 atendiendo llamadas y gestionando incidentes"
-                             loading="lazy">
+                            src="../assets/img_modulo3/modulo3-personal-c4.png"
+                            alt="Imagen del personal del C4"
+                            loading="lazy">
                         <figcaption class="module-caption">
-                            Fuente: Secretaría Distrital de Seguridad, Convivencia y Justicia.
+                            Fuente: SCJ.
                             <a class="module-link"
                                href="https://scj.gov.co/prensa/noticias/mas-llamadas-la-linea-123-no-significan-mas-delitos-sino-mas-confianza-de-la"
-                               target="_blank" rel="noopener noreferrer">Consultar noticia</a>
+                               target="_blank" rel="noopener noreferrer">
+                                Consultar noticia
+                            </a>
                         </figcaption>
                     </figure>
                 </div>
 
                 <h3>3.2. Nomenclatura domiciliaria</h3>
                 <p>De manera más específica, las direcciones de Bogotá permiten identificar un predio de manera precisa. Para ello, deberás considerar sus componentes:</p>
-                <ol>
-                    <li><strong>Vía Principal:</strong> Vía sobre la cual está ubicado el acceso principal del predio.</li>
-                    <li><strong>Vía Generadora:</strong> Eje vial de menor denominación numérica que tiene intersección con la vía principal.</li>
-                    <li><strong>Número de predio:</strong> Distancia aproximada en metros desde el eje generador o de referencia hasta el acceso al predio (par o impar según el sentido de la vía principal).</li>
-                </ol>
+                <p><strong>Vía Principal:</strong> Vía sobre la cual está ubicado el acceso principal del predio.</p>
+                <p><strong>Vía Generadora:</strong> Eje vial de menor denominación numérica que tiene intersección con la vía principal.</p>
+                <p><strong>Número de predio:</strong> Distancia aproximada en metros desde el eje generador o de referencia hasta el acceso al predio (par o impar según el sentido de la vía principal).</p>
 
                 <figure>
                     <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-nomenclatura-domiciliaria.png"
-                         alt="Esquema de vía principal, vías generadoras y distancia en metros para identificar un predio"
-                         loading="lazy">
-                    <figcaption class="module-caption">Componentes de la nomenclatura domiciliaria.</figcaption>
+                        src="../assets/img_modulo3/modulo3-diagrama-nomenclatura-domiciliaria.png"
+                        alt="Diagrama original de nomenclatura domiciliaria extraído del material de formación"
+                        loading="lazy">
                 </figure>
 
                 <p>Ahora bien, la ciudad no es una cuadricula perfecta. Por el contrario, resultado del particular proceso de urbanización, las calles y carreras están acompañadas de letras de la A a la Z, el sufijo BIS o los puntos cardinales ESTE o SUR. En ocasiones una combinación de ellos, a veces ninguno y en otros casos todos simultáneamente.</p>
 
                 <h3>3.3. Nomenclatura Vial</h3>
                 <p>Bogotá tiene calles y carreras principalmente. Estas vías vienen acompañadas por una numeración consecutiva, en ocasiones una denominación o alias, y algunas veces los puntos cardinales. Deberás tener en cuenta:</p>
-                <ul>
-                    <li><strong>Numeración:</strong> Calles y carreras se identificación números consecutivos que inician con el 0, e incrementan progresivamente. Para evitar tener una numeración negativa, en la ciudad se usan los puntos cardinales SUR para calles y ESTE para carreras.</li>
-                    <li><strong>Alias:</strong> Calles y carreras pueden estar acompañadas por la denominación Avenida, desde luego dependerá del tamaño de la vía (i.e. Avenida Carrera 68 o Avenida Carrera 7). De igual manera, las vías pueden tener un nombre, el cual es definido por el Consejo de Bogotá (i.e. Avenida Boyacá, Avenida Guacamayas, Norte-Quito-Sur, o la Avenida La Sirena).</li>
-                    <li><strong>Diagonales y Transversales:</strong> Las vías no siempre son paralelas, pueden tener inclinaciones. Cuando hay una inclinación de hasta 45° de las calles, las vías se denominan diagonales. Cuando la inclinación es respecto a las carreras, las vías se denominan transversales.</li>
-                </ul>
+                <p><strong>Numeración:</strong> Calles y carreras se identificación números consecutivos que inician con el 0, e incrementan progresivamente. Para evitar tener una numeración negativa, en la ciudad se usan los puntos cardinales SUR para calles y ESTE para carreras.</p>
+                <p><strong>Alias:</strong> Calles y carreras pueden estar acompañadas por la denominación Avenida, desde luego dependerá del tamaño de la vía (i.e. Avenida Carrera 68 o Avenida Carrera 7). De igual manera, las vías pueden tener un nombre, el cual es definido por el Consejo de Bogotá (i.e. Avenida Boyacá, Avenida Guacamayas, Norte-Quito-Sur, o la Avenida La Sirena).</p>
+                <p><strong>Diagonales y Transversales:</strong> Las vías no siempre son paralelas, pueden tener inclinaciones. Cuando hay una inclinación de hasta 45° de las calles, las vías se denominan diagonales. Cuando la inclinación es respecto a las carreras, las vías de denominan transversales.</p>
 
                 <figure>
                     <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-ejemplo-direccion-1.png"
-                         alt="Ejemplo visual de identificación de una dirección en Bogotá"
-                         loading="lazy">
-                    <figcaption class="module-caption">Ejemplo de identificación de nomenclatura vial.</figcaption>
-                </figure>
-
-                <figure>
-                    <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-ejemplo-direccion-2.png"
-                         alt="Ejemplo adicional de nomenclatura y dirección"
-                         loading="lazy">
-                    <figcaption class="module-caption">Ejemplo de nomenclatura.</figcaption>
-                </figure>
-
-                <figure>
-                    <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-ejemplo-direccion-3.png"
-                         alt="Ejemplo adicional de dirección urbana"
-                         loading="lazy">
+                        src="../assets/img_modulo3/modulo3-diagrama-diagonales-transversales.png"
+                        alt="Diagrama original de diagonales y transversales"
+                        loading="lazy">
                 </figure>
 
                 <h3>3.4. Sentido de la vía</h3>
                 <p>Las calles atraviesan la ciudad de oriente a occidente o de occidente a oriente. Por su parte las carreras atraviesan la ciudad de norte a sur o de sur a norte.</p>
                 <p>Según el sentido de la vía, los números de los predios serán impares o pares. Ten en cuenta los siguientes criterios:</p>
 
-                <div class="module-table-wrap">
-                    <table class="module-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">CARRERAS</th>
-                                <th colspan="2">CALLES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Costado oriental</td>
-                                <td>Predios pares</td>
-                                <td>Costado norte</td>
-                                <td>Predios pares</td>
-                            </tr>
-                            <tr>
-                                <td>Costado occidental</td>
-                                <td>Predios impares</td>
-                                <td>Costado sur</td>
-                                <td>Predios impares</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">NORTE — SUR</td>
-                                <td colspan="2">ORIENTE — OCCIDENTE</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
                 <figure>
                     <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-ejemplo-direccion-4.png"
-                         alt="Diagrama ilustrativo de orientación y sentido de las vías"
-                         loading="lazy">
+                        src="../assets/img_modulo3/modulo3-diagrama-sentido-vias.png"
+                        alt="Diagrama original sobre el sentido de las vías"
+                        loading="lazy">
                 </figure>
 
                 <div class="activity-card">
                     <h4>Actividad 2</h4>
-                    <p>Hasta ahora, hemos identificado los elementos comunes para ubicar a una persona, un lugar o evento dentro de la ciudad. La segunda actividad que deberás desarrollar será realizar un resumen, una infografía o una presentación de una sola diapositiva.</p>
-                    <p>Puedes apoyarte de cualquier recurso tecnológico: Power Point, Canva, ChatGPT, Claude, Gemini o cualquier otro con el que te sientas familiarizado para esta actividad.</p>
+                    <p>Hasta ahora, hemos identificado los elementos comunes para ubicar a una persona, un lugar o evento dentro de la ciudad. La segunda actividad que deberás desarrollar será realizar un resumen, una infografía o una presentación de una sóla diapositiva.</p>
+                    <p>Puedes apoyarte de cualquier recurso tecnológico: Power Point, Canva, Chatgpt, Claude, Gemini o cualquier otro con el que te sientas familiarizado para esta actividad</p>
                 </div>
 
                 <h3>3.5. Localidades</h3>
@@ -584,11 +548,11 @@
                     <h4>Actividad 3</h4>
                     <p>Escoge una localidad, puedes ser aquella en la que vives actualmente. Vas a identificar los siguientes elementos de la localidad:</p>
                     <ul>
-                        <li>Nombre y número.</li>
-                        <li>Avenidas que dividen la localidad (nomenclatura numérica y alias).</li>
-                        <li>Localidades con las que comparte límites.</li>
-                        <li>Puntos de interés (lugares representativos de la localidad).</li>
-                        <li>Puntos de referencia (puntos de interés o vías) de inicio o fin de la localidad.</li>
+                        <li>Nombre y número</li>
+                        <li>Avenidas que dividen la localidad (nomenclatura numérica y Alias)</li>
+                        <li>Localidades con las que comparte límites</li>
+                        <li>Puntos de interés (lugares representativos de la localidad)</li>
+                        <li>Puntos de referencia (puntos de interés o vías) de inicio o fin de la localidad</li>
                     </ul>
                 </div>
 
@@ -615,48 +579,35 @@
                     </table>
                 </div>
 
-                <p>Además, deberás seguir la siguiente estructura:</p>
-                <div class="module-callout" style="text-align:center">
-                    <strong>Vía principal + Número + Complemento + Vía generadora + Número + Complemento + Número de predio</strong>
+                <p>Además, deberás seguir la siguiente estructura</p>
+                <div class="module-callout">
+                    <p><strong>Vía principal + Numero + Complemento + Vía generadora + Número + Complemento + Numero de predio</strong></p>
                 </div>
 
-                <p>Por ejemplo, la dirección del C4 es Calle 20 No. 68 A – 20, según el sistema de nomenclatura que utilizarás es:</p>
-                <div class="module-callout" style="text-align:center">
-                    <strong style="font-size:1.35rem">CL 20 68A 20</strong>
+                <p>Porjemplo, la dirección del C4 es Calle 20 No. 68 A – 20, según el sistema de nomenclatura que utilizará es:</p>
+                <div class="module-callout">
+                    <p><strong>CL 20 68A 20</strong></p>
                 </div>
-
-                <figure>
-                    <img class="module-image"
-                         src="../assets/img_modulo3/modulo3-ejemplo-direccion-5.png"
-                         alt="Ejemplo visual de nomenclatura C4"
-                         loading="lazy">
-                </figure>
 
                 <div class="activity-card">
                     <h4>Actividad 4</h4>
                     <ul>
                         <li>¿Puedes escribir tu dirección en este formato?</li>
-                        <li>Descarga el documento Ejercicio Práctico y realiza la actividad.</li>
+                        <li>Descarga el documento Ejercicio Práctico (Subir a github) y realiza la actividad</li>
                     </ul>
-                    <p><strong>Documento de ejercicio práctico:</strong> el PDF debe cargarse en GitHub para activar este enlace.</p>
-                    <p><a class="module-link"
-                          href="../assets/documentos/Ejercicio_Practico_Modulo3.pdf"
-                          target="_blank" rel="noopener noreferrer">
-                        Abrir Ejercicio práctico del módulo 3
-                    </a></p>
+                    <p><em>El documento PDF del ejercicio práctico debe cargarse a GitHub para habilitar el enlace.</em></p>
                 </div>
 
-                <h3>3.7. Otras herramientas</h3>
-                <p>Por fortuna, actualmente no necesitas conocer toda la ciudad. A través de herramientas digitales es posible ubicar a la ciudadanía cuando llama a la Línea 123 de Bogotá.</p>
+                <h3>3.6. Otras herramientas</h3>
+                <p>Por fortuna, actualmente no necesitas conocer toda la ciudad. A través de herramientas digitales es posible ubicar a la ciudadanía cuando llama a la Línea 123 de Bogotá</p>
 
                 <div class="activity-card">
                     <h4>Actividad 5</h4>
                     <p>Consulta y explora las siguientes páginas web:</p>
                     <ul>
-                        <li><a class="module-link" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
-                        <li><a class="module-link" href="https://mapas.bogota.gov.co/" target="_blank" rel="noopener noreferrer">Mapas Bogotá</a></li>
+                        <li><a class="module-link" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">https://www.google.com/maps</a></li>
+                        <li><a class="module-link" href="https://mapas.bogota.gov.co/" target="_blank" rel="noopener noreferrer">https://mapas.bogota.gov.co/</a></li>
                     </ul>
-                    <p>Explora las herramientas y observa cómo puedes ubicar direcciones, calles, carreras y puntos de referencia.</p>
                 </div>
             </div>
         </section>
@@ -664,7 +615,7 @@
         <section class="module-content-section" id="trabajo-autonomo">
             <h2>4. Actividades de Trabajo Autónomo</h2>
             <div class="module-placeholder">
-                <p>Si llegaste hasta acá, has finalizado el módulo Geolocalización de incidentes.</p>
+                <p>Si llegaste hasta acá, has finalizado el módulo Geolocalización de incidentes</p>
                 <p>Envía por correo electrónico al Equipo de Capacitación todas las respuestas y actividades realizadas a la siguiente dirección:</p>
                 <p><a class="module-link" href="mailto:equipocapacitacionc4@scj.gov.co">equipocapacitacionc4@scj.gov.co</a></p>
                 <p>Utiliza como asunto: Modulo 3 – Nombres y apellidos</p>
@@ -675,7 +626,7 @@
             <h2>5. Evaluación</h2>
             <div class="module-placeholder" style="padding:30px;background:#F8F7FA;border-left:6px solid #E60B61;border-radius:0 8px 8px 0">
                 <h3 style="margin:0 0 12px;color:#252238">Evaluación del módulo</h3>
-                <p style="margin:0;color:#6B6878;line-height:1.8">Ponte a prueba y realiza tu evaluación.</p>
+                <p style="margin:0;color:#6B6878;line-height:1.8">Ponte a prueba y realiza tu evaluación:</p>
                 <div style="margin:72px 0 76px;text-align:center">
                     <h4 style="margin:0 0 8px;color:#252238">Formulario de evaluación</h4>
                     <p style="margin:0 0 22px;color:#6B6878;line-height:1.8">Lee cuidadosamente cada pregunta y responde el formulario.</p>
