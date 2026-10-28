@@ -1,12 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#E60B61">
-<title>Tipificación de incidentes | Portal C4</title>
-<link rel="stylesheet" href="../assets/css/style.css">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E60B61">
+    <link rel="icon" type="image/png" href="/operadoresC4/assets/img/logo.png">
+    <title>Tipificación de incidentes | Portal C4</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
         :root {
             --pink: #E60B61;
             --dark: #252238;
@@ -139,13 +142,24 @@
             margin-bottom: 7px;
         }
 
-        .module-placeholder {
+        .module-content-section blockquote {
+            margin: 20px 0;
+            padding: 16px 20px;
+            border-left: 4px solid var(--pink);
+            background: var(--background);
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .module-placeholder,
+        .note {
             padding: 18px 20px;
             border-left: 4px solid var(--pink);
             border-radius: 0 8px 8px 0;
             background: var(--background);
         }
 
+        .activity,
         .activity-card {
             margin: 26px 0;
             padding: 22px;
@@ -153,23 +167,92 @@
             background: var(--background);
         }
 
+        .activity h3,
         .activity-card h3,
         .activity-card h4 {
             margin-top: 0;
             color: var(--dark);
         }
 
+        .resource-link,
         .module-link {
+            display: inline-block;
+            margin: 8px 10px 8px 0;
             color: var(--pink);
             font-weight: 600;
             text-decoration: underline;
             text-underline-offset: 3px;
         }
 
+        .resource-link:hover,
         .module-link:hover {
             color: #A90849;
         }
 
+        .story {
+            margin: 22px 0;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #FFFFFF;
+        }
+
+        .story p {
+            margin: 12px 0;
+        }
+
+        .start-callout {
+            margin: 24px 0;
+            padding: 18px;
+            border-left: 5px solid var(--pink);
+            border-radius: 0 8px 8px 0;
+            background: #FCE4EF;
+            color: var(--pink) !important;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .table-wrap,
+        .module-table-wrap {
+            width: 100%;
+            margin: 22px 0;
+            overflow-x: auto;
+        }
+
+        .table-wrap table,
+        .module-table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+            color: var(--dark);
+        }
+
+        .table-wrap th,
+        .module-table th {
+            padding: 11px;
+            border: 1px solid var(--border);
+            background: var(--pink);
+            color: #FFFFFF;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .table-wrap td,
+        .module-table td {
+            padding: 11px;
+            border: 1px solid var(--border);
+            background: #FFFFFF;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .table-wrap tbody tr:nth-child(even) td,
+        .module-table tbody tr:nth-child(even) td {
+            background: var(--background);
+        }
+
+        .source-image,
         .module-image {
             display: block;
             width: 100%;
@@ -186,20 +269,6 @@
             text-align: center;
         }
 
-        .module-callout {
-            margin: 22px 0;
-            padding: 18px;
-            border-left: 5px solid var(--pink);
-            border-radius: 0 8px 8px 0;
-            background: #FFFFFF;
-        }
-
-        .module-callout p {
-            margin: 8px 0;
-            color: var(--dark);
-            text-align: center;
-        }
-
         .module-video {
             width: 100%;
             max-width: 605px;
@@ -212,37 +281,6 @@
             min-height: 500px;
             border: 0;
             border-radius: 10px;
-        }
-
-        .module-table-wrap {
-            width: 100%;
-            margin: 22px 0;
-            overflow-x: auto;
-        }
-
-        .module-table {
-            width: 100%;
-            min-width: 420px;
-            border-collapse: collapse;
-            color: var(--dark);
-        }
-
-        .module-table th {
-            padding: 11px;
-            border: 1px solid var(--border);
-            background: var(--pink);
-            color: #FFFFFF;
-            text-align: left;
-        }
-
-        .module-table td {
-            padding: 11px;
-            border: 1px solid var(--border);
-            background: #FFFFFF;
-        }
-
-        .module-table tbody tr:nth-child(even) td {
-            background: var(--background);
         }
 
         .module-navigation {
@@ -356,229 +394,329 @@
         }
     </style>
 </head>
+
 <body>
 <header>
-<div class="navbar">
-<a aria-label="Volver al Portal C4" class="logo" href="../index.html">
-<span aria-hidden="true" class="logo-mark">C4</span>
-<span>Portal de Capacitación C4</span>
-</a>
-<nav aria-label="Navegación principal" class="nav-links">
-<a href="../index.html">Inicio</a>
-<a href="../index.html#formacion">Módulos</a>
-<a href="../index.html#recursos">Recursos</a>
-</nav>
-</div>
+    <div class="navbar">
+        <a aria-label="Volver al Portal C4" class="logo" href="../index.html">
+            <span aria-hidden="true" class="logo-mark">C4</span>
+            <span>Portal de Capacitación C4</span>
+        </a>
+        <nav aria-label="Navegación principal" class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#formacion">Módulos</a>
+            <a href="../index.html#recursos">Recursos</a>
+        </nav>
+    </div>
 </header>
+
 <div class="module-layout" id="moduleLayout">
-<aside class="module-sidebar" id="moduleSidebar">
-<h2>Tipificación de incidentes</h2>
-<nav aria-label="Apartados del módulo">
-<a href="#objetivos" class="active">1. Objetivos</a>
-<a href="#tematicas">2. Temáticas Abordadas</a>
-<a href="#actividades">3. Actividades</a>
-<a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
-<a href="#evaluacion">5. Evaluación</a>
-</nav>
-</aside>
-<main class="module-main">
-<div class="module-toolbar"><button class="module-toggle" id="toggleSidebar" type="button" aria-controls="moduleSidebar" aria-expanded="true">☰ Ocultar navegación</button></div>
-<span class="module-label">MÓDULO 04</span>
-<h1 class="module-title">Tipificación de incidentes</h1>
-<div class="module-intro">
+    <aside class="module-sidebar" id="moduleSidebar">
+        <h2>Tipificación de incidentes</h2>
+        <nav aria-label="Apartados del módulo">
+            <a href="#objetivos" class="active">1. Objetivos</a>
+            <a href="#tematicas">2. Temáticas Abordadas</a>
+            <a href="#actividades">3. Actividades</a>
+            <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
+            <a href="#evaluacion">5. Evaluación</a>
+        </nav>
+    </aside>
 
-<p class="lead">¡Bienvenidos y bienvenidas al último módulo virtual de formación del programa Operador de Recepción!</p>
-<p>En este módulo realizarás lecturas y actividades que te permitirán desarrollar las competencias necesarias para identificar, clasificar y registrar de manera adecuada las situaciones reportadas por la ciudadanía a través del uso de los códigos adecuados para tipificar incidentes de emergencia y seguridad.</p>
+    <main class="module-main">
+        <div class="module-toolbar">
+            <button class="module-toggle" id="toggleSidebar" type="button"
+                    aria-controls="moduleSidebar" aria-expanded="true">
+                ☰ Ocultar navegación
+            </button>
+        </div>
+
+        <span class="module-label">MÓDULO 04</span>
+        <h1 class="module-title">Tipificación de incidentes</h1>
+
+        <div class="module-intro">
+            <p class="lead">¡Bienvenidos y bienvenidas al último módulo virtual de formación del programa Operador de Recepción!</p>
+            <p>En este módulo realizarás lecturas y actividades que te permitirán desarrollar las competencias necesarias para identificar, clasificar y registrar de manera adecuada las situaciones reportadas por la ciudadanía, mediante el uso de los códigos correspondientes para tipificar incidentes de emergencia y seguridad.</p>
+        </div>
+
+        <section class="module-content-section" id="objetivos">
+            <h2>1. Objetivos</h2>
+            <ul>
+                <li>Reconocer los criterios para la tipificación de incidentes de seguridad y emergencias de Bogotá.</li>
+                <li>Clasificar incidentes de seguridad y emergencias a partir de la Guía de Tipificación vigente.</li>
+                <li>Aplicar la Guía de Tipificación vigente para asegurar la seguridad, la integridad y el bienestar de las personas que requieren atención.</li>
+            </ul>
+        </section>
+
+        <section class="module-content-section" id="tematicas">
+            <h2>2. Temáticas Abordadas</h2>
+            <ul>
+                <li>Guía de tipificación de incidentes.</li>
+                <li>Caracterización de incidentes.</li>
+                <li>Códigos de disposición, cierre e informativos.</li>
+                <li>Casuística.</li>
+            </ul>
+        </section>
+
+        <section class="module-content-section" id="actividades">
+            <h2>3. Actividades</h2>
+            <p>Antes de comenzar, ubícate en un lugar cómodo. Vas a desarrollar varias lecturas. Consigue un cuaderno, lápiz o esfero, o alguna herramienta digital para tomar apuntes.</p>
+            <p class="start-callout">¡Comencemos!</p>
+
+            <h3>3.1. Guía de tipificación de incidentes</h3>
+            <p>La tipificación de incidentes en la Línea de Emergencias 123 de Bogotá es un proceso fundamental para la gestión de emergencias en la ciudad.</p>
+            <p><strong>Definición:</strong> A partir de la información proporcionada por la ciudadanía, los operadores y las operadoras de recepción clasifican los incidentes mediante criterios predefinidos entre todas las agencias del Sistema NUSE.</p>
+            <p>Aunque sencilla, la tipificación es una pieza fundamental dentro de la gestión de emergencias en la ciudad. A partir de la clasificación se definen prioridades, se orientan acciones y se identifican responsables para dar una respuesta eficiente y oportuna a la ciudadanía.</p>
+            <p>Considera el siguiente relato:</p>
+
+            <div class="story">
+                <p><strong>¡Ring! ¡Ring! Ingresa una llamada a la Línea 123 de Bogotá.</strong></p>
+                <p>Contesta una operadora de recepción.</p>
+                <p>— Línea 123 Bogotá, ¿cuál es su emergencia?</p>
+                <p>Al otro lado del teléfono, responde una ciudadana con un tono agitado:</p>
+                <p>— Señorita, estoy con mi amiga que se encuentra muy mal. Íbamos caminando hacia nuestra casa después de haber comido un ceviche de camarones en un restaurante y empezó a sentirse muy mal. No puede caminar más, parece que está intoxicada.</p>
+                <p>Ante la información inicial, la operadora identifica la definición de intoxicación:</p>
+                <blockquote>Entrada en el organismo de sustancias capaces de provocar alteraciones en las funciones del ser humano y que pueden ocasionar salivación abundante, calor, aumento de la frecuencia cardiaca, piel roja, vómito o diarrea. Para la redacción debe tenerse en cuenta el tipo de intoxicación: comida, fines delictivos (escopolamina, burundanga, etc.), veneno, alcohol, pintura, medicamentos u otros.</blockquote>
+                <p>Por tanto, la operadora pregunta a la ciudadana:</p>
+                <p>— ¿Sabe cuántas personas están intoxicadas?</p>
+                <p>— La verdad no sé; por ahora solo mi amiga. ¡Necesito ayuda!</p>
+                <p>La operadora sabe qué está ocurriendo, pero necesita identificar dónde sucede el incidente. Continúa realizando preguntas:</p>
+                <p>— Señora, ¿puede proporcionarme la dirección donde se encuentran?</p>
+                <p>— Estamos sobre la calle 72 con carrera décima, frente al Centro Comercial Granahorrar.</p>
+                <p>La operadora identifica la ubicación y verifica la información del sector.</p>
+                <p>— Señora, ¿se encuentra en el barrio La Porciúncula, en la localidad de Chapinero?</p>
+                <p>— Sí, sí, es allí donde nos encontramos.</p>
+                <p>La operadora pregunta el nombre de la ciudadana y el número telefónico desde el cual llama, y verifica si dispone de un número adicional.</p>
+                <p>Finalmente, la operadora le indica:</p>
+                <p>— Permanezca en línea, voy a comunicarle con la Secretaría de Salud.</p>
+                <p>La operadora intenta hacer la transferencia. Después del primer intento sin respuesta, retoma la llamada e insiste en la transferencia.</p>
+                <p>Luego de varios intentos, la transferencia no resulta exitosa. La operadora informa a la ciudadana que se está gestionando la ayuda y finaliza la llamada.</p>
+                <p>En este punto, la operadora cuenta con la información necesaria para gestionar el incidente: aplicó las preguntas correspondientes, intentó realizar la transferencia y registró la información para que la agencia pertinente conozca la situación.</p>
+            </div>
+
+            <p>En este ejemplo, la operadora supo qué debía hacer porque conocía la Guía de Tipificación, un documento construido entre las agencias del Sistema NUSE. Allí se encuentran los criterios para clasificar los incidentes, así como:</p>
+            <ul>
+                <li>Las preguntas que deben realizar los operadores y las operadoras de recepción.</li>
+                <li>Las circunstancias particulares que pueden presentarse dentro de un mismo incidente.</li>
+                <li>Las agencias a las que se debe transferir la llamada.</li>
+                <li>Las agencias a las que se copia o se remite el incidente.</li>
+            </ul>
+
+            <p>Esta es la información de referencia para las intoxicaciones que se presenta en el material de formación:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de incidente</th>
+                            <th>Descripción</th>
+                            <th>Preguntas</th>
+                            <th>Circunstancia modificadora</th>
+                            <th>Descripción de circunstancia</th>
+                            <th>Transferencia de voz</th>
+                            <th>Copia de incidente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>610 INTOX</strong><br>(Intoxicación)</td>
+                            <td>Entrada en el organismo de sustancias capaces de alterar las funciones del ser humano y que pueden ocasionar salivación abundante, calor, aumento de la frecuencia cardiaca, piel roja, vómito o diarrea. Se debe precisar el tipo de intoxicación: comida, fines delictivos, veneno, alcohol, pintura, medicamentos u otros.</td>
+                            <td>¿Sabe con qué se intoxicó?<br>¿Sabe cuántas personas están intoxicadas?<br><br>¿Ocurrió en un establecimiento abierto al público? Si aplica, seleccionar EST.PUB.<br><br>¿Se hizo con fines delictivos? Si aplica, seleccionar LES.PER.</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>TARM</td>
+                            <td>CRUE</td>
+                        </tr>
+                        <tr>
+                            <td><strong>610 INTOX</strong></td>
+                            <td>Misma descripción del incidente 610 INTOX.</td>
+                            <td>Mismas preguntas indicadas en la fila anterior.</td>
+                            <td>EST.PUB</td>
+                            <td>Establecimiento abierto al público.</td>
+                            <td>TARM</td>
+                            <td>CRUE, Policía</td>
+                        </tr>
+                        <tr>
+                            <td><strong>610 INTOX</strong></td>
+                            <td>Misma descripción del incidente 610 INTOX.</td>
+                            <td>Mismas preguntas indicadas en la fila anterior.</td>
+                            <td>LES.PER</td>
+                            <td>Lesiones personales.</td>
+                            <td>TARM</td>
+                            <td>CRUE, Policía</td>
+                        </tr>
+                        <tr>
+                            <td><strong>610 INTOX</strong></td>
+                            <td>Misma descripción del incidente 610 INTOX.</td>
+                            <td>Mismas preguntas indicadas en la fila anterior.</td>
+                            <td>NOBOGOTA</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>Policía</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="activity">
+                <h3>Actividad 1</h3>
+                <p>Como operador u operadora de recepción, la Guía de Tipificación será el documento más importante que deberás aprender para desarrollar tus actividades. Descarga la Guía y responde las siguientes preguntas:</p>
+                <a class="resource-link" href="../assets/documentos/guia-tipificacion-incidentes.pdf" target="_blank" rel="noopener">Descargar Guía de Tipificación (PDF)</a>
+                <a class="resource-link" href="../assets/documentos/guia-tipificacion-incidentes.xlsx" target="_blank" rel="noopener">Descargar Guía de Tipificación (Excel)</a>
+                <ol>
+                    <li>¿Cuántos códigos de disposición tiene actualmente la Guía?</li>
+                    <li>¿Cuántos códigos de disposición y cierre tiene la Guía?</li>
+                    <li>¿Cuál es la diferencia entre un código de disposición y cierre y un código de disposición?</li>
+                    <li>¿Cuántos códigos de tipificación tienen solamente un código alfabético?</li>
+                </ol>
+            </div>
+
+            <h3>3.2. Cambios, ajustes y complementos de la Guía de Tipificación</h3>
+            <p>La Guía de Tipificación es un documento que se revisa y ajusta constantemente. La sociedad cambia, las formas como nos interrelacionamos se transforman y los eventos y situaciones llevan a que se modifiquen parcial o totalmente algunos elementos de la Guía.</p>
+            <p>Todo cambio a la Guía es un esfuerzo institucional y un acuerdo entre las diferentes agencias del Sistema NUSE. Cuando se realiza un cambio, se puede emitir un boletín en el que se detallan los ajustes que deberán seguirse al recibir una llamada de emergencia.</p>
+
+            <div class="activity">
+                <h3>Actividad 2</h3>
+                <p>Como se indicó en el módulo 1, puede existir información reservada o clasificada que no puede compartirse ni publicarse. Los boletines pueden formar parte de ese acervo documental, por lo que su divulgación debe estar autorizada.</p>
+                <p>Si cuentas con autorización para utilizar el fragmento correspondiente, inclúyelo en este espacio:</p>
+                <img class="source-image" src="../assets/img_modulo4/fragmento-boletin-tipificacion.png" alt="Fragmento autorizado de un boletín sobre cambios en la tipificación">
+                <p>A partir del fragmento autorizado, responde:</p>
+                <ol>
+                    <li>¿Cómo se ajusta el código de tipificación 611? Apóyate en el formato de la Guía para identificar los cambios.</li>
+                    <li>Si llama una mujer de 19 años que reporta una agresión de su tío, ¿se activa la circunstancia modificadora VM.PAREX? Justifica tu respuesta con base en la Guía.</li>
+                    <li>¿Qué código de disposición y número de comentario se deben usar si la transferencia de llamada fue posible?</li>
+                </ol>
+            </div>
+
+            <p>No solo se modifican los protocolos; también pueden incorporarse agencias a la gestión de incidentes. Entre las incorporaciones mencionadas en el material de formación está el Instituto Distrital de Bienestar y Protección Animal (IDPYBA).</p>
+
+            <div class="activity">
+                <h3>Actividad 3</h3>
+                <p>Consulta el video y responde las preguntas.</p>
+                <a class="resource-link" href="https://www.facebook.com/secretariadeseguridadbogota/videos/la-línea123-también-salva-la-vida-de-los-animales-que-viven-en-calledesde-que-in/2292160184650155/" target="_blank" rel="noopener">Ver video: La Línea 123 también salva la vida de los animales</a>
+                <ol>
+                    <li>A partir de la incorporación del IDPYBA, ¿cuál código de la Guía de Tipificación se debe aplicar en el caso presentado en el video?</li>
+                    <li>Según la Guía de Tipificación, ¿qué preguntas debe realizar un operador de recepción?</li>
+                    <li>¿Qué agencias se enteran del código escogido en la primera pregunta? ¿Por qué es importante que las agencias pertinentes reciban la información?</li>
+                </ol>
+            </div>
+
+            <h3>3.3. Práctica, práctica, práctica</h3>
+            <p>El aprendizaje de la Guía de Tipificación puede ser más rápido si realizas ejercicios que te ayuden a familiarizarte con su contenido.</p>
+
+            <div class="activity">
+                <h3>Actividad 4</h3>
+                <p>Descarga el documento y resuelve el ejercicio propuesto.</p>
+                <a class="resource-link" href="../assets/documentos/ejercicio-practico-tipificacion.pdf" target="_blank" rel="noopener">Descargar ejercicio práctico</a>
+            </div>
+
+            <div class="activity">
+                <h3>Actividad 5</h3>
+                <p>Consulta el recurso de práctica y realiza las actividades propuestas.</p>
+                <div class="note">El asistente de práctica se integrará en este espacio cuando esté publicada su versión web.</div>
+            </div>
+        </section>
+
+        <section class="module-content-section" id="trabajo-autonomo">
+            <h2>4. Actividades de Trabajo Autónomo</h2>
+            <p>Si llegaste hasta aquí, has finalizado el módulo Tipificación de incidentes.</p>
+            <p>Envía por correo electrónico al Equipo de Capacitación las respuestas y actividades realizadas:</p>
+            <p><a class="module-link" href="mailto:equipocapacitacionc4@scj.gov.co">equipocapacitacionc4@scj.gov.co</a></p>
+            <p>Utiliza como asunto: <strong>Modulo 4 – Nombres y apellidos</strong>.</p>
+        </section>
+
+        <section class="module-content-section" id="evaluacion">
+            <h2>5. Evaluación</h2>
+            <p>Ponte a prueba y realiza la evaluación del módulo.</p>
+            <a class="resource-link" href="https://forms.cloud.microsoft/r/TKfmZuQNRT" target="_blank" rel="noopener">Realizar evaluación del módulo</a>
+        </section>
+
+        <nav class="module-navigation" aria-label="Navegación entre módulos">
+            <a href="geolocalizacion-incidentes.html">← Módulo anterior</a>
+            <a href="../index.html">⌂ Inicio</a>
+            <a href="../index.html#formacion">Finalizar módulo →</a>
+        </nav>
+    </main>
 </div>
 
-<section class="module-content-section" id="objetivos"><h2>1. Objetivos</h2>
-
-<ul>
-<li>Reconocer los criterios para la tipificación de incidentes de seguridad y emergencias de Bogotá.</li>
-<li>Clasificar incidentes de seguridad y emergencias a partir de la Guía de Tipificación vigente.</li>
-<li>Aplicar la Guía de Tipificación vigente para asegurar la seguridad, la integridad y el bienestar de las personas que requieren la atención.</li>
-</ul>
-</section>
-<section class="module-content-section" id="tematicas"><h2>2. Temáticas Abordadas</h2>
-
-<ul>
-<li>Guía de tipificación de incidentes.</li>
-<li>Caracterización de incidentes.</li>
-<li>Códigos de disposición, cierre e informativos.</li>
-<li>Casuística.</li>
-</ul>
-</section>
-<section class="module-content-section" id="actividades"><h2>3. Actividades</h2>
-
-<p>Antes de comenzar, ubícate en un lugar cómodo, vas a desarrollar varias lecturas. Consigue un cuaderno, lápiz o esfero, o alguna herramienta digital para tomar apuntes.</p>
-<p class="start-callout">¡Comencemos!</p>
-<h3>3.1 Guía de tipificación de incidentes</h3>
-<p>La tipificación de incidentes en la Línea de Emergencias 123 de Bogotá es un proceso fundamental para la gestión de emergencias en la ciudad.</p>
-<p><strong>Definición:</strong> A partir de la información proporcionada por la ciudadanía, operadores y operadoras de recepción clasifican los incidentes, a partir de unos criterios predefinidos entre todas las agencias del Sistema NUSE.</p>
-<p>Aunque sencilla, la tipificación es una pieza fundamental dentro la gestión de emergencias en la ciudad. A partir de la clasificación, se definen prioridades, orientan acciones, e identifican responsables para dar una respuesta eficiente y oportuna a la ciudadanía.</p>
-<p>Considera el siguiente relato:</p>
-<div class="story">
-<p><strong>¡Ring! ¡Ring! Ingresa una llamada la 123 de Bogotá</strong></p>
-<p>Contesta una operadora de recepción.</p>
-<p>— Línea 123 Bogotá ¿Cuál es su emergencia?</p>
-<p>Al otro lado del teléfono, responde una ciudadana con un tono agitado:</p>
-<p>— Señorita, estoy con mi amiga que se encuentra muy mal… Íbamos caminando hacia nuestra casa después de haber comido un ceviche de camarones, que nos acabamos de comer en un restaurante, y se empezó a sentir con mucho malestar… No puede caminar más, parece que esta como intoxicada.</p>
-<p>Ante la información inicial de la llamada, la operadora rápidamente sabe que una intoxicación se define:</p>
-<blockquote>“Entrada en el organismo de sustancias capaces de provocar alteraciones en las funciones del ser humano y que puede ocasionar salivación abundante, calor, aumento de la frecuencia cardiaca, piel roja, vómito o diarrea. Tener en cuenta para la redacción: tipo de intoxicación: comida, con fines delictivos (escopolamina, burundanga, etc.), veneno, alcohol, pintura, medicamentos, otros.”</blockquote>
-<p>Por tanto, la operadora pregunta a la ciudadana:</p>
-<p>— ¿Sabe cuántas personas están intoxicadas?</p>
-<p>Le responde la ciudadana:</p>
-<p>— La verdad no sé, por ahora sólo mi amiga ¡Necesito ayuda!</p>
-<p>La operadora ya sabe qué está ocurriendo, sabe que es un incidente, pero aún le hace falta otro elemento, y sigue realizando preguntas a la ciudadana:</p>
-<p>— Señora ¿Puede proporcionarme la dirección donde se encuentran?</p>
-<p>La ciudadana le responde:</p>
-<p>— Estamos sobre la Calle 72, con carrera décima, en frente el Centro Comercial Granahorrar.</p>
-<p>Aunque el centro comercial ya no se tiene ese nombre, la operadora sabe que se encuentran en dirección occidente-oriente por la calle 72, y recuerda además de su capacitación que en caso de estar en una vivienda u oficina, en ese costado norte de la calle se encuentran los predios pares.</p>
-<p>Después de esa ágil y breve reflexión, la operadora continúa con la gestión del incidente:</p>
-<p>— Señora ¿Se encuentra en el barrio La Porciúncula, en la localidad de Chapinero?</p>
-<p>— Sí, sí, es allí donde nos encontramos.</p>
-<p>La operadora se encuentra terminando la información que debe preguntar, y hace un par de preguntas adicionales:</p>
-<p>— Señora ¿Puede brindarme su nombre?</p>
-<p>— Sí, yo me llamo Andrea Cifuentes.</p>
-<p>— ¿Se está comunicando del número 3112297596?</p>
-<p>— Sí, es mi número de teléfono.</p>
-<p>— ¿Tiene un número adicional?</p>
-<p>— No, estoy en la calle con mi amiga que se encuentra muy mal, no tengo otro número.</p>
-<p>La operadora finalmente le dice a la ciudadana:</p>
-<p>— Permanezca en línea, voy a comunicarle con la Secretaría de Salud.</p>
-<p>La operadora intenta hacer la transferencia, pero después del primer intento y no obtener respuesta, retoma la llamada le dice a la ciudadana:</p>
-<p>— Permanezca en línea, estoy insistiendo en la transferencia de la llamada.</p>
-<p>Luego de dos intentos más y repetirle a la ciudadana la misma frase para mantener la atención de la ciudadana, cierra la llamada:</p>
-<p>— No ha sido posible la comunicación con la Secretaría de Salud, pero ya tiene conocimiento del caso. Estamos gestionando la ayuda, gracias por llamar a la Línea 123.</p>
-<p>En este punto, la operadora cuelga la llamada. Sabe que puede hacerlo, ya que cuenta con la información necesaria para gestionar el incidente, ha implementado los guiones, intentó realizar la transferencia, y aunque no fue exitosa, a través de las herramientas tecnológicas del C4, la Secretaría de Salud ya conoce qué está pasando, dónde está ocurriendo, y además cuenta con un nombre y número de teléfono para contactar a la ciudadana.</p>
-</div>
-<p>En este ejemplo, la operadora de recepción supo qué debía hacer, ya que conocía la Guía de Tipificación. Un documento construido entre todas las agencias del Sistema NUSE, en el cual, no sólo se encuentran los criterios (definiciones) para clasificar los incidentes, sino también:</p>
-<ul>
-<li>Las preguntas que deben realizar los operadores y operadoras de recepción.</li>
-<li>Una situación particular que ocurre dentro de un mismo incidente.</li>
-<li>Las agencias a las que se debe hacer transferencia de la llamada.</li>
-<li>Las agencias que se copia o a las cuales llega el incidente.</li>
-</ul>
-<p>Esta es la información que se encuentra en la Guía de Tipificación vigente para las intoxicaciones:</p>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Tipo de incidente</th><th>Descripción</th><th>Preguntas</th><th>Circunstancia modificadora</th><th>Descripción de circunstancia modificadora</th><th>Transferencia de voz</th><th>Copia de incidente</th></tr></thead>
-<tbody>
-<tr>
-<td><strong>610 INTOX</strong><br/>(Intoxicación)</td>
-<td>Entrada en el organismo de sustancias capaces de provocar alteraciones en las funciones del ser humano y que puede ocasionar salivación abundante, calor, aumento de la frecuencia cardiaca, piel roja, vómito o diarrea. Tener en cuenta para la redacción: tipo de intoxicación: comida, con fines delictivos (escopolamina, burundanga, etc.), veneno, alcohol, pintura, medicamentos, otros.</td>
-<td>Preguntas para documentar:<br/>• ¿Sabe con qué se intoxicó?<br/>• ¿Sabe cuántas personas están intoxicadas?<br/><br/>Preguntas y acciones para circunstancias modificadoras:<br/>• ¿Sabe si la intoxicación ocurrió en un establecimiento abierto al público? Seleccionar EST.PUB si ocurrió en un establecimiento abierto al público.<br/>• ¿Sabe si la intoxicación se hizo con fines delictivos? Seleccionar LES.PER en caso de que sea con fines delictivos.</td>
-<td>—</td><td>—</td><td>TARM</td><td>CRUE</td>
-</tr>
-<tr><td><strong>610 INTOX</strong></td><td>Misma descripción del incidente 610 INTOX.</td><td>Mismas preguntas indicadas en la fila anterior.</td><td>EST.PUB</td><td>Establecimiento abierto al público</td><td>TARM</td><td>CRUE, Policía</td></tr>
-<tr><td><strong>610 INTOX</strong></td><td>Misma descripción del incidente 610 INTOX.</td><td>Mismas preguntas indicadas en la fila anterior.</td><td>LES.PER</td><td>Lesiones personales</td><td>TARM</td><td>CRUE, Policía</td></tr>
-<tr><td><strong>610 INTOX</strong></td><td>Misma descripción del incidente 610 INTOX.</td><td>Mismas preguntas indicadas en la fila anterior.</td><td>NOBOGOTA</td><td>—</td><td>—</td><td>Policía</td></tr>
-</tbody>
-</table>
-</div>
-<div class="activity">
-<h3>Actividad 1</h3>
-<p>Como operador u operadora de recepción la Guía de Tipificación será el documento más importante que deberás aprenderte para el desarrollo de tus actividades. Por tanto, vas a descargar la Guía y vas a responder las siguientes preguntas:</p>
-<a class="resource-link" href="../assets/documentos/guia-tipificacion-incidentes.pdf" rel="noopener" target="_blank">Descargar Guía de Tipificación (PDF)</a>
-<a class="resource-link" href="../assets/documentos/guia-tipificacion-incidentes.xlsx" rel="noopener" target="_blank">Descargar Guía de Tipificación (Excel)</a>
-<ol>
-<li>¿Cuántos códigos de disposición tiene actualmente la Guía?</li>
-<li>¿Cuántos códigos de disposición y cierre tiene la Guía?</li>
-<li>¿Cuál es la diferencia entre un código de disposición y cierre y un código de disposición?</li>
-<li>¿Cuántos códigos de tipificación tienen solamente un código alfabético?</li>
-</ol>
-</div>
-<h3>3.2. Cambios, ajustes y complementos de la Guía de Tipificación</h3>
-<p>La Guía de Tipificación es un documento que se revisa y ajusta constantemente. La sociedad cambia, las formas como nos interrelacionamos se transforman, y los eventos y situaciones llevan a que se modifiquen parcial o totalmente algunos elementos de la Guía.</p>
-<p>Por sencillo que sea, todo cambio a la Guía es un esfuerzo institucional, un acuerdo entre las diferentes agencias del Sistema NUSE. Cuando se realiza un pequeño cambio, se emite un Boletín, un documento en el cual se detallan los cambios que deberás seguir en el momento de recibir una llamada de emergencia.</p>
-<div class="activity">
-<h3>Actividad 2</h3>
-<p>Con posterioridad podrás leer todos los Boletines. Sin embargo, como recordarás del módulo 1, existe información reservada o clasificada que no puede ser compartida o publicada, y los Boletines hacen parte del acervo documental reservado o clasificado.</p>
-<p>Vas a considerar este fragmento de uno de los boletines:</p>
-<img alt="Fragmento de un boletín sobre cambios en la tipificación, tal como aparece en el documento fuente" class="source-image" src="assets/fragmento-boletin-tipificacion.png"/>
-<p>A partir de este fragmento, responde las siguientes preguntas:</p>
-<ol>
-<li>¿Cómo se ajusta el código de tipificación 611? Apóyate en el formato en el que se encuentra la guía para identificar los cambios.</li>
-<li>Si llama una mujer de 19 años, quien reporta una agresión de tío, ¿se activa la circunstancia modificadora VM.PAREX?</li>
-<li>¿Qué código de disposición y número de comentario se deben usar si la transferencia de llamada fue posible?</li>
-</ol>
-</div>
-<p>No sólo se cambian los protocolos, también se pueden sumar agencias a la gestión de incidentes. La más reciente incorporación fue el Instituto Distrital de Bienestar y Protección Animal (IDPYBA).</p>
-<div class="activity">
-<h3>Actividad 3</h3>
-<p>Mira el siguiente video y responde las preguntas a continuación.</p>
-<a class="resource-link" href="https://www.facebook.com/secretariadeseguridadbogota/videos/la-línea123-también-salva-la-vida-de-los-animales-que-viven-en-calledesde-que-in/2292160184650155/" rel="noopener" target="_blank">Ver video: La Línea 123 también salva la vida de los animales</a>
-<ol>
-<li>A partir de la incorporación de IDPYBA, ¿cuál código de la guía de tipificación se debe aplicar en el caso del video?</li>
-<li>Según la Guía de Tipificación, ¿qué preguntas debe realizar un operador de recepción?</li>
-<li>¿Qué agencias se enteran del código escogido en la pregunta del numeral 1? ¿Por qué crees que las emergencias deben de la Guía?</li>
-</ol>
-</div>
-<h3>3.3. Práctica, práctica, práctica</h3>
-<p>El aprendizaje de la Guía de Tipificación es más rápido, si realizas ejercicios que te ayuden a familiarizarte con su contenido.</p>
-<div class="activity">
-<h3>Actividad 4</h3>
-<p>Descarga el siguiente documento y resuelve el ejercicio propuesto.</p>
-<a class="resource-link" href="../assets/documentos/ejercicio-practico-tipificacion.pdf" rel="noopener" target="_blank">Descargar ejercicio práctico</a>
-</div>
-<div class="activity">
-<h3>Actividad 5</h3>
-<p>Consulta el siguiente recurso y realiza las actividades propuestas.</p>
-<div class="note">El asistente de práctica se integrará en este espacio cuando esté publicada la versión web del recurso.</div>
-</div>
-</section>
-<section class="module-content-section" id="trabajo-autonomo"><h2>4. Actividades de Trabajo Autónomo</h2>
-
-<p>Si llegaste hasta acá, has finalizado el módulo Tipificación de incidentes.</p>
-<p>Envía por correo electrónico al Equipo de Capacitación todas las respuestas y actividades realizadas a la siguiente dirección:</p>
-<p><a href="mailto:equipocapacitacionc4@scj.gov.co">equipocapacitacionc4@scj.gov.co</a></p>
-<p>Utiliza como asunto: <strong>Modulo 4 – Nombres y apellidos</strong>.</p>
-</section>
-<section class="module-content-section" id="evaluacion"><h2>5. Evaluación</h2>
-
-<p>Ponte a prueba y realiza tu evaluación:</p>
-<a class="resource-link" href="https://forms.cloud.microsoft/r/TKfmZuQNRT" rel="noopener" target="_blank">Realizar evaluación del módulo</a>
-</section>
-
-<nav class="module-navigation" aria-label="Navegación entre módulos">
-<a href="geolocalizacion-incidentes.html">← Módulo anterior</a>
-<a href="../index.html">⌂ Inicio</a>
-<a href="../index.html#formacion">Finalizar módulo →</a>
-</nav>
-</main>
-</div>
 <div class="module-progress" aria-label="Progreso de lectura">
-<div class="module-progress-heading"><span>Avance del módulo</span><strong id="progressText">0%</strong></div>
-<div class="module-progress-track" id="progressTrack" role="progressbar" aria-label="Porcentaje de avance del módulo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="module-progress-fill" id="progressFill"></div></div>
+    <div class="module-progress-heading">
+        <span>Avance del módulo</span>
+        <strong id="progressText">0%</strong>
+    </div>
+    <div class="module-progress-track"
+         id="progressTrack"
+         role="progressbar"
+         aria-label="Porcentaje de avance del módulo"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="0">
+        <div class="module-progress-fill" id="progressFill"></div>
+    </div>
 </div>
+
 <script>
-const layout=document.getElementById("moduleLayout");
-const toggleButton=document.getElementById("toggleSidebar");
-const progressText=document.getElementById("progressText");
-const progressFill=document.getElementById("progressFill");
-const progressTrack=document.getElementById("progressTrack");
-const sections=document.querySelectorAll(".module-content-section");
-const sectionLinks=document.querySelectorAll(".module-sidebar nav a");
-toggleButton.addEventListener("click",()=>{
- const hidden=layout.classList.toggle("module-sidebar-hidden");
- toggleButton.setAttribute("aria-expanded",String(!hidden));
- toggleButton.textContent=hidden?"☰ Mostrar navegación":"☰ Ocultar navegación";
-});
-function updateProgress(){
- const scrollableHeight=document.documentElement.scrollHeight-window.innerHeight;
- const progress=scrollableHeight<=0?100:Math.round(window.scrollY/scrollableHeight*100);
- const bounded=Math.max(0,Math.min(100,progress));
- progressText.textContent=bounded+"%"; progressFill.style.width=bounded+"%";
- progressTrack.setAttribute("aria-valuenow",bounded);
-}
-window.addEventListener("scroll",updateProgress,{passive:true});
-window.addEventListener("resize",updateProgress);
-window.addEventListener("load",updateProgress);
-const sectionObserver=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{if(entry.isIntersecting) sectionLinks.forEach(link=>link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id));});
-},{rootMargin:"-15% 0px -65% 0px"});
-sections.forEach(section=>sectionObserver.observe(section));
-sectionLinks.forEach(link=>link.addEventListener("click",()=>{sectionLinks.forEach(item=>item.classList.remove("active"));link.classList.add("active");}));
+    const layout = document.getElementById("moduleLayout");
+    const toggleButton = document.getElementById("toggleSidebar");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+    const progressTrack = document.getElementById("progressTrack");
+    const sections = document.querySelectorAll(".module-content-section");
+    const sectionLinks = document.querySelectorAll(".module-sidebar nav a");
+
+    toggleButton.addEventListener("click", () => {
+        const hidden = layout.classList.toggle("module-sidebar-hidden");
+        toggleButton.setAttribute("aria-expanded", String(!hidden));
+        toggleButton.textContent = hidden
+            ? "☰ Mostrar navegación"
+            : "☰ Ocultar navegación";
+    });
+
+    function updateProgress() {
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = scrollableHeight <= 0
+            ? 100
+            : Math.round((window.scrollY / scrollableHeight) * 100);
+
+        const bounded = Math.max(0, Math.min(100, progress));
+
+        progressText.textContent = bounded + "%";
+        progressFill.style.width = bounded + "%";
+        progressTrack.setAttribute("aria-valuenow", bounded);
+    }
+
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    window.addEventListener("load", updateProgress);
+
+    if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionLinks.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+                }
+            });
+        }, {
+            rootMargin: "-15% 0px -65% 0px"
+        });
+
+        sections.forEach(section => sectionObserver.observe(section));
+    }
+
+    sectionLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            sectionLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+
+    updateProgress();
 </script>
 </body>
 </html>
