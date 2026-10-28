@@ -641,10 +641,194 @@
                     <a class="resource-link" href="../assets/documentos/ejercicio-practico-tipificacion.pdf" target="_blank" rel="noopener">Descargar ejercicio práctico</a>
                 </div>
     
-                <div class="module-placeholder"
+                                <div class="module-placeholder">
                     <h3>Actividad 5</h3>
                     <p>Consulta el recurso de práctica y realiza las actividades propuestas.</p>
-                    <div class="note">El asistente de práctica se integrará en este espacio cuando esté publicada su versión web.</div>
+                    <iframe
+                        title="Asistente de estudio C4"
+                        srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Inicio del asistente de estudio C4.&quot;&gt;
+  &lt;title&gt;Asistente de estudio C4&lt;/title&gt;
+  &lt;style&gt;
+    :root {
+      --navy: #082a88;
+      --navy-dark: #062578;
+      --ink: #202938;
+      --muted: #68778f;
+      --page: #eef2f7;
+      --line: #d7e0ec;
+      --panel: #ffffff;
+      --tile: #f4f7fb;
+      --tag: #e8edff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--page);
+      color: var(--ink);
+      font-family: &quot;Segoe UI&quot;, Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .assistant-shell { width: 100%; padding: 9px 15px 1px; }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 18px;
+    }
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 10px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      color: var(--navy);
+      font: inherit;
+      font-weight: 650;
+      letter-spacing: .1px;
+      white-space: nowrap;
+    }
+    .tab.active { color: #fff; background: var(--navy); border-color: var(--navy); }
+    .home-panel {
+      min-height: 501px;
+      padding: 28px 28px 25px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      box-shadow: 0 8px 22px rgba(31, 49, 78, .035);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--tag);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    h1 {
+      margin: 24px 0 18px;
+      color: #202938;
+      font-size: clamp(22px, 2.3vw, 25px);
+      line-height: 1.35;
+      font-weight: 750;
+      letter-spacing: .1px;
+    }
+    .intro { margin: 0 0 15px; max-width: 1050px; }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .activity-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 223px;
+      padding: 21px 18px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--tile);
+    }
+    .activity-card h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 750;
+    }
+    .activity-card p { margin: 0 0 15px; color: var(--muted); line-height: 1.65; }
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: auto;
+      padding: 10px 16px;
+      border: 1px solid var(--navy);
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .action:focus-visible, .tab:focus-visible { outline: 3px solid #8ba8ff; outline-offset: 3px; }
+    .note { margin: 17px 0 0; color: #526582; font-size: 13px; }
+    @media (max-width: 760px) {
+      .assistant-shell { padding: 9px 10px 12px; }
+      .tabs { gap: 7px; margin-bottom: 12px; }
+      .tab { min-height: 42px; padding: 8px 12px; font-size: 14px; }
+      .home-panel { min-height: 0; padding: 22px 18px; border-radius: 14px; }
+      h1 { margin-top: 20px; }
+      .activity-grid { grid-template-columns: 1fr; gap: 10px; }
+      .activity-card { min-height: 0; padding: 18px; }
+      .activity-card h2 { margin-bottom: 9px; }
+      .activity-card p { margin-bottom: 13px; }
+      .action { margin-top: 0; }
+    }
+    @media (min-width: 761px) and (max-width: 900px) {
+      .activity-card { padding: 18px 14px; }
+      .activity-card h2 { font-size: 17px; }
+      .action { white-space: normal; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main class=&quot;assistant-shell&quot; aria-label=&quot;Asistente de estudio C4&quot;&gt;
+    &lt;nav class=&quot;tabs&quot; aria-label=&quot;Secciones del asistente&quot;&gt;
+      &lt;span class=&quot;tab active&quot; aria-current=&quot;page&quot;&gt;Inicio&lt;/span&gt;
+      &lt;span class=&quot;tab&quot;&gt;Tarjetas&lt;/span&gt;
+      &lt;span class=&quot;tab&quot;&gt;Cuestionario&lt;/span&gt;
+      &lt;span class=&quot;tab&quot;&gt;Explorar códigos&lt;/span&gt;
+    &lt;/nav&gt;
+
+    &lt;section class=&quot;home-panel&quot; aria-labelledby=&quot;home-title&quot;&gt;
+      &lt;span class=&quot;eyebrow&quot;&gt;Aprendizaje autónomo&lt;/span&gt;
+      &lt;h1 id=&quot;home-title&quot;&gt;¿Qué quieres practicar hoy?&lt;/h1&gt;
+      &lt;p class=&quot;intro&quot;&gt;Selecciona una actividad para estudiar los códigos de disposición, los tipos de incidente y las instrucciones contenidas en los documentos de referencia.&lt;/p&gt;
+
+      &lt;div class=&quot;activity-grid&quot;&gt;
+        &lt;article class=&quot;activity-card&quot;&gt;
+          &lt;h2&gt;Tarjetas de memoria&lt;/h2&gt;
+          &lt;p&gt;Recuerda conceptos y comprueba la respuesta al voltear cada tarjeta.&lt;/p&gt;
+          &lt;span class=&quot;action&quot;&gt;Estudiar tarjetas&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;activity-card&quot;&gt;
+          &lt;h2&gt;Cuestionario&lt;/h2&gt;
+          &lt;p&gt;Practica preguntas de opción múltiple con retroalimentación inmediata.&lt;/p&gt;
+          &lt;span class=&quot;action&quot;&gt;Comenzar cuestionario&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;activity-card&quot;&gt;
+          &lt;h2&gt;Explorar códigos&lt;/h2&gt;
+          &lt;p&gt;Busca códigos, nombres, descripciones y circunstancias modificadoras.&lt;/p&gt;
+          &lt;span class=&quot;action&quot;&gt;Consultar contenido&lt;/span&gt;
+        &lt;/article&gt;
+      &lt;/div&gt;
+
+      &lt;p class=&quot;note&quot;&gt;El contenido se procesa localmente en tu navegador. No se usa ninguna API ni se envían preguntas a un servicio externo.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"
+                        style="display:block; width:100%; height:650px; border:0; border-radius:12px; background:#eef2f7;"
+                        loading="lazy"
+                        sandbox="allow-same-origin">
+                    </iframe>
                 </div>
             </section>
         </div>
