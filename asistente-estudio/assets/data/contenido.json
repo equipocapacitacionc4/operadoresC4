@@ -1,1 +1,2776 @@
-
+{
+  "meta": {
+    "title": "Asistente de estudio C4",
+    "source_excel": "Guia de tipificación de incidentes.xlsx",
+    "source_pdf": "1. Guia de tipificación de incidentes.pdf",
+    "note": "Material de estudio derivado de los documentos suministrados. Verificar siempre la versión institucional vigente. No sustituye procedimientos operativos."
+  },
+  "instructions": [
+    "Se recomienda usar el código alfabético en lugar del código numérico. Por ejemplo, RIÑA en vez de 934.",
+    "PremierOne le mostrará las entidades a copiar al momento de enviar el incidente. No olvide seleccionarlas y validar la jurisdicción a la que se está copiando.",
+    "Las circunstancias modificadoras que tienen el símbolo / representan la combinación de dos o más circunstancias previas del mismo tipo de incidente.",
+    "Si se reportan más de dos tipos de incidentes realice la clonación a la agencia correspondiente, y asocie los incidentes",
+    "Si el tipo de incidente y la circunstancia modificadora seleccionada no copia a Movilidad, se debe clonar a Movilidad (Clic derecho, clonar a Movilidad) cuando el incidente ocurra o afecte la vía pública.",
+    "Todo incidente debe tener siempre un código de disposición de cierre. Añada el código de disposición TRAMITADO cuando sea un incidente procedente. De lo contrario añada el código de disposición de cierre que aplique.",
+    "Añada los códigos de disposición informativos según corresponda y documente frente a cada uno la información cuando sea necesario.",
+    "Realice el cierre del incidente una vez termine de documentar y tramitar.",
+    "Las prioridades son asignadas por el sistema de manera automática y están asociadas al tipo de incidente y a la circunstancia modificadora, por tanto, bajo ninguna circunstancia estas se deben modificar manualmente.",
+    "La asignación de los códigos de disposición informativos y de cierre, se deben realizar posterior al proceso de copiado de información a despacho.",
+    "La confirmación, solicitud y documentación del número de contacto adicional para los incidentes del CRUE, debe hacerse antes de la transferencia de voz y del proceso de copiado de información respectivamente.",
+    "La información documentada en el comentario del código de disposición no es vista por el despacho, es por ello que allí se deberá documentar información de importancia para la SUR y sólo de ser necesario. Ejemplo: INFOADICIO; se informa incidente a MEBOG o área de seguimiento en la SUR, se realiza llamada para obtención de dirección.",
+    "No inducir al usuario hacia un tipo de incidente o circunstancia modificadora, solo asignar una con la información que suministre, Ejemplo: circunstancias modificadoras EISP (Evento de Interés en Salud Pública) o VACUNA (Sintomatología adversa posvacuna), “el operador no debe vincular el incidente por presunción y no deberá inducir al usuario a asociar su sintomatología con el virus”, o PRVSANITAR(Prevención Sanitaria), Solo cuando exista fallecimiento confirmado por COVID o exista presunción manifiesta por parte del usuario”.",
+    "Si la persona lo indica, documente cuando exista medida de protección en los tipos de incidente a que haya lugar.",
+    "Hacer uso de la herramienta ETIQUETAS, como apoyo constante en la confirmación de dirección a través de los puntos de referencia, ya que estos son parte importante de la dirección.",
+    "En el tipo de incidente RECONOCIMI (Reconocimiento de Soat), se debe proceder así: 1. Digite la dirección de la entidad de salud y valide en el sistema (ALT + V), ingrese el nombre de la Institución en el campo Nombre Ubi. 2. En el espacio comentarios del incidente, documente nombre del paciente, dirección y localidad donde ocurrió el ACCTRA, y copie al área de la entidad de salud donde se encuentra el paciente."
+  ],
+  "dispositions": [
+    {
+      "code": "TRAMITADO",
+      "name": "Tramitado",
+      "type": "Cierre",
+      "description": "Se copió a las agencias para que realicen la atención."
+    },
+    {
+      "code": "ALARBANC",
+      "name": "Alarma bancaria",
+      "type": "Informativo",
+      "description": "La llamada corresponde a una alarma bancaria."
+    },
+    {
+      "code": "ALARCOMU",
+      "name": "Alarma comunitaria",
+      "type": "Informativo",
+      "description": "La llamada corresponde a una alarma comunitaria."
+    },
+    {
+      "code": "MALTMUJER",
+      "name": "Maltrato a la mujer",
+      "type": "Informativo",
+      "description": "Se identifica que en el incidente se presentó maltrato a la mujer."
+    },
+    {
+      "code": "MENOR",
+      "name": "Menor afectado",
+      "type": "Informativo",
+      "description": "Se identifica que hay afectación de menor de edad en el incidente."
+    },
+    {
+      "code": "ADULTMAY",
+      "name": "Adulto mayor afectado",
+      "type": "Informativo",
+      "description": "Se identifica que hay afectación de un adulto mayor en el incidente."
+    },
+    {
+      "code": "CONDISC",
+      "name": "Persona en condición de discapacidad afectada",
+      "type": "Informativo",
+      "description": "Se identifica que hay afectación de una persona en condición de discapacidad en el incidente."
+    },
+    {
+      "code": "URG_VET",
+      "name": "Urgencia veterinaria",
+      "type": "Informativo",
+      "description": "Se usa para indicar que se trata de una urgencia veterinaria"
+    },
+    {
+      "code": "PROPUBL",
+      "name": "En propiedad pública",
+      "type": "Informativo",
+      "description": "Se usa para indicar que los hechos ocurren en propiedad pública."
+    },
+    {
+      "code": "PROPRIV",
+      "name": "En propiedad privada",
+      "type": "Informativo",
+      "description": "Se usa para indicar que los hechos ocurren en propiedad privada."
+    },
+    {
+      "code": "PPUBAFECT",
+      "name": "Propiedad pública afectada",
+      "type": "Informativo",
+      "description": "Se usa para indicar que hay afectación de propiedad pública."
+    },
+    {
+      "code": "PPRIAFECT",
+      "name": "Propiedad privada afectada",
+      "type": "Informativo",
+      "description": "Se usa para indicar que hay afectación de propiedad privada."
+    },
+    {
+      "code": "ESTABPUB",
+      "name": "Establecimiento abierto al público",
+      "type": "Informativo",
+      "description": "Se usa para indicar que el incidente ocurre en un establecimiento abierto al público no especificado."
+    },
+    {
+      "code": "SI_CENEDU",
+      "name": "Sitio de interés: Centro o institución educativa",
+      "type": "Informativo",
+      "description": "Se usa para indicar que el incidente ocurre en un centro o institución de educación."
+    },
+    {
+      "code": "EVENTO",
+      "name": "Evento con aglomeración de personas",
+      "type": "Informativo",
+      "description": "Se usa para documentar el nombre del evento en el que ocurre el incidente. Comentario esperado: Nombre del evento Ejemplo: AGROEXPO"
+    },
+    {
+      "code": "PRUEBA",
+      "name": "Prueba",
+      "type": "Cierre",
+      "description": "Se usa para indicar que el incidente se creó como prueba del CAD."
+    },
+    {
+      "code": "INFOADICIO",
+      "name": "Información adicional",
+      "type": "Informativo",
+      "description": "Se usa para documentar información adicional que sólo compete a S.U.R. Comentario esperado: Dirección obtenida a través de llamada a usuario"
+    },
+    {
+      "code": "ALTOIMPACT",
+      "name": "Alto impacto",
+      "type": "Informativo",
+      "description": "Usada por el área de seguimiento para documentar información sobre los incidentes de alto impacto."
+    },
+    {
+      "code": "DUPLICADO",
+      "name": "Duplicado",
+      "type": "Cierre",
+      "description": "El incidente es duplicado de otro. Comentario esperado: Número del incidente al que fue asociado Ejemplo: 0024785"
+    },
+    {
+      "code": "COVID19",
+      "name": "COVID19",
+      "type": "Información",
+      "description": "Se usa para indicar que el incidente tiene que ver con la pandemia de COVID-19"
+    },
+    {
+      "code": "NOPROCEDEN",
+      "name": "NOPROCEDEN",
+      "type": "Información",
+      "description": "Se usa cuando no se requiere la gestión del incidente"
+    },
+    {
+      "code": "SDQS",
+      "name": "SDQS",
+      "type": "Información",
+      "description": "Se usa cuando se tramita incidente y adicionalmente existe requerimiento para SDQS"
+    },
+    {
+      "code": "SININFO",
+      "name": "SININFO",
+      "type": "Información",
+      "description": "Se emplea cuando no hay información para gestionar incidente"
+    },
+    {
+      "code": "TRAEXITOSA",
+      "name": "TRAEXITOSA",
+      "type": "Información",
+      "description": "Aplica cuando la transferencia de voz fue exitosa, (asigne sólo el número correspondiente en comentarios del código de disposición). Comentario esperado: 0 – Transferencia sin novedad 4 – El funcionario de la entidad de despacho NO aplica el guion para recibir el asociado del incidente 7 – Hay maltrato por parte del funcionario de la entidad de despacho hacia el operador de recepción 8 – Una vez el funcionario de la entidad de despacho recibe la llamada, supera los tiempos para realizar la transferencia"
+    },
+    {
+      "code": "TRAFALLIDA",
+      "name": "TRAFALLIDA",
+      "type": "Información",
+      "description": "Aplica cuando la transferencia de voz fue fallida, (asignar el número correspondiente en comentarios del código de disposición). Comentario esperado: 1 – Timbra y no hay respuesta 2 – El funcionario de la entidad de despacho recibe la llamada y no habla 3 – El funcionario de la entidad de despacho recibe la llamada y la deja en espera 4 – El funcionario de la entidad de despacho NO aplica el guion para recibir el asociado del incidente 5 – El funcionario de la entidad de despacho recibe la llamada y cuelga 6 – El funcionario de la entidad de despacho No recibe el incidente porque no coincide con la jurisdicción. 7 – Hay maltrato por parte del funcionario de la entidad de despacho hacia el operador de recepción 8 – Una vez el funcionario de la entidad de despacho recibe la llamada, supera los tiempos para realizar la transferencia 9 – El usuario cuelga"
+    },
+    {
+      "code": "DIRREPORT",
+      "name": "DIRREPORT",
+      "type": "Información",
+      "description": "Se asigna al identificar modificación en la dirección después de la verificación en el sistema (Alt+V) Comentario esperado: Dirección modificada Ejemplo: (Cl 20 sur 19D)"
+    }
+  ],
+  "incidents": [
+    {
+      "raw_type": "457 VMEDGUB (Violación de medida gubernamental)",
+      "code": "457",
+      "short": "VMEDGUB",
+      "label": "Violación de medida gubernamental",
+      "description": "Conductas de violación a la normatividad que afectan el desarrollo de las acciones de control de los entes gubernamentales. Palabras clave: aglomeración, establecimiento, espacio público, vivienda, elemento de bioseguridad.",
+      "questions": "Preguntas para documentar: • ¿Sabe si la persona usa elementos de bioseguridad? • ¿De cuántas personas se trata?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "535 INFCON (Información confidencial)",
+      "code": "535",
+      "short": "INFCON",
+      "label": "Información confidencial",
+      "description": "Información que puede conducir a la captura o hallazgo de: caleta de armas, cabecilla de la guerrilla o paramilitar buscado, ubicación de un secuestrado, ubicación de una obra de arte u objeto de valor robado. Incluye casos de extorsión, contrabando y perturbación electoral. Información sobre la posible realización de un atentado. Realice transferencia de voz exclusivamente para casos de: • Extorsión • Información sobre la posible realización de un atentado",
+      "questions": "Indague por la situación para poder determinar si hay lugar a otro código.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "Policía",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "601 ACV (Accidente cerebro vascular)",
+      "code": "601",
+      "short": "ACV",
+      "label": "Accidente cerebro vascular",
+      "description": "Evento de origen cerebral que se manifiesta por incapacidad para articular palabra, desviación de la cara, incapacidad para la movilización de cualquier extremidad (superiores o inferiores). Puede provocar estado de inconsciencia. Palabras clave: trombosis, derrame.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona está despierta? Seleccionar INCONSCIEN en caso de que la persona no esté despierta. • Preguntas y acciones para circunstancias modifi cadoras: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "EISP",
+          "description": "Evento de Interés de Salud Pública",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "INCONSCIEN",
+          "description": "Inconsciente",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "602 CAIALT (Caída de altura)",
+      "code": "602",
+      "short": "CAIALT",
+      "label": "Caída de altura",
+      "description": "Se utiliza este código en caso de caída de altura. No incluye caída de su propia altura, la cual se deberá tipificar como 608 - HERIDO.",
+      "questions": "Preguntas para documentar: • ¿Sabe de dónde cayó? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si se encuentra en un lugar de difícil acceso? Seleccionar RESCATE si la persona se encuentra en un lugar de difícil acceso. • ¿Sabe si la persona está inconsciente? Seleccionar INCONSCIEN en caso de que la persona esté inconsciente. • Seleccionar INCO/RESC si la persona está inconsciente y adicionalmente se encuentra en un lugar de difícil acceso.",
+      "circumstances": [
+        {
+          "code": "INCONSCIEN",
+          "description": "Inconsciente",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "RESCATE",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "CRUE, Bomberos"
+        },
+        {
+          "code": "INCO/RESC",
+          "description": "Inconsciente y rescate",
+          "transfer": "TARM",
+          "copy": "CRUE, Bomberos"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "603 CONVULSIÓN (Convulsión)",
+      "code": "603",
+      "short": "CONVULSIÓN",
+      "label": "Convulsión",
+      "description": "Se caracteriza por movimientos incontrolados e involuntarios, manifestado en uno o más miembros. Incluye salivación profusa, de manera ocasional relajación de esfínteres o, incluso, hasta la pérdida del estado de conciencia. Palabras clave: ataque, epilepsia, ataque epiléptico.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona está despierta? Seleccionar INCONSCIEN en caso de que la persona esté inconsciente. • Preguntas y acciones para circunstancias modifi cadoras: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "INCONSCIEN",
+          "description": "Inconsciente",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "604 EVERES (Evento respiratorio)",
+      "code": "604",
+      "short": "EVERES",
+      "label": "Evento respiratorio",
+      "description": "Situación que ocasiona una sensación o incomodidad al respirar o la sensación de no estar recibiendo el suficiente oxigeno, puede producir cambios de color en la piel y observarse mayor esfuerzo al respirar. También se puede originar por la presencia de un cuerpo extraño sólido o líquido en la tráquea, laringe o faringe. Palabras claves: Inmersión, obstrucción por cuerpo extraño, enfermedad crónica, por enfermedad aguda, asfixiado, ahogado, está morado.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si el paciente está morado o si emite ruidos al respirar? Seleccione MORADRUIDO si el paciente está morado o emite ruidos al respirar. • Preguntas y acciones para circunstancias modifi cadoras: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "EISP",
+          "description": "Evento de interés de salud pública",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "EISP/ASES",
+          "description": "Asesoría por evento de interés de salud pública",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "MORADRUIDO",
+          "description": "Está morado o emite ruidos al respirar",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "605 DOLTOR (Dolor torácico)",
+      "code": "605",
+      "short": "DOLTOR",
+      "label": "Dolor torácico",
+      "description": "Sensación de molestia, incomodidad o dolor que se siente en el pecho (algún punto a lo largo de la parte anterior del cuerpo entre el cuello y el abdomen superior). Palabras clave: infarto, preinfarto.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona tiene antecedentes? Seleccione ANTECEDEN si la persona tiene antecedentes de infarto, preinfarto o similares. • Preguntas y acciones para circunstancias modifi cadoras: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "EISP",
+          "description": "Evento de interés de salud pública",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "EISP/ASES",
+          "description": "Asesoría por evento de interés de salud pública",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "ANTECEDEN",
+          "description": "Antecedentes",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "606 ELECTROCUC (Electrocución)",
+      "code": "606",
+      "short": "ELECTROCUC",
+      "label": "Electrocución",
+      "description": "Emergencia originada al entrar una persona en contacto de manera directa o indirecta con energía eléctrica. Incluye impactos de rayo.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si se encuentra en un lugar de difícil acceso? Seleccionar RESCATE si la persona se encuentra en un lugar de difícil acceso. • ¿Sabe si la persona está despierta o fue impactada por rayo? Seleccionar INC/IM.RAY en caso de que la persona no esté despierta o haya sido impactada por rayo. • Seleccione RE/IN/I.R si la persona se encuentra en lugar de difícil acceso, está inconsciente y fue impactada por rayo.",
+      "circumstances": [
+        {
+          "code": "RESCATE",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "INC/IM.RAY",
+          "description": "Inconsciente o impactado por rayo",
+          "transfer": "TARM",
+          "copy": "CRUE, IDIGER"
+        },
+        {
+          "code": "RE/IN/I.R",
+          "description": "Rescate e inconsciente o impactado por rayo",
+          "transfer": "TARM",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE, IDIGER"
+    },
+    {
+      "raw_type": "607 PATGIN (Patología ginecobstétrica)",
+      "code": "607",
+      "short": "PATGIN",
+      "label": "Patología ginecobstétrica",
+      "description": "1) Condiciones o procesos anormales asociados con el embarazo: dolor, sangrado, salida de líquido amniótico, salida de partes fetales, etc. 2) Parto extra hospitalario. 3) Aborto: Interrupción o terminación a destiempo de un embarazo, antes de la semana 20 de gestación. Palabras clave: Embarazo",
+      "questions": "Preguntas para documentar: • ¿Sabe qué tiempo de embarazo tiene?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "608 HERIDO (Herido)",
+      "code": "608",
+      "short": "HERIDO",
+      "label": "Herido",
+      "description": "Persona que ha sufrido alguna lesión en su cuerpo por causas accidentales. Incluye caída de su propia altura y lesiones por actividades deportivas o cotidianas. Tener en cuenta para la redacción, la zona del cuerpo dónde ocurre la herida.",
+      "questions": "Preguntas para documentar: • ¿Sabe en qué parte del cuerpo tiene la(s) herida(s)? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona está despierta? Seleccionar INCONSCIEN en caso de que la persona esté inconsciente.",
+      "circumstances": [
+        {
+          "code": "INCONSCIEN",
+          "description": "Inconsciente",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "609 AMESUI (Amenaza de suicidio)",
+      "code": "609",
+      "short": "AMESUI",
+      "label": "Amenaza de suicidio",
+      "description": "Manifestación expresa del deseo a través de palabras de quitarse la vida. Cuando la persona está realizando acciones para quitarse la vida tipificar como 918 - INTSUI.",
+      "questions": "No hay preguntas.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "PSICOLOGÍA",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "610 INTOX (Intoxicación)",
+      "code": "610",
+      "short": "INTOX",
+      "label": "Intoxicación",
+      "description": "Entrada en el organismo de sustancias capaces de provocar alteraciones en las funciones del ser humano y que puede ocasionar salivación abundante, calor, aumento de la frecuencia cardiaca, piel roja, vómito o diarrea. Tener en cuenta para la redacción: tipo de intoxicación: comida, con fines delictivos (escopolamina, burundanga, etc.), veneno, alcohol, pintura, medicamentos, otros.",
+      "questions": "Preguntas para documentar: • ¿Sabe con qué se intoxicó? • ¿Sabe cuántas personas están intoxicadas? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la intoxicación ocurrió en un establecimiento abierto al público? Seleccionar EST.PUB si la intoxicación ocurrió en un establecimiento abierto al público. • ¿Sabe si la intoxicación se hizo con fines delictivos? Seleccionar LES.PER en caso de que sea con fines delictivos.",
+      "circumstances": [
+        {
+          "code": "EST.PUB",
+          "description": "Establecimiento abierto al público",
+          "transfer": "TARM",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "LES.PER",
+          "description": "Lesiones personales",
+          "transfer": "TARM",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "611 MALTRATO (Maltrato)",
+      "code": "611",
+      "short": "MALTRATO",
+      "label": "Maltrato",
+      "description": "Cualquier acción intencional que provoque daño psicológico o físico a niños o niñas, personas en condición de discapacidad o adultos mayores, incluye: 1) Los casos informados directamente por Bienestar Familiar solicitando apoyo de la Policía. 2) Los casos donde se reporta abandono de niños o niñas, personas en condición de discapacidad o adultos mayores al interior del domicilio. 3) Maltrato a la mujer: acción intencional que provoque daño físico o psicológico a una mujer de cualquier edad. Si el maltrato a la mujer está ocurriendo en el momento, tipifique 934 (RIÑA) con circunstancia modificadora correspondiente.",
+      "questions": "Preguntas para documentar: • ¿Sabe si está ocurriendo en el momento? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si requiere ambulancia? Seleccionar HERIDO si se requiere ambulancia. Cuando el funcionario del ICBF requiera reportar más de un caso, infórmele que debe realizar una llamada por caso.",
+      "circumstances": [
+        {
+          "code": "VIOINTFAM",
+          "description": "Violencia intrafamiliar",
+          "transfer": "PSICOLOGÍA",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "VIOGENERO",
+          "description": "Violencia de género",
+          "transfer": "PSICOLOGÍA",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "PSICOLOGÍA",
+      "copy": "CRUE, Policía"
+    },
+    {
+      "raw_type": "613 INCONSCIEN (Inconsciente o paro cardiorrespiratorio)",
+      "code": "613",
+      "short": "INCONSCIEN",
+      "label": "Inconsciente o paro cardiorrespiratorio",
+      "description": "Estado de la persona que ha perdido el conocimiento y la capacidad de sentir y de moverse. Es la interrupción repentina y simultánea de la respiración y el funcionamiento del corazón, que produce pérdida de la consciencia y potencialmente la muerte.",
+      "questions": "Preguntas para documentar: • ¿Sabe hace cuánto tiempo que la persona está inconsciente? • ¿Sabe si respira? • ¿Sabe si se mueve? • ¿Sabe si se queja? Preguntas y acciones para circunstancias modificadoras: • Seleccionar ACOMPOLI en caso de que se requiera acompañamiento policial. • Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "ACOMPOLI",
+          "description": "Acompañamiento policial",
+          "transfer": "TARM",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "615 QUEMADURAS (Quemaduras)",
+      "code": "615",
+      "short": "QUEMADURAS",
+      "label": "Quemaduras",
+      "description": "Lesión en los tejidos del cuerpo causada por la exposición al fuego, calor, sustancias químicas, rayos solares, radiaciones, líquidos hirvientes o frío extremo.",
+      "questions": "Preguntas para documentar: • ¿Sabe con qué se quemó? • ¿Sabe si se trata de una agresión? Preguntas y acciones para circunstancias modificador as: • Seleccione LES.PER en caso de que sea una agresión.",
+      "circumstances": [
+        {
+          "code": "LES.PER",
+          "description": "Lesiones personales",
+          "transfer": "TARM",
+          "copy": "CRUE, Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "616 SANVAG (Sangrado vaginal)",
+      "code": "616",
+      "short": "SANVAG",
+      "label": "Sangrado vaginal",
+      "description": "Sangrado anormal por genitales, manchado entre períodos o menstruaciones, aplica en casos en que la mujer no esté embarazada.",
+      "questions": "Preguntas para determinar tipificación: • ¿Sabe si está embarazada? Tipificar como 607 – PATGIN si está embarazada.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "617 SINTOGASTR (Síntomas gastrointestinales)",
+      "code": "617",
+      "short": "SINTOGASTR",
+      "label": "Síntomas gastrointestinales",
+      "description": "Urgencia producida por afecciones que comprometen al estómago y los intestinos: dolor abdominal, diarrea, náuseas, vómitos, heces con sangre.",
+      "questions": "Preguntas para documentar: • ¿Sabe si está vomitando con sangre o haciendo deposición negra? Preguntas y acciones para circunstancias modificador as: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplicación y seleccione circunstancia modific adora VACUNA.",
+      "circumstances": [
+        {
+          "code": "EISP",
+          "description": "Evento de interés de salud pública",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "EISP/ASES",
+          "description": "Asesoría por evento de interés de salud pública",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "702 ABRIRDOMIC (Abrir domicilio)",
+      "code": "702",
+      "short": "ABRIRDOMIC",
+      "label": "Abrir domicilio",
+      "description": "Procedimiento preventivo ante imperiosa necesidad por potencial emergencia cuando: 1. Para socorrer a quien pida auxilio. 2. Para proteger los bienes de personas ausentes. 3. Cuando desde el interior de un inmueble se atente contra persona o propiedad.",
+      "questions": "Preguntas para documentar: • ¿Sabe si hay algún peligro al interior de la edificación? • ¿Sabe si hay personas dentro de la edificación?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos"
+    },
+    {
+      "raw_type": "703 ELEMECAÍDO (Elemento caído o en peligro de caer)",
+      "code": "703",
+      "short": "ELEMECAÍDO",
+      "label": "Elemento caído o en peligro de caer",
+      "description": "Prevención de una potencial emergencia, la cual se puede originar a partir de la inminente caída de un elemento y que puede poner en peligro la vida, el medio ambiente y los bienes. Emergencia originada por la caída de un elemento. Puede ser: árbol, poste, semáforo o cualquier otro objeto que se encuentre en el espacio público.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos o atrapados? Seleccionar HERIDO si hay heridos o atrapados. • ¿Sabe si se encuentra en vía pública? Seleccionar VIA.PUB si se encuentra en vía pública.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "CRUE, Bomberos"
+        },
+        {
+          "code": "VIA.PUB",
+          "description": "Vía pública",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad"
+        },
+        {
+          "code": "ÁRBOL",
+          "description": "Árbol",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        }
+      ],
+      "transfer": "",
+      "copy": "Bomberos"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Elemento caído o en peligro de caer)",
+      "code": "",
+      "short": "CONTINUACIÓN (Elemento caído o en peligro de caer)",
+      "label": "Elemento caído o en peligro de caer",
+      "description": "",
+      "questions": "• ¿Sabe de qué elemento se trata? Seleccionar ARBOL o MOBURB según corresponda. • Seleccionar HER/V.PUB si hay heridos o atrapados y adicionalmente se encuentra en vía pública. • Seleccionar HER/ARBOL si hay heridos o atrapados y adicionalmente es un árbol. • Seleccionar HER/M.URB si hay heridos o atrapados y adicionalmente es mobiliario urbano. • Seleccionar V.PUB/ARBO si es un árbol y adicionalmente se encuentra en vía pública. • Seleccionar V.PUB/M.URB si es mobiliario urbano y adicionalmente se encuentra en vía pública. • Seleccionar HE/V.P/ARB si hay heridos o atrapados y adicionalmente es un árbol y se encuentra en vía pública. • Seleccionar HE/V.P/M.U si hay heridos o atrapados y adicionalmente es mobiliario urbano y se encuentra en vía pública.",
+      "circumstances": [
+        {
+          "code": "MOBURB",
+          "description": "Mobiliario urbano",
+          "transfer": "",
+          "copy": "Bomberos"
+        },
+        {
+          "code": "HER/V.PUB",
+          "description": "Herido, vía pública",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad"
+        },
+        {
+          "code": "HER/ARBOL",
+          "description": "Herido, árbol",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "HER/M.URB",
+          "description": "Herido, mobiliario urbano",
+          "transfer": "",
+          "copy": "CRUE, Bomberos"
+        },
+        {
+          "code": "V.PUB/ARBO",
+          "description": "Vía pública, árbol",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "V.PUB/M.URB",
+          "description": "Vía pública, mobiliario urbano.",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad"
+        },
+        {
+          "code": "HE/V.P/ARB",
+          "description": "Herido, vía pública, árbol.",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "HE/V.P/M.U",
+          "description": "Herido, vía pública, mobiliario urbano.",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Bomberos"
+    },
+    {
+      "raw_type": "708 MATPEL (Materiales peligrosos)",
+      "code": "708",
+      "short": "MATPEL",
+      "label": "Materiales peligrosos",
+      "description": "Incidentes relacionados con artículos o sustancias sólidas, líquidas o gaseosas, que cuando son transportados por cualquier medio, o cuándo son expuestos, son capaces de constituir un riesgo importante para la vida, la salud, los bienes o el medio ambiente. Pólvora: Fabricar, tener, portar, almacenar, distribuir, transportar, comercializar, manipular o usar artículos pirotécnicos, fuegos artificiales, pólvora o globos sin el cumplimiento de los requisitos establecidos en la normatividad vigente. Fuga de gas natural o propano: Fugas en las tuberías que transportan gas natural o en gasodomésticos que utilizan este como combustible.",
+      "questions": "Preguntas para documentar: • ¿Sabe cómo es transportado o dónde está almacenado el material peligroso? • ¿Sabe si la sustancia esta almacenada o contenida o suelta y sin contención sobre la vía? • ¿Sabe si está afectando la movilidad o está dentro de un bien inmueble o predio? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe de qué sustancia se trata? Seleccionar PÓLVORA si se trata de pólvora. Seleccionar GAS.NAT.PR si se trata de gas natural o propano.",
+      "circumstances": [
+        {
+          "code": "PÓLVORA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "GAS.NAT.PR",
+          "description": "Gas natural o propano",
+          "transfer": "",
+          "copy": "Policía, Bomberos, IDIGER"
+        },
+        {
+          "code": "RES.PEL",
+          "description": "Residuos peligrosos",
+          "transfer": "",
+          "copy": "Policía, Bomberos, IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Materiales peligrosos)",
+      "code": "",
+      "short": "CONTINUACIÓN (Materiales peligrosos)",
+      "label": "Materiales peligrosos",
+      "description": "Se pueden presentar en la vía pública o al interior de los inmuebles. También por manipulación equivocada de cilindros y elementos involucrados en el manejo de gas licuado de petróleo (gas propano).",
+      "questions": "Seleccionar RES.PEL si se trata de residuos peligrosos. Cuando se trate de gravilla o barro desactive manualmente BOMBEROS • ¿Sabe si hay heridos o afectados? Seleccionar HERIDO si hay heridos o afectados. • Seleccionar POLV/HER si se trata de pólvora y adicionalmente hay heridos o afectados. • Seleccionar GAS/HER si se trata de gas natural o propano y adicionalmente hay heridos o afectados. • Seleccionar R.PEL/HER si se trata de residuos peligrosos y adicionalmente hay heridos o afectados.",
+      "circumstances": [
+        {
+          "code": "POLV/HER",
+          "description": "Herido por pólvora",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "GAS/HER",
+          "description": "Gas natural o propano, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "R.PEL/HER",
+          "description": "Residuos peligrosos, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, CRUE"
+    },
+    {
+      "raw_type": "709 RESCATE (Rescate)",
+      "code": "709",
+      "short": "RESCATE",
+      "label": "Rescate",
+      "description": "Acuático: Proceso de localización y rescate de víctimas atrapadas en aguas oscuras o rápidas. Estructura colapsada: Búsqueda, localización, acceso y rescate de víctimas atrapadas en espacios confinados. Montaña: Procedimiento tendiente a la localización y rescate de personas en sitios montañosos o de difícil acceso. Transporte vertical: rescate de personas en ascensores, escaleras eléctricas, rampas eléctricas o cualquier otro transporte vertical. Si no aplica ninguno de los tipos de rescate mencionados deje la circunstancia modificadora en blanco y documente las respuestas a las preguntas en los comentarios del incidente.",
+      "questions": "Preguntas para documentar: • ¿Sabe hace cuánto tiempo ocurrió? • ¿Sabe si se encuentra en vía pública? En caso de estructura colapsada pregunte y documente: • ¿en qué sitio se encuentra atrapado? En caso de rescate acuático pregunte y documente: • ¿dónde cayó la persona? En caso de montaña pregunte y documente: • ¿en qué zona? • ¿cuántas personas? • ¿puede dar información de las personas? Ej. (Edad, sexo, contextura, tez, color de ojos, color del cabello, características particulares, vestido). Preguntas y acciones para circunstancias modificadoras: • En caso de estructura colapsada seleccione ESTR.COLAP. • En caso de rescate acuático pregunte seleccione ACUÁTICO.",
+      "circumstances": [
+        {
+          "code": "ESTR.COLAP",
+          "description": "Estructura colapsada",
+          "transfer": "",
+          "copy": "Policía, Bomberos"
+        },
+        {
+          "code": "ACUÁTICO",
+          "description": "Acuático",
+          "transfer": "",
+          "copy": "Policía, Bomberos"
+        },
+        {
+          "code": "MONTAÑA",
+          "description": "Montaña",
+          "transfer": "",
+          "copy": "Policía, Bomberos"
+        },
+        {
+          "code": "TRANS.VERT",
+          "description": "Transporte vertical",
+          "transfer": "",
+          "copy": "Policía, Bomberos, IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos"
+        },
+        {
+          "code": "EST.CL/HER",
+          "description": "Estructura colapsada, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos"
+        },
+        {
+          "code": "ACUAT/HER",
+          "description": "Acuático, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos"
+        },
+        {
+          "code": "MONTA/HER",
+          "description": "Montaña, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos"
+        },
+        {
+          "code": "TR.VE/HER",
+          "description": "Transporte vertical, herido",
+          "transfer": "",
+          "copy": "CRUE, Policía, Bomberos, IDIGER"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Rescate)",
+      "code": "",
+      "short": "CONTINUACIÓN (Rescate)",
+      "label": "Rescate",
+      "description": "",
+      "questions": "• En caso de montaña seleccione MONTAÑA • En caso de transporte vertical seleccione TRANS.VERT • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos. • Seleccione EST.CL/HER, ACUAT/HER, MONTA/HER o TR.VE/HER según corresponda y si adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "715 EVENAT (Evento natural)",
+      "code": "715",
+      "short": "EVENAT",
+      "label": "Evento natural",
+      "description": "Incidentes que ocurren por procesos naturales sin intervención humana y que generan afectación a la vida, al medio ambiente y los bienes.",
+      "questions": "Preguntas para determinar tipificación: • ¿Sabe si hay afectación en algún bien? • ¿Sabe si hay heridos? • ¿Sabe si hay atrapados?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, CRUE, Bomberos, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "802 MANIOBRAPE (Maniobras peligrosas)",
+      "code": "802",
+      "short": "MANIOBRAPE",
+      "label": "Maniobras peligrosas",
+      "description": "Conductor de vehículo realizando maniobras peligrosas en la vía pública, poniendo en riesgo su vida o la de los demás.",
+      "questions": "Preguntas para documentar: • ¿Sabe cuántos vehículos están realizando las maniobras? • ¿Puede dar información del vehículo? • ¿Sabe qué vía tomó? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona que conduce está en estado de alicoramiento? Seleccione LICOR en caso de que la persona que conduce esté en estado de alicoramiento.",
+      "circumstances": [
+        {
+          "code": "LICOR",
+          "description": "Persona en estado de alicoramiento",
+          "transfer": "",
+          "copy": "Policía, Movilidad"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Movilidad"
+    },
+    {
+      "raw_type": "901 MUERTO (Muerto)",
+      "code": "901",
+      "short": "MUERTO",
+      "label": "Muerto",
+      "description": "Este tipo de incidente se debe usar cuando se reporta un caso de muerte de un ser humano y se desconocen las causas, o hay prueba fehaciente de su deceso. Incluye el reporte por hospitales o un primer respondiente.",
+      "questions": "Preguntas para documentar: En caso de homicidio pregunte y documente: • ¿puede dar información del agresor? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si es en vía pública? Seleccione VIA.PUB en caso de que sea en vía pública. • ¿Sabe si se encuentra en lugar de difícil acceso? Seleccione RESCATE en caso de ser en lugar de difícil acceso. • Seleccione V.P/RES si es en un lugar de difícil acceso y adicionalmente es en vía pública.",
+      "circumstances": [
+        {
+          "code": "VIA.PUB",
+          "description": "Vía pública",
+          "transfer": "",
+          "copy": "Policía, Movilidad"
+        },
+        {
+          "code": "RESCATE",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, Bomberos"
+        },
+        {
+          "code": "V.P/RES",
+          "description": "Vía pública, rescate",
+          "transfer": "",
+          "copy": "Policía, Bomberos, Movilidad"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "902 SECUESTRO (Secuestro)",
+      "code": "902",
+      "short": "SECUESTRO",
+      "label": "Secuestro",
+      "description": "Delito que consiste en retener de forma indebida o ilegal con fines extorsivos.",
+      "questions": "No hay preguntas.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "Policía",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "903 RAPTO (Rapto)",
+      "code": "903",
+      "short": "RAPTO",
+      "label": "Rapto",
+      "description": "Delito consistente en la retención de una persona, privándola de libertad en contra de su voluntad, sin fines delictivos. Por ejemplo: el rapto de un hijo por parte de su padre.",
+      "questions": "Preguntas para documentar: • ¿Sabe hace cuánto ocurrió? • ¿Sabe si es en vehículo? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "904 HUREFECT (Hurto efectuado)",
+      "code": "904",
+      "short": "HUREFECT",
+      "label": "Hurto efectuado",
+      "description": "Comete este delito quien toma un bien mueble y ajeno sin la voluntad de su dueño, sometiendo a la víctima a estado de indefensión o con violencia sobre las personas o las cosas. Aquellos hurtos en los que no hay presencia de agresores. O cuando no existan características o sobrepase el tiempo previsto en el 905 Usar también para casos de: • Estafa: delito contra el patrimonio económico: lo comete la persona que utilizando maniobras o engaños obtiene provecho económico para sí o para un tercero. • Abuso de confianza: incidente en el que una persona comete un delito afectando a otra persona que depositó en ella su confianza por su entorno o ambiente. • Hurto simple: consiste el delito de hurto simple en el apoderamiento ilegítimo de una cosa mueble, ajena en todo o en parte, realizado sin fuerza en las cosas, ni violencia o intimidación en las personas. • Abigeato: Hurto de animales semovientes.",
+      "questions": "Preguntas para determinar tipificación: • ¿Sabe hace cuánto ocurrió? Si son menos de 30 minutos tipificar como 905 – HURPROCESO. Preguntas y acciones para circunstancias modificadoras: • Si se reporta hurto de vehículo seleccionar VEHI. • ¿Sabe si hay heridos? Seleccionar HERIDO si hay heridos. • Seleccionar VH/HER si se reporta hurto de vehículo y si adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "VEHI",
+          "description": "Vehículo",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "VH/HER",
+          "description": "Vehículo, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "905 HURPROCESO (Hurto en proceso)",
+      "code": "905",
+      "short": "HURPROCESO",
+      "label": "Hurto en proceso",
+      "description": "Se tipifica con este código aquellos casos en los cuales el usuario puede informar alguna(s) característica(s) del delincuente(s) implicado(s) o del medio en que se moviliza o la ruta que siguió, en un tiempo razonablemente corto de máximo 30 minutos. Comete este delito quien toma un bien mueble y ajeno sin la voluntad de su dueño. Delito a mano armada que ocurre en el acto, deteniendo el paso o el curso normal de las cosas, deteniendo el paso a una persona para agredirla hurtándole sus pertenencias. Usar también para casos de: • Desvalijadores en acción: se refiere al hurto de partes de automotores; puede ser una contravención o un delito, dependiendo de la parte hurtada, si dicha parte es esencial para el funcionamiento del vehículo se convierte en delito. • Raponazo: está sujeto a su tipificación de los dos tipos de incidentes HUREFE, ATHUPR teniendo en cuenta la variable del tiempo y distancia donde ocurrieron los hechos. • Abigeato: Hurto de animales semovientes.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de los delincuentes? • ¿Sabe cómo se movilizan? Preguntas y acciones para circunstancias modificadoras: • Si se reporta hurto de vehículo seleccionar VEHI. • ¿Sabe si hay heridos? Seleccionar HERIDO si hay heridos. • Seleccionar VH/HER si se reporta hurto de vehículo y si adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "VEHI",
+          "description": "Vehículo",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "VH/HER",
+          "description": "Vehículo, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "906 VIOSEXUAL (Violencia sexual)",
+      "code": "906",
+      "short": "VIOSEXUAL",
+      "label": "Violencia sexual",
+      "description": "El concepto de violencia sexual incluye diferentes tipos y manifestaciones que pueden ser las siguientes: 1. Acceso carnal violento. 2. La violación. 3. Inducir, obligar o permitir a un adulto, niño o niña que toque de manera inapropiada a otra. 4. Explotación sexual: todo tipo de actividad en que una persona usa el cuerpo de otra para sacar ventaja o provecho de carácter sexual, basándose en una relación de poder.",
+      "questions": "Preguntas para documentar: • ¿Sabe si está ocurriendo o hace cuánto ocurrió? • ¿Puede suministrar información del agresor? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos? Seleccionar HERIDO si hay heridos. • Si durante la llamada, el ciudadano manifiesta que la víctima es una mujer pregunte lo siguiente de acuerdo con los hechos: • ¿Sabe si está ocurriendo o hace cuánto ocurrió? • Si ocurrió hace más de 72 horas seleccione MUJPOSEVENTO. Si además se reportan",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "MUJRECIENTE",
+          "description": "Violencia sexual contra mujer mayor de edad reciente",
+          "transfer": "PSICOLOGÍA",
+          "copy": "Policía, CRUE, SDMuj er"
+        },
+        {
+          "code": "MUJPOSEVENTO",
+          "description": "Violencia sexual contra mujer mayor de edad en pos evento",
+          "transfer": "PSICOLOGÍA",
+          "copy": "Policía, CRUE, SDMujer"
+        },
+        {
+          "code": "HER/M.REC",
+          "description": "Herido y violencia sexual contra mujer mayor de edad reciente",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE, SDMuj er"
+        },
+        {
+          "code": "HER/M.PEV",
+          "description": "Herido y violencia sexual contra mujer mayor de edad posevento",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE, SDMuj er"
+        }
+      ],
+      "transfer": "PSICOLOGÍA",
+      "copy": "Policía, CRUE"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Violencia sexual)",
+      "code": "",
+      "short": "CONTINUACIÓN (Violencia sexual)",
+      "label": "Violencia sexual",
+      "description": "",
+      "questions": "heridos seleccione HER/M.PEV • Si ocurrió antes de 72 horas seleccione MUJRECIENTE. Si además se reportan heridos seleccione HER/M.REC",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "909 EXACOB (Exhibiciones o actos obscenos)",
+      "code": "909",
+      "short": "EXACOB",
+      "label": "Exhibiciones o actos obscenos",
+      "description": "Realizar actos sexuales o de exhibicionismo en presencia de adultos, niños o niñas.",
+      "questions": "Preguntas para documentar: • ¿Puede suministrar información de la persona? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay menores presentes? Seleccione MENOR si hay menores presentes.",
+      "circumstances": [
+        {
+          "code": "MENOR",
+          "description": "Menor de edad",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medid a gubernamental",
+          "transfer": "",
+          "copy": ""
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "910 LESPER (Lesiones personales)",
+      "code": "910",
+      "short": "LESPER",
+      "label": "Lesiones personales",
+      "description": "Delito en contra de la vida y la salud personal, que comete el que cause a otro un daño que deje en su cuerpo un vestigio o altere su salud física. Tener en cuenta para la redacción: zona del cuerpo dónde ocurre la herida.",
+      "questions": "Preguntas para documentar: • ¿Puede suministrar información del agresor? • Si la persona está herida pregunte y documente ¿sabe con qué lo hirieron? Si la respuesta es con arma de fuego tipifique como DISPAROS (911) y active circunstancia modificadora HERIDO Si la persona indica, documente medida de protección Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si requiere ambulancia? Seleccione HERIDO si se requiere ambulancia.",
+      "circumstances": [
+        {
+          "code": "MALTMUJER",
+          "description": "Maltrato a la mujer",
+          "transfer": "",
+          "copy": "Policía, SDMujer"
+        },
+        {
+          "code": "RIESGOFEM",
+          "description": "Riesgo de feminicidio",
+          "transfer": "",
+          "copy": "Policía, SDMujer"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "HER/M.MUJ",
+          "description": "Herido y maltrato a la mujer",
+          "transfer": "",
+          "copy": "Policía, CRUE , SDMujer"
+        },
+        {
+          "code": "HER/R.FEM",
+          "description": "Herido y riesgo de feminicidio",
+          "transfer": "",
+          "copy": "Policía,CRUE, SDMujer"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "911 DISPAROS (Disparos)",
+      "code": "911",
+      "short": "DISPAROS",
+      "label": "Disparos",
+      "description": "Información donde se reporta el haber escuchado o presenciado disparos, sabiendo o no el lugar de dónde provienen. No depende de la intencionalidad. Puede haberse disparado a sí mismo.",
+      "questions": "Preguntas para documentar: • ¿Puede suministrar información de la persona? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si requiere ambulancia? Seleccione HERIDO si se requiere ambulancia.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "912 DAÑOSPP (Daños en propiedad pública o privada)",
+      "code": "912",
+      "short": "DAÑOSPP",
+      "label": "Daños en propiedad pública o privada",
+      "description": "Daño ocasionado a bienes de titularidad pública, tales como plazas, caminos públicos, parques, calles. Incluye propiedad privada. Escribir o fijar leyendas, dibujos, grafitis, sin el debido permiso.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? • ¿Sabe qué está dañando?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "914 VHABAN (Vehículo abandonado)",
+      "code": "914",
+      "short": "VHABAN",
+      "label": "Vehículo abandonado",
+      "description": "Vehículo abandonado en un lugar, cuya presencia no es habitual en la zona donde se encuentra.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información del vehículo?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "VHMALE (Vehículo mal estacionado)",
+      "code": "",
+      "short": "VHMALE (Vehículo mal estacionado)",
+      "label": "Vehículo mal estacionado",
+      "description": "Vehículo que puede estar obstruyendo una vía o un garaje.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información del vehículo?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Movilidad"
+    },
+    {
+      "raw_type": "915 VIODOM (Intento o violación de domicilio)",
+      "code": "915",
+      "short": "VIODOM",
+      "label": "Intento o violación de domicilio",
+      "description": "Avistamientos de personas que están tratando de entrar en una propiedad en cuyas inmediaciones el Usuario 123 manifiesta no conocerlo (el desconocido aún no ha entrado en la propiedad). Si han ingresado a la propiedad se debe tipificar como 905 - HURPROCESO. Utilizar este tipo de incidente para casos donde se reporta una persona que ingresa a una propiedad sin autorización de su residente.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "916 SOSPEVH (Persona o vehículo sospechoso)",
+      "code": "916",
+      "short": "SOSPEVH",
+      "label": "Persona o vehículo sospechoso",
+      "description": "Persona que la hace sospechosa su actitud con relación al comportamiento de las personas del lugar dónde se encuentra, se puede movilizar a pie o en un vehículo",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona o vehículo?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gu bernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "918 INTSUI (Intento de suicidio)",
+      "code": "918",
+      "short": "INTSUI",
+      "label": "Intento de suicidio",
+      "description": "Situación en la que una persona está realizando o ha realizado acciones para quitarse la vida.",
+      "questions": "Preguntas para documentar: • ¿Sabe qué acciones realizó o está realizando para quitarse la vida? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si se encuentra en lugar de difícil acceso? Seleccione RESCATE si se encuentra en lugar de difícil acceso.",
+      "circumstances": [
+        {
+          "code": "RESCATE",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE, Bomberos"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "TARM",
+      "copy": "Policía, CRUE"
+    },
+    {
+      "raw_type": "919 PERAUX (Persona pidiendo auxilio)",
+      "code": "919",
+      "short": "PERAUX",
+      "label": "Persona pidiendo auxilio",
+      "description": "Este tipo de incidente se debe utilizar para reportes en los cuales alguna persona o personas manifiestan requerir ayuda de tipo policial, médico, o de otra clase, pero no se logra identificar con precisión la situación que se ha suscitado.",
+      "questions": "Describa la situación.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "922 NARCÓTICOS (Narcóticos)",
+      "code": "922",
+      "short": "NARCÓTICOS",
+      "label": "Narcóticos",
+      "description": "Tener, almacenar, facilitar, distribuir, expender o consumir drogas o sustancias prohibidas.",
+      "questions": "Preguntas para documentar: • ¿Sabe si está en el espacio público o al interior de un establecimiento? • ¿Puede dar información de la persona? • ¿Sabe si hay menores de edad consumiendo?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "MENOR",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "923 HABITCALLE (Habitante de la calle)",
+      "code": "923",
+      "short": "HABITCALLE",
+      "label": "Habitante de la calle",
+      "description": "Persona sin distinción de sexo, raza o edad, que hace de la calle su lugar de habitación, ya sea de forma permanente o transitoria y que genere comportamientos contrarios a la convivencia.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? • ¿Sabe qué comportamientos está realizando? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si son menores de edad? Seleccione MENOR si hay menores de edad",
+      "circumstances": [
+        {
+          "code": "MENOR",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "924 ENFERMO (Enfermo)",
+      "code": "924",
+      "short": "ENFERMO",
+      "label": "Enfermo",
+      "description": "Cualquier manifestación de enfermedad que no se encuentre en ninguno de los códigos de esta guía.",
+      "questions": "Preguntas para determinar tipificación: • ¿Sabe qué tiene el paciente? Cambie a la tipificación que corresponda si existe en la Guía de Tipificación. De lo contrario documente. Preguntas y acciones para circunstancias modificadoras: Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplica ción y seleccione circunstancia modificadora VACUNA.",
+      "circumstances": [
+        {
+          "code": "EISP",
+          "description": "Evento de interés de salud pública",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "EISP/ASES",
+          "description": "Asesoría por evento de interés de salud pública",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "926 EMBRIAGUEZ (Embriaguez)",
+      "code": "926",
+      "short": "EMBRIAGUEZ",
+      "label": "Embriaguez",
+      "description": "Se utiliza para tipificar incidentes en los que se reportan personas que se encuentran bajo los efectos del alcohol y a las que dicho estado no les permite dilucidar o sortear situaciones cotidianas o que están alterando el orden público. Venta y consumo en el espacio público.",
+      "questions": "Preguntas para documentar: • ¿Sabe si están causando algún daño? • ¿Sabe si está en el espacio público o al interior de un establecimiento? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay menores de edad consumiendo? Seleccione MENOR si hay menores de edad consumiendo.",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "MENOR",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "927 QUEMAS (Quemas)",
+      "code": "927",
+      "short": "QUEMAS",
+      "label": "Quemas",
+      "description": "Fuego controlado ocasionado por acto humano, que genera riesgo de un potencial fuego incontrolado.",
+      "questions": "Preguntas para documentar: • ¿Sabe qué se está quemando? • ¿Puede dar información de la persona que está realizando las quemas?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos, IDIGER"
+    },
+    {
+      "raw_type": "928 INUNDACIÓN (Inundación)",
+      "code": "928",
+      "short": "INUNDACIÓN",
+      "label": "Inundación",
+      "description": "Son caudales o niveles de agua que afectan edificaciones, infraestructura o el medio ambiente.",
+      "questions": "Preguntas para documentar: • ¿Sabe si hay afectación de vías? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si es en edificación o sótano? Seleccione EDIF/SOTA si es en edificación o sótano. • ¿Sabe si hay heridos o afectados? Seleccione HERIDO si hay heridos o afectados. • Seleccione ED/SO/HER si es en edificación o sótano y adicionalmente hay heridos o afectados.",
+      "circumstances": [
+        {
+          "code": "EDIF/SOTA",
+          "description": "Edificación, sótano",
+          "transfer": "",
+          "copy": "Policía, Bomberos, IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "ED/SO/HER",
+          "description": "Edificación, sótano, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos, IDIGER"
+    },
+    {
+      "raw_type": "929 EXPLOSIÓN (Explosión)",
+      "code": "929",
+      "short": "EXPLOSIÓN",
+      "label": "Explosión",
+      "description": "Liberación brusca de una gran cantidad de energía, de origen térmico, químico o nuclear, encerrada en un volumen relativamente pequeño, la cual produce un incremento violento y rápido de la presión, con desprendimiento de calor, luz y gases. Va acompañada de estruendo y rotura violenta del recipiente contenedor.",
+      "questions": "Preguntas para documentar: • ¿Sabe si hay alguna afectación? • ¿Sabe si hay afectación de vías? • ¿Conoce la causa? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "TARM",
+          "copy": "Policía, CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "930 FEREMA (Fenómeno de remoción de masa)",
+      "code": "930",
+      "short": "FEREMA",
+      "label": "Fenómeno de remoción de masa",
+      "description": "Son desplazamientos descendentes del suelo o rocas a lo largo de una o varias superficies. Incluye avalanchas, derrumbes, amenazas de deslizamientos y caída de rocas.",
+      "questions": "Preguntas para documentar: • ¿Sabe si hay edificaciones afectadas? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos o atrapados? Seleccione HERIDO si hay heridos o atrapados. • ¿Sabe si hay afectación de vía pública? Seleccione VIA.PUB si hay afectación de vía",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "VIA.PUB",
+          "description": "Vía pública",
+          "transfer": "",
+          "copy": "Policía, Bomberos, Movilidad, IDIGER"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Bomberos, IDIGER"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Fenómeno de remoción de masa)",
+      "code": "",
+      "short": "CONTINUACIÓN (Fenómeno de remoción de masa)",
+      "label": "Fenómeno de remoción de masa",
+      "description": "",
+      "questions": "pública. • Seleccione HER/V.P si hay heridos o atrapados y adicionalmente hay afectación de vía pública.",
+      "circumstances": [
+        {
+          "code": "HER/V.P",
+          "description": "Herido, vía pública",
+          "transfer": "",
+          "copy": "Policía, CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, CRUE, Bomberos, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "931 INCENDIO (Incendio)",
+      "code": "931",
+      "short": "INCENDIO",
+      "label": "Incendio",
+      "description": "Incendios o fuegos sin control.",
+      "questions": "Preguntas para documentar: En caso de estructural o sótano pregunte y documente • ¿Sabe el tipo de edificación? • ¿Sabe en qué piso? En caso de vehicular pregunte y documente • ¿Sabe qué tipo de vehículo? En caso de forestal pregunte y documente • ¿Sabe si hay alguna edificación cercana? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos o atrapados? Seleccione HERIDO si hay heridos o atrapados. • En caso de estructural o sótano seleccione ESTR/SOTA. • En caso de vehicular seleccione VEHICULAR. • En caso de forestal seleccione FORESTAL. • En caso de túnel o relleno sanitario seleccione TUN/R.SAN. • Seleccione ES/SO/HER, VEHI/HER, FORE/HER o T/R.S/HER según el tipo de incendio que corresponda y si adicionalmente hay heridos o atrapados.",
+      "circumstances": [
+        {
+          "code": "ESTR/SOTA",
+          "description": "Estructural, sótano",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        },
+        {
+          "code": "VEHICULAR",
+          "description": "",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        },
+        {
+          "code": "FORESTAL",
+          "description": "",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        },
+        {
+          "code": "TUN/R.SAN",
+          "description": "Túnel, relleno sanitario",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "CRUE, Bomberos"
+        },
+        {
+          "code": "ES/SO/HER",
+          "description": "Estructural, sótano, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "VEHI/HER",
+          "description": "Vehicular, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "FORE/HER",
+          "description": "Forestal, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "T/R.S/HER",
+          "description": "Túnel, relleno sanitario, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Bomberos"
+    },
+    {
+      "raw_type": "932 RUIDO (Ruido)",
+      "code": "932",
+      "short": "RUIDO",
+      "label": "Ruido",
+      "description": "Sonidos o ruidos en actividades, fiestas, reuniones o eventos similares que afecten la convivencia del vecindario, cuando generen molestia por su impacto auditivo; cualquier medio de producción de sonidos o dispositivos o accesorios o maquinaria que produzcan ruidos, desde bienes muebles o inmuebles.",
+      "questions": "Preguntas para documentar: • ¿Sabe si es en espacio público o al interior de un inmueble?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "933 DELINCAPTU (Delincuente capturado por civil)",
+      "code": "933",
+      "short": "DELINCAPTU",
+      "label": "Delincuente capturado por civil",
+      "description": "Persona capturada por la ciudadanía porque presuntamente cometió un delito y la autoridad debe acercarse a verificar dicha situación.",
+      "questions": "Preguntas para documentar: • ¿Sabe si están en zona pública o al interior de un inmueble? • ¿Sabe el motivo de la captura?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "934 RIÑA (Riña)",
+      "code": "934",
+      "short": "RIÑA",
+      "label": "Riña",
+      "description": "Es todo incidente o altercado que pueda surgir entre dos o más personas ocasionando agresiones físicas, que pueden llevar incluso a poner en riesgo la vida de una persona. Reñir, incitar o incurrir en confrontaciones violentas que puedan derivar en agresiones físicas.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si se están usando armas de fuego? Seleccione U.ARM.FUE si se están usando armas de fuego. • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos. • Seleccione U.A.F/HER si se están usando armas de fuego y adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "VIOINTFAM",
+          "description": "Violencia intrafamiliar",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "VIOGENERO",
+          "description": "Violencia de género",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "U.ARM.FUE",
+          "description": "Uso de arma de fuego",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "U.A.F/HER",
+          "description": "Uso de arma de fuego, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "935 VERIFSITUA (Verificar situación)",
+      "code": "935",
+      "short": "VERIFSITUA",
+      "label": "Verificar situación",
+      "description": "Se utiliza este código para tipificar situaciones no contenidas en la Guía de Tipificación. Su selección busca la verificación o asistencia de la Agencia competente al lugar del incidente. Utilizar este tipo de incidente para casos de: 1. Caso Cuenta: Incidente de persona que se niega a pagar la cuenta en un establecimiento comercial. 2. Acaparamiento y especulación: Persona que se vale de su condición para retener con fines lucrativos malintencionados un elemento de primera necesidad. 3. Actos contra símbolos: Es una contravención y consiste en actuar en detrimento de un símbolo patrio. 4. Moneda falsa: Caso donde se presume que las denominaciones de dinero que porta una persona son falsas, quien determina si la denominación es falsa es un perito en la materia. 5. Uso ilícito de comunicaciones: Consiste en dar uso indebido o escuchar, grabar conversaciones ajenas por cualquier medio electrónico cuándo no se tiene la autorización legal para ello. 6. Cohecho o concusión: Cohecho consiste en dar u ofrecer y concusión en recibir o exigir dádiva, dinero u",
+      "questions": "Describa la situación.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Verificar situación)",
+      "code": "",
+      "short": "CONTINUACIÓN (Verificar situación)",
+      "label": "Verificar situación",
+      "description": "otra contraprestación a un servidor público para que realice o no un acto propio de sus funciones. 7. Firma de boletas de citación: es un llamamiento que hace una autoridad judicial a una persona para que comparezca ante ella con un objeto determinado que se le haga saber. 8. Reclutamiento forzado: Procedimiento que se llevará a cabo para las llamadas donde informen de la presencia del ejército en determinado sector de la ciudad llevándose a jóvenes para el servicio militar, preguntar tipo de vehículo y placas.",
+      "questions": "",
+      "circumstances": [],
+      "transfer": "",
+      "copy": ""
+    },
+    {
+      "raw_type": "SIMULACRO (Simulacro)",
+      "code": "",
+      "short": "SIMULACRO (Simulacro)",
+      "label": "Simulacro",
+      "description": "Solicitar entidad donde se va a realizar, fecha, hora y tipo de simulacro.",
+      "questions": "Preguntas para documentar: • ¿En dónde se hará el simulacro?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, CRUE, Bomberos, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "936 PERTENVIA (Persona tendida en la vía)",
+      "code": "936",
+      "short": "PERTENVIA",
+      "label": "Persona tendida en la vía",
+      "description": "Incidente que describe la presencia de una persona que se encuentra tendida o acostada en la vía pública, y de la cual se desconoce su estado de salud.",
+      "questions": "Preguntas para documentar: • ¿Conoce estado de salud de la persona? • ¿Sabe qué le sucedió a la persona? • ¿Sabe si está sangrando?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "937 URGANIMAL (Urgencia animal)",
+      "code": "937",
+      "short": "URGANIMAL",
+      "label": "Urgencia animal",
+      "description": "Atrapado: Aquel animal que es reportado como atrapado en un lugar de difícil acceso. Maltratado: Todo acto de violencia, crueldad, abandono, desprotección, puesta en riesgo, tenencia irresponsable, sufrimiento físico u otras que afecten el bienestar del animal. Muerto: Hallazgo de un animal muerto. Para los casos de Urgencias Veterinarias añadir el Código de disposición URG_VET.",
+      "questions": "Preguntas para documentar: En caso de animal atrapado pregunte y documente: • ¿Sabe dónde se encuentra atrapado? Preguntas y acciones para circunstancias modificadoras: • En caso de animal atrapado seleccione ATRAPADO. • En caso de animal maltratado seleccione MALTRATADO. • En caso de animal muerto seleccione MUERTO.",
+      "circumstances": [
+        {
+          "code": "ATRAPADO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, Bomberos, IDIGER"
+        },
+        {
+          "code": "MALTRATADO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "MUERTO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, IDIGER"
+    },
+    {
+      "raw_type": "938 ANIPEL (Animal peligroso)",
+      "code": "938",
+      "short": "ANIPEL",
+      "label": "Animal peligroso",
+      "description": "Se trata de un animal que, por sus características y condiciones, puede llegar a ocasionar o ha ocasionado daño a los habitantes de la ciudad. Cuando los niños, niñas y adolescentes sean",
+      "questions": "Preguntas para documentar: En caso de abejas pregunte y documente: • ¿Sabe dónde se encuentran las abejas?",
+      "circumstances": [
+        {
+          "code": "ABEJA",
+          "description": "",
+          "transfer": "",
+          "copy": "Bomberos, IDIGER"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, IDIGER"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Animal peligroso)",
+      "code": "",
+      "short": "CONTINUACIÓN (Animal peligroso)",
+      "label": "Animal peligroso",
+      "description": "tenedores de animales potencialmente peligrosos. Incluye abejas y avispas: Manejo y control de enjambres de abejas o avispas ubicados en estructuras o edificaciones y que representan riesgo para la comunidad. Incluye plagas.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe de qué animal se trata? Si se trata de abejas o avispas seleccione ABEJA. Si se trata de una plaga seleccione PLAGA. • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos. • Seleccione ABEJ/HER si se trata de abejas o avispas y adicionalmente hay heridos. • Seleccione PLAG/HER si se trata de plaga y adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "PLAGA",
+          "description": "",
+          "transfer": "",
+          "copy": "IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, IDIGER"
+        },
+        {
+          "code": "ABEJ/HER",
+          "description": "Abeja, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "PLAG/HER",
+          "description": "Plaga, herido",
+          "transfer": "",
+          "copy": "CRUE, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "IDIGER"
+    },
+    {
+      "raw_type": "941 TRASTMENT (Trastorno mental)",
+      "code": "941",
+      "short": "TRASTMENT",
+      "label": "Trastorno mental",
+      "description": "Cualquier alteración del comportamiento de una persona y que potencialmente pone en riesgo la vida de sí mismo o de otras personas. Persona que solicita voluntariamente hablar con el psicólogo o manifiesta tener problemas de salud mental. Palabras clave: ansiedad, depresión, angustia o querer dar asesoría a un tercero.",
+      "questions": "Preguntas para documentar: • ¿Sabe en qué sitio se encuentra? • ¿Sabe si causó algún daño a si misma o a otros? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona está armada o es agresiva? Seleccione U.AR/P.AGR si la persona está armada o es agresiva. • Si se informa reacción adversa, posterior a vacuna COVID19. Pregunte y documente por lugar y tiempo de aplica ción y seleccione circunstancia modificadora VACUNA.",
+      "circumstances": [
+        {
+          "code": "U.AR/P.AGR",
+          "description": "Uso de arma, persona agresiva",
+          "transfer": "PSICOLOGÍA",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "VACUNA",
+          "description": "Reacción adversa pos vacuna",
+          "transfer": "TARM",
+          "copy": "CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "PSICOLOGÍA",
+      "copy": "CRUE"
+    },
+    {
+      "raw_type": "942 ACCTRA (Accidente de tránsito)",
+      "code": "942",
+      "short": "ACCTRA",
+      "label": "Accidente de tránsito",
+      "description": "Suceso eventual que altera el orden regular del tránsito en la ciudad, en el cual están involucrados vehículos contra: personas, estructuras, mobiliario público, otros vehículos o cualquier otro actor de la vía. En caso de que el accidente se origine por un vehículo en fuga clonar y asociar incidente con tipo 802 - MANIOBRAPE.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de los vehículos o elementos implicados? • ¿Sabe si bloquean alguna vía? • ¿Sabe si se presentan vehículos volcados o que no puedan ser movilizados? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos o atrapados? Seleccione HERIDO si hay heridos. Seleccione RESCATE si hay atrapados. Seleccione HER/RES si hay heridos y",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "CRUE, Movilidad"
+        },
+        {
+          "code": "RESCATE",
+          "description": "",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad"
+        },
+        {
+          "code": "TR.MASIVO",
+          "description": "Transporte masivo",
+          "transfer": "",
+          "copy": "Movilidad, IDIGER"
+        },
+        {
+          "code": "MAT.PEL",
+          "description": "Materiales peligrosos",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad"
+        },
+        {
+          "code": "HER/RES",
+          "description": "Herido, rescate",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad"
+        }
+      ],
+      "transfer": "",
+      "copy": "Movilidad"
+    },
+    {
+      "raw_type": "CONTINUACIÓN (Accidente de tránsito)",
+      "code": "",
+      "short": "CONTINUACIÓN (Accidente de tránsito)",
+      "label": "Accidente de tránsito",
+      "description": "",
+      "questions": "adicionalmente hay atrapados. • Si hay vehículos de transporte masivo seleccione TR.MASIVO. • ¿Debido al choque sabe si quedan materiales peligrosos o escombros en vía? Seleccione MAT.PEL si quedan materiales peligrosos en la vía. • Seleccione HER/RES si hay heridos y adicionalmente hay atrapados. • Seleccione HER/T.MAS si hay heridos y adicionalmente hay vehículos de transporte masivo. • Seleccione M.PEL/HER si hay materiales peligrosos y adicionalmente hay heridos. • Seleccione RES/T.MAS si hay atrapados y adicionalmente hay vehículos de transporte masivo. • Seleccione M.PEL/RES si hay materiales peligrosos y adicionalmente hay atrapados. • Seleccione T.MAS/M.P si hay vehículos de transporte masivo y adicionalmente hay materiales peligrosos. • Seleccione T.M/H/R si hay vehículos de transporte masivo y adicionalmente hay heridos y atrapados. • Seleccione M.P/H/R si hay materiales peligrosos y adicionalmente hay heridos y atrapados. • Seleccione T.M/M.P/H si hay vehículos de transporte masivo y adicionalmente hay materiales peligrosos y heridos. • Seleccione T.M/M.P/R si hay vehículos de transporte masivo y adicionalmente hay materiales peligrosos y atrapados. • Seleccione T/M/H/R si hay vehículos de transporte masivo y adicionalmente hay materiales peligrosos, heridos y atrapados.",
+      "circumstances": [
+        {
+          "code": "HER/T.MAS",
+          "description": "Herido, transporte masivo",
+          "transfer": "",
+          "copy": "CRUE, Movilidad, IDIGER"
+        },
+        {
+          "code": "M.PEL/HER",
+          "description": "Materiales peligrosos, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad"
+        },
+        {
+          "code": "RES/T.MAS",
+          "description": "Rescate, transporte masivo",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "M.PEL/RES",
+          "description": "Materiales peligrosos, rescate",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad"
+        },
+        {
+          "code": "T.MAS/M.P",
+          "description": "Transporte masivo, materiales peligrosos",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "T.M/H/R",
+          "description": "Transporte masivo, herido, rescate",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "M.P/H/R",
+          "description": "Materiales peligrosos, herido, rescate",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad"
+        },
+        {
+          "code": "T.M/M.P/H",
+          "description": "Transporte masivo, materiales peligrosos, herido",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "T.M/M.P/R",
+          "description": "Transporte masivo, materiales peligrosos, rescate",
+          "transfer": "",
+          "copy": "Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "T/M/H/R",
+          "description": "Transporte masivo, materiales peligrosos, herido, rescate",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, Movilidad, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "CRUE, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "RECONOCIMI (Reconocimiento de SOAT)",
+      "code": "",
+      "short": "RECONOCIMI (Reconocimiento de SOAT)",
+      "label": "Reconocimiento de SOAT",
+      "description": "Acción que debe realizar el oficial de policía de tránsito por requerimiento de entidad de salud.",
+      "questions": "Preguntas para documentar: • Nombre del paciente • Dirección y localidad donde ocurrió el ACCTRA",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Movilidad"
+    },
+    {
+      "raw_type": "943 CONVEH (Congestión vehicular)",
+      "code": "943",
+      "short": "CONVEH",
+      "label": "Congestión vehicular",
+      "description": "Aumento de tiempo de viaje por causa de factores externos o anormales del funcionamiento de la vía normal. Palabras clave: Daño en dispositivo eléctrico que regula el tránsito de vehículos y peatones, semáforo dañado, trancón.",
+      "questions": "Preguntas para documentar: • ¿Sabe la causa? • Si reportan daño en un semáforo indagar y documentar de qué tipo de falla se trata: apagado, intermitente, poca duración en verde, etc.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Movilidad"
+    },
+    {
+      "raw_type": "944 MANMOT (Manifestación o motín)",
+      "code": "944",
+      "short": "MANMOT",
+      "label": "Manifestación o motín",
+      "description": "Manifestación realizada generalmente en el espacio público, que tiene como finalidad exteriorizar deseos, aspiraciones, sentimientos o protestas. Motín es un movimiento desordenado de personas que concurre con actos de violencia en contra de las autoridades, eventualmente puede derivar en lesiones a personas o daños materiales. También se incluyen actos de sabotaje.",
+      "questions": "Preguntas para documentar: • ¿Sabe si se está causando algún daño? • ¿Sabe si hay afectación de vías? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE, Movilidad, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, Movilidad, IDIGER"
+    },
+    {
+      "raw_type": "946 REDIAC (Remisión de dinero o acompañamiento)",
+      "code": "946",
+      "short": "REDIAC",
+      "label": "Remisión de dinero o acompañamiento",
+      "description": "Se define básicamente como la solicitud que realiza un ciudadano o una entidad para un acompañamiento de Policía en el traslado de dineros u otros elementos que representen valor de un sitio a otro.",
+      "questions": "Preguntas para documentar: • Si el acompañamiento es de tipo bancario, pregunte el nombre de la entidad.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "947 ALARMA (Alarma)",
+      "code": "947",
+      "short": "ALARMA",
+      "label": "Alarma",
+      "description": "Existen dos tipos de reportes de alarmas: 1. Grabaciones que son remitidas automáticamente a la línea 123. Solo se tramita la grabación de alarma bancaria y comunitaria. 2. Reportes de personal de empresas de monitoreo de alarmas; siempre y cuando el supervisor este en el sitio y suministre información de lo que está sucediendo. Si la llamada de alarma no aplica trámite deje la circunstancia modificadora en blanco.",
+      "questions": "Preguntas para documentar: • ¿En qué edificación?",
+      "circumstances": [
+        {
+          "code": "BANC/COMU",
+          "description": "Bancaria o comunitaria",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": ""
+    },
+    {
+      "raw_type": "950 ACCSUB (Acción subversiva)",
+      "code": "950",
+      "short": "ACCSUB",
+      "label": "Acción subversiva",
+      "description": "Se usa para referirse a un ataque subversivo a una unidad policial o militar o a la sociedad civil, de igual forma para referirse al avistamiento o presencia de un miembro perteneciente a un grupo subversivo.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si está causando daños? Seleccione DAÑO si se están causando daños a elementos. • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos. • Seleccione DAÑO/HER si están causando daños a elementos y adicionalmente hay heridos.",
+      "circumstances": [
+        {
+          "code": "DAÑO",
+          "description": "Daño a elementos",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "DAÑO/HER",
+          "description": "Daño a elementos, herido",
+          "transfer": "",
+          "copy": "Policía, CRUE, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "951 INVASIONTE (Invasión de terreno o edificio)",
+      "code": "951",
+      "short": "INVASIONTE",
+      "label": "Invasión de terreno o edificio",
+      "description": "Invasión u ocupación de hecho en un terreno o edificio sin ser su dueño o poseedor. Perturbar, alterar o interrumpir la posesión o mera tenencia de un bien inmueble ocupándolo ilegalmente.",
+      "questions": "Preguntas para documentar: • ¿Sabe cuántos invasores hay aproximadamente? • ¿Sabe hace cuánto empezó la invasión? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si las personas que hacen la invasión son migrantes o desplazados?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación a la Medida Gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "MIGR/DESP",
+          "description": "Migrantes o desplazados",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "952 PERSABAN (Persona abandonada)",
+      "code": "952",
+      "short": "PERSABAN",
+      "label": "Persona abandonada",
+      "description": "Información sobre abandono de menor, personas de la tercera edad o personas en condición de discapacidad abandonada. También incluye los casos en donde se reporta que los padres no han recogido a un menor del colegio.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona abandonada? • ¿Sabe cuánto tiempo lleva abandonada?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "953 MUERTENAT (Muerte natural)",
+      "code": "953",
+      "short": "MUERTENAT",
+      "label": "Muerte natural",
+      "description": "Se define así a toda muerte que se dé, por causas naturales, de manera no violenta y donde no intervino la voluntad ni las acciones de las demás personas.",
+      "questions": "Preguntas para documentar: • ¿Sabe si el cuerpo está en zona pública o al interior de un inmueble? • ¿Puede dar información de la persona fallecida? • Documente nombre, cédula, edad y causa del deceso. Preguntas y acciones para circunstancias modi ficadoras: • En caso de que el deceso sea confirmado o exista presunción de enfermedad infecciosa (p.ej. COVID- 19) seleccione la circunstancia modificadora PRVSANITAR",
+      "circumstances": [
+        {
+          "code": "PRVSANITAR",
+          "description": "Prevención sanitaria",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "958 ACTOSAMBIE (Actos contra el ambiente)",
+      "code": "958",
+      "short": "ACTOSAMBIE",
+      "label": "Actos contra el ambiente",
+      "description": "Acciones cometidas en detrimento de los recursos naturales protegidos, causando daño ecológico. Por ejemplo: 1. Tala de bosques. 2. Pesca ilícita. 3. Proliferación de basuras. 4. Contaminación aire, agua y suelo.",
+      "questions": "Describa la situación.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "961 APOYO (Solicitud de apoyo o desacato)",
+      "code": "961",
+      "short": "APOYO",
+      "label": "Solicitud de apoyo o desacato",
+      "description": "Solicitud de apoyo a uniformados, este apoyo puede ser solicitado por un desacato o un irrespeto a la autoridad o por otros motivos. Usar también para casos relacionados con: • Asonada: Manifestación pública que quiere impedir el actuar de una autoridad competente Ej. Impedir el sellamiento de un establecimiento público. • Asistencia militar: Es el apoyo que brindan las fuerzas militares a la Policía Nacional en caso de una confrontación armada. • Recoger retenido: Cuando se solicite apoyo por parte de algún funcionario público para llevar a cabo el desarrollo de sus funciones.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos? Seleccione HERIDO si hay heridos.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "964 INDEBUSOES (Indebido uso de establecimiento)",
+      "code": "964",
+      "short": "INDEBUSOES",
+      "label": "Indebido uso de establecimiento",
+      "description": "Comportamientos contrarios a la convivencia, consiste en el funcionamiento de un establecimiento, distinto al que es descrito en los documentos que lo autoriza a funcionar, abierto al público. Consumo de tabaco en establecimientos públicos. Reporte de personas encerradas dentro de establecimientos abiertos al público que estén infringiendo el horario de funcionamiento establecido.",
+      "questions": "Preguntas para documentar: • ¿Sabe el nombre del establecimiento? • ¿Sabe qué funciona en el establecimiento?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "965 FUGPRESOS (Fuga de presos)",
+      "code": "965",
+      "short": "FUGPRESOS",
+      "label": "Fuga de presos",
+      "description": "Persona que se encuentra legalmente detenida y se escapa del debido cuidado de la autoridad o vigilancia. Incluye fuga de menores de centros de reclusión, rehabilitación u hogares de paso.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de las personas? • ¿Sabe cómo se movilizan? Si es un vehículo indague por: clase, placa, color, marca y la vía que tomaron.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "966 MENDICIDAD (Mendicidad)",
+      "code": "966",
+      "short": "MENDICIDAD",
+      "label": "Mendicidad",
+      "description": "Personas pidiendo dinero, comida o ayudas a transeúntes en el espacio público.",
+      "questions": "Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si la persona es menor de edad? Seleccione MENOR si la persona es menor de edad.",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "MENOR",
+          "description": "Menor de edad",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "967 MENORESTMY (Menor en establecimiento de mayores)",
+      "code": "967",
+      "short": "MENORESTMY",
+      "label": "Menor en establecimiento de mayores",
+      "description": "Es la simple presencia de un menor en un establecimiento reglamentado para adultos en donde se expenda licor o tabaco.",
+      "questions": "Preguntas para documentar: • ¿Sabe el nombre del establecimiento?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "968 PANDILLAS (Pandillas)",
+      "code": "968",
+      "short": "PANDILLAS",
+      "label": "Pandillas",
+      "description": "Es la simple presencia de jóvenes en lugar público o abierto al público con el propósito inequívoco de cometer vandalismos o daños.",
+      "questions": "Preguntas para documentar: • ¿Sabe si están armados?",
+      "circumstances": [
+        {
+          "code": "VMEDGUB",
+          "description": "Violación de medida gubernamental",
+          "transfer": "",
+          "copy": "Policía"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "969 PORTEARMAS (Porte de armas)",
+      "code": "969",
+      "short": "PORTEARMAS",
+      "label": "Porte de armas",
+      "description": "Avistamiento de armas o munición en poder de personas de las cuales se presume no poseen permisos para portarlas.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? • ¿Sabe cómo se movilizan? Si es un vehículo indague por: clase, placa, color, marca y la vía que tomaron.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "972 SUPROF (Suplantación de profesión u oficio)",
+      "code": "972",
+      "short": "SUPROF",
+      "label": "Suplantación de profesión u oficio",
+      "description": "Consiste en la presunta o comprobada sustitución que hace una persona ostentando las calidades o credenciales para representar un cargo o una entidad a la cual no pertenece, mediante falsas identificaciones, credenciales o el uso indebido de uniformes.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? • ¿Se identifica con algún carné? • ¿Sabe cómo se moviliza? Si es un vehículo, indague por: clase, placa, color, marca.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "973 DAÑORED (Daños en redes de servicios)",
+      "code": "973",
+      "short": "DAÑORED",
+      "label": "Daños en redes de servicios",
+      "description": "Todo daño o alteración a las redes de servicios. Si se trata de problemas con la red de Gas Natural, asigne el tipo de incidente 708 - MATPEL y la circunstancia modificadora GAS.NAT.PR. Incluye los reportes de alcantarilla sin tapa o en mal estado.",
+      "questions": "Preguntas para documentar: • ¿Sabe la causa? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe de qué servicio se trata? Seleccione ENERGIA si es la red de energía eléctrica. Si informan transformador en llamas, crear el incidente con circunstancia modificadora ENERGÍA y luego clonar a Bomberos. Seleccione ACUEDUCTO si es la red de acueducto. Seleccione ALCANTARIL si es la red de alcantarillado.",
+      "circumstances": [
+        {
+          "code": "ENERGÍA",
+          "description": "Red de energía",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "ACUEDUCTO",
+          "description": "Red de acueducto",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "ALCANTARIL",
+          "description": "Red de alcantarillado",
+          "transfer": "",
+          "copy": "Policía, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, IDIGER"
+    },
+    {
+      "raw_type": "974 COLAPSO (Colapso o posibilidad de colapso)",
+      "code": "974",
+      "short": "COLAPSO",
+      "label": "Colapso o posibilidad de colapso",
+      "description": "Hecho que evidencia que una edificación está a punto de caerse o se ha derrumbado, poniendo en peligro a sus moradores.",
+      "questions": "Preguntas para documentar: • Describa el tipo de construcción. • ¿Sabe si hay personas en riesgo? Preguntas y acciones para circunstancias modificadoras: • ¿Sabe si hay heridos o atrapados? Seleccione HER/RES si hay heridos o atrapados.",
+      "circumstances": [
+        {
+          "code": "HER/RES",
+          "description": "Herido, rescate",
+          "transfer": "",
+          "copy": "CRUE, Bomberos, IDIGER"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Bomberos, IDIGER"
+    },
+    {
+      "raw_type": "976 EXTDES (Extraviado o desaparecido)",
+      "code": "976",
+      "short": "EXTDES",
+      "label": "Extraviado o desaparecido",
+      "description": "Hace referencia a una persona que se encuentra perdida o extraviada. Gestionar el incidente y remitir al ciudadano a medicina legal con dos fotografías recientes de la persona desaparecida. Si la persona apareció: Gestionar incidente con Nombre, número de documento de identidad y dirección, documentando que la persona apareció. (No solicitar más datos)",
+      "questions": "Preguntas para documentar: • ¿Puede dar información de la persona? • ¿Sabe en qué zona se extravió o hacia qué lugar se dirigía? • ¿Sabe la fecha y hora en que se extravió? Preguntas y acciones para circunstancias modificadoras: • Si la persona ya apareció, pregunte: ¿Sabe en qué estado de salud se encuentra? Seleccione HERIDO si la persona se encuentra herida o en mal estado de salud.",
+      "circumstances": [
+        {
+          "code": "HERIDO",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía, CRUE"
+        },
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "977 VHRECUP (Vehículo recuperado)",
+      "code": "977",
+      "short": "VHRECUP",
+      "label": "Vehículo recuperado",
+      "description": "Se refiere al vehículo que ha sido reportado como hurtado anteriormente y del cual se informa su avistamiento o ubicación.",
+      "questions": "Preguntas para documentar: • ¿Puede dar información del vehículo?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "978 HALEXPLO (Hallazgo de explosivos)",
+      "code": "978",
+      "short": "HALEXPLO",
+      "label": "Hallazgo de explosivos",
+      "description": "Consiste en el hallazgo de elementos que por sus características pueden hacer expansión de gases de manera violenta y causar daño a las personas o a las cosas. Incluye el reporte de paquetes sospechosos.",
+      "questions": "Preguntas para documentar: • ¿Sabe de qué objeto o tipo de material se trata? (explosivos, ácidos, etc.) • Si está siendo transportado pregunte: ¿puede dar información del vehículo? • ¿Sabe si está en zona pública o al interior de un inmueble? • Si vio la persona que dejó el material pregunte: ¿puede dar información de la persona?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "982 ESTABORTO (Establecimiento ilegal para el aborto)",
+      "code": "982",
+      "short": "ESTABORTO",
+      "label": "Establecimiento ilegal para el aborto",
+      "description": "Cuando reportan un establecimiento en donde se practique de forma ilegal el aborto.",
+      "questions": "Preguntas para documentar: • ¿Sabe el nombre del establecimiento?",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "990 RESHUM (Restos humanos)",
+      "code": "990",
+      "short": "RESHUM",
+      "label": "Restos humanos",
+      "description": "Restos humanos o partes de un cadáver (esqueletos, restos en avanzado estado de descomposición)",
+      "questions": "Describa la situación.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "992 ACCAVI (Accidente de aviación)",
+      "code": "992",
+      "short": "ACCAVI",
+      "label": "Accidente de aviación",
+      "description": "Accidente que implica la participación de una aeronave con ocasión y causa de un vuelo.",
+      "questions": "No hay preguntas.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía, CRUE, Bomberos, Movilidad"
+    },
+    {
+      "raw_type": "DELINF (Delitos informáticos)",
+      "code": "",
+      "short": "DELINF (Delitos informáticos)",
+      "label": "Delitos informáticos",
+      "description": "Delitos contra la confidencialidad, la integridad y la disponibilidad de los datos y sistemas informáticos: Acceso ilícito a sistemas informáticos. Interceptación ilícita de datos informáticos. Interferencia en el funcionamiento de un sistema informático.",
+      "questions": "Documente la información de la persona que realiza la denuncia.",
+      "circumstances": [
+        {
+          "code": "NOBOGOTA",
+          "description": "",
+          "transfer": "",
+          "copy": "Policía"
+        }
+      ],
+      "transfer": "",
+      "copy": "Policía"
+    },
+    {
+      "raw_type": "BROMA (Broma)",
+      "code": "",
+      "short": "BROMA (Broma)",
+      "label": "Broma",
+      "description": "Cambie a este tipo de incidente cuando identifique BROMA después de copiado",
+      "questions": "No hay preguntas.",
+      "circumstances": [],
+      "transfer": "",
+      "copy": ""
+    }
+  ]
+}
