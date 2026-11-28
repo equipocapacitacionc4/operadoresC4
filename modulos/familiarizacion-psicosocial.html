@@ -1,114 +1,763 @@
 <!DOCTYPE html>
-<html lang="es"><head><link rel="icon" type="image/png" href="/operadoresC4/assets/img/logo.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#E60B61"><title>Familiarización psicosocial | Portal C4</title><link rel="stylesheet" href="../assets/css/style.css"><style>
-:root{--module-pink:#E60B61;--module-dark:#252238;--module-muted:#6B6878;--module-border:#E8E5ED;--module-background:#F8F7FA;--pink:var(--module-pink);--dark:var(--module-dark);--muted:var(--module-muted);--border:var(--module-border);--background:var(--module-background)}
-html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;padding-bottom:140px}.module-layout{display:flex;min-height:calc(100vh - 140px)}
-.module-sidebar{width:290px;flex-shrink:0;align-self:flex-start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;padding:28px 20px;border-right:1px solid var(--module-border);background:var(--module-background);transition:width .25s ease,padding .25s ease}.module-sidebar h2{font-size:1.15rem;line-height:1.4;margin:0 0 22px;color:var(--module-dark)}.module-sidebar nav{display:grid;gap:7px}.module-sidebar nav a{display:block;padding:11px 12px;border-radius:8px;color:var(--module-dark);text-decoration:none;font-size:.94rem}.module-sidebar nav a:hover,.module-sidebar nav a.active{background:#FCE4EF;color:var(--module-pink)}.module-sidebar .subnav{padding-left:12px;border-left:2px solid #eadce5;margin-left:8px}.module-sidebar .subnav a{font-size:.9rem}.module-main{min-width:0;flex:1;padding:38px clamp(20px,5vw,72px)}.module-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:25px}.module-toggle{border:1px solid var(--module-border);background:white;color:var(--module-dark);padding:10px 14px;border-radius:8px;cursor:pointer;font:inherit}.module-toggle:hover{border-color:var(--module-pink)}
-.module-content-section{max-width:1100px;margin:0 auto 36px;scroll-margin-top:24px}.module-content-section>h2{color:var(--module-dark);font-size:1.5rem;border-bottom:3px solid var(--module-pink);padding-bottom:10px;margin-bottom:16px}.module-hero{border-radius:18px;background:linear-gradient(135deg,#252238,#49304a);color:white;padding:30px;margin-bottom:24px}.module-hero h1{color:white}.module-hero p{color:white;line-height:1.8}.module-label,.eyebrow{color:var(--module-pink);font-weight:700;letter-spacing:.08em}.objective,.topic-intro,.panel,.question-box,.example{border-radius:12px}.module-content-section p{line-height:1.8}.module-content-section a{color:var(--module-pink)}.module-navigation{position:fixed;bottom:0;left:0;right:0;z-index:50;background:white;border-top:1px solid var(--module-border);padding:12px 20px;display:flex;align-items:center;gap:12px;justify-content:center}.module-navigation a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:10px 14px;border:1px solid var(--module-border);border-radius:9px;background:white;color:var(--module-dark);text-decoration:none}.module-navigation a:last-child{background:var(--module-pink);border-color:var(--module-pink);color:white}.module-progress{position:fixed;z-index:1000;bottom:72px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 32px));padding:12px 18px 14px;border:1px solid var(--module-border);border-radius:14px;background:rgba(255,255,255,.97);box-shadow:0 -4px 20px rgba(37,34,56,.08)}.module-progress-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;color:var(--module-dark);font-size:.85rem}.module-progress-track{height:7px;background:#EEEAF1;border-radius:99px;overflow:hidden}.module-progress-fill{height:100%;width:0;background:var(--module-pink);border-radius:inherit;transition:width .15s linear}.module-sidebar-hidden .module-sidebar{display:none}.module-sidebar-hidden .module-main{padding-left:clamp(20px,8vw,110px);padding-right:clamp(20px,8vw,110px)}
-.lesson summary{cursor:pointer}.lesson-content{padding:16px 20px}.practice-reg textarea,.lesson-content textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid var(--module-border);border-radius:8px;font:inherit}.audio-context audio{width:100%}
-@media(max-width:760px){.module-layout{display:block}.module-sidebar{position:relative;top:auto;width:auto;max-height:none;overflow:visible;border-right:0;border-bottom:1px solid var(--module-border);padding:20px}.module-sidebar .subnav{display:flex;flex-wrap:wrap}.module-main{padding:25px 20px}.module-sidebar-hidden .module-main{padding:25px 20px}.module-navigation{flex-wrap:wrap}.module-navigation a{flex:1;min-width:120px}.module-progress{width:calc(100% - 24px);bottom:95px}.module-main .module-hero{padding:22px}}
-</style>
-:root{--pink:#E60B61;--dark:#252238;--muted:#6B6878;--border:#E8E5ED;--background:#F8F7FA}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;padding-bottom:82px}.module-layout{display:flex;min-height:calc(100vh - 140px)}.module-sidebar{width:290px;flex-shrink:0;align-self:flex-start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;padding:28px 20px;border-right:1px solid var(--border);background:var(--background)}.module-sidebar h2{font-size:1.05rem;color:var(--dark)}.module-sidebar a{display:block;text-decoration:none;color:var(--dark);padding:10px 12px;margin:5px 0;border-radius:8px}.module-sidebar a:hover,.module-sidebar a.active{background:#FCE5EF;color:var(--pink)}.module-main{flex:1;min-width:0;padding:30px clamp(16px,4vw,48px)}.module-content-section{max-width:1100px;margin:0 auto 36px}.module-content-section>h2{color:var(--dark);border-bottom:3px solid var(--pink);padding-bottom:10px}.module-hero{border-radius:18px;background:linear-gradient(135deg,#252238,#49304a);color:white;padding:30px;margin-bottom:24px}.module-hero h1{color:white}.module-hero p{color:white}.objective,.topic-intro,.panel,.question-box,.example{border-radius:12px}.module-navigation{position:fixed;bottom:0;left:0;right:0;z-index:50;background:white;border-top:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;gap:12px;justify-content:center}.module-progress{width:min(320px,30vw);height:9px;background:#eee;border-radius:99px;overflow:hidden}.module-progress-fill{height:100%;width:0;background:var(--pink);transition:width .2s}.module-caption{font-size:.9rem;color:var(--muted)}.learning-unit{margin:28px 0;padding:0}.lesson-list{margin-top:20px}.lesson summary{cursor:pointer}.lesson-content{padding:16px 20px}.practice-reg textarea{width:100%;box-sizing:border-box}.audio-context audio{width:100%}.module-sidebar .sidebar-note{font-size:.85rem;color:var(--muted);padding:12px}.module-sidebar .subnav{padding-left:12px;border-left:2px solid #eadce5;margin-left:8px}.module-sidebar .subnav a{font-size:.9rem}.module-main .module-hero{scroll-margin-top:25px}#unidad-emocional,#unidad-comunicativa{scroll-margin-top:25px}.module-content-section{scroll-margin-top:24px}.module-nav-buttons{display:flex;gap:8px}.module-nav-buttons a,.module-nav-buttons button{border:1px solid var(--border);padding:9px 14px;border-radius:8px;background:white;color:var(--dark);text-decoration:none;cursor:pointer}.module-nav-buttons .primary{background:var(--pink);color:white;border-color:var(--pink)}@media(max-width:850px){.module-layout{display:block}.module-sidebar{position:relative;width:auto;max-height:none;top:auto;border-right:0;border-bottom:1px solid var(--border);padding:14px}.module-sidebar .subnav{display:flex;flex-wrap:wrap}.module-main{padding:18px}.module-navigation{flex-wrap:wrap}.module-progress{width:40vw}} </style></head>
-<body><header><div class="navbar"><a class="logo" href="../index.html" aria-label="Volver al Portal C4"><span class="logo-mark" aria-hidden="true">C4</span><span>Portal de Capacitación C4</span></a><nav class="nav-links" aria-label="Navegación principal"><a href="../index.html">Inicio</a><a href="../index.html#formacion">Módulos</a><a href="../index.html#recursos">Recursos</a></nav></div></header>
-<div class="module-layout" id="moduleLayout"><aside class="module-sidebar" id="moduleSidebar"><h2>Familiarización psicosocial</h2><nav><a href="#objetivos">Objetivos</a><a href="#tematicas">Temáticas abordadas</a><div class="subnav"><a href="#unidad-emocional">Unidad 1 · Habilidades emocionales</a><a href="#unidad-comunicativa">Unidad 2 · Habilidades comunicativas</a></div><a href="#actividades">Actividades</a><a href="#trabajo-autonomo">Trabajo autónomo</a><a href="#evaluacion">Evaluación</a></nav><div class="sidebar-note">Avanza por las dos unidades y realiza las actividades de aplicación a tu ritmo.</div></aside><main class="module-main"><div class="module-toolbar"><button class="module-toggle" id="toggleSidebar" type="button" aria-controls="moduleSidebar" aria-expanded="true">☰ Ocultar navegación</button></div>
-<section id="objetivos" class="module-content-section"><div class="module-hero"><div class="eyebrow">MÓDULO 5 · FAMILIARIZACIÓN PSICOSOCIAL</div><h1>Habilidades emocionales y comunicativas</h1><p>Herramientas para reconocer emociones y comunicarse con claridad durante la recepción, atención y gestión de llamadas de emergencia de la Línea 123 de Bogotá.</p></div><h2>Objetivos</h2><p>Fortalecer habilidades emocionales y comunicativas que favorezcan una atención consciente, empática, clara y adecuada durante la atención de llamadas de emergencia.</p><ul><li>Reconocer y comprender las emociones propias y las expresadas por la ciudadanía.</li><li>Explorar y aplicar herramientas básicas de gestión emocional.</li><li>Fortalecer la escucha activa y el uso del lenguaje verbal claro, específico y congruente.</li><li>Aplicar habilidades de recepción, clarificación, clasificación y gestión de información de acuerdo con procedimientos institucionales.</li></ul></section>
-<section id="tematicas" class="module-content-section"><h2>Temáticas abordadas</h2><p>El módulo se organiza en dos unidades de aprendizaje complementarias.</p>
-<div class="learning-unit" id="unidad-emocional">
-<div class="module-hero"><div class="eyebrow">MÓDULO 01 · HABILIDADES EMOCIONALES</div><h1>Reconocimiento, exploración<br/>y gestión emocional</h1><p>Herramientas para comprender las emociones propias y de la ciudadanía durante la recepción, atención y gestión de llamadas de emergencia de la Línea 123 de Bogotá.</p><div class="module-meta"><span>◷ 20–25 min sugeridos</span><span>▦ 7 apartados de aprendizaje</span><span>✓ evaluación</span></div></div>
-<div class="objective"><strong>Objetivo general</strong><p>Brindar herramientas básicas para el desarrollo de capacidades de comprensión y conocimiento de las emociones propias y de las demás personas en el contexto de las llamadas de la Línea 123 de Bogotá.</p><strong>Objetivos específicos</strong><ul><li>Identificar las emociones propias y cómo su manifestación y expresión influyen en las respuestas y comportamientos durante la recepción, atención y gestión de llamadas.</li><li>Reconocer las emociones y necesidades emocionales de los ciudadanos que se comunican con la Línea 123.</li><li>Implementar herramientas básicas de reconocimiento y gestión emocional que favorezcan respuestas empáticas, asertivas y adecuadas ante situaciones de alta intensidad emocional.</li></ul></div>
-<div class="topic-intro"><strong>Contenido del módulo</strong><p>Abre cada apartado de manera independiente. Puedes consultar los temas en el orden propuesto y volver a ellos cuando lo necesites.</p></div>
-<div class="lesson-list m1-lessons">
-<details class="lesson" open=""><summary><span class="lesson-num">01</span><h3>Presentación del módulo</h3></summary><div class="lesson-content"><p>En la atención de llamadas de emergencia pueden aparecer emociones intensas tanto en la ciudadanía como en quien recibe la llamada. Comprenderlas permite reconocer señales, explorar lo que ocurre y elegir respuestas conscientes que favorezcan una atención empática y adecuada.</p><div class="question-box"><strong>Propósito de aprendizaje</strong><p>Desarrollar capacidades para reconocer, comprender y gestionar las emociones propias y reconocer las expresadas por otras personas, teniendo en cuenta las exigencias del contexto de atención de emergencias.</p></div></div></details>
-<details class="lesson"><summary><span class="lesson-num">02</span><h3>¿Qué son las emociones?</h3></summary><div class="lesson-content"><p>Las emociones permiten reconocer e interpretar nuestras propias reacciones y las de los demás, facilitando una respuesta consciente, empática y adecuada ante las situaciones de emergencia.</p><div class="emotion-functions"><article><b>↗ Adaptarnos</b><p>Preparan al organismo para responder ante situaciones del entorno y reconocer posibles amenazas.</p></article><article><b>◎ Comunicar</b><p>Permiten expresar nuestros estados emocionales y comprender las emociones de otras personas, favoreciendo la empatía y las relaciones interpersonales.</p></article><article><b>→ Orientar la conducta</b><p>Impulsan acciones relacionadas con nuestras necesidades, objetivos y situaciones de bienestar o malestar.</p></article></div><p><strong>Idea para recordar:</strong> las emociones aportan información sobre lo que ocurre y pueden orientar nuestra respuesta; reconocerlas es un primer paso para actuar de manera consciente.</p></div></details>
-<details class="lesson"><summary><span class="lesson-num">03</span><h3>¿Cuáles son las emociones?</h3></summary><div class="lesson-content"><h4>Emociones básicas o primarias</h4><p>Son emociones de base biológica e innata que aparecen de manera rápida y automática ante determinados estímulos. Cumplen funciones adaptativas relacionadas con la supervivencia y la respuesta al entorno.</p><div class="emotion-grid"><article><span>😠</span><b>IRA</b><p>Reacción ante situaciones percibidas como ofensivas o amenazantes.</p></article><article><span>😢</span><b>TRISTEZA</b><p>Experiencia emocional asociada a pérdidas o situaciones difíciles.</p></article><article><span>😊</span><b>ALEGRÍA</b><p>Experiencia emocional agradable.</p></article><article><span>😮</span><b>SORPRESA</b><p>Respuesta ante acontecimientos inesperados.</p></article><article><span>🤢</span><b>ASCO</b><p>Respuesta de rechazo ante determinados estímulos.</p></article><article><span>😨</span><b>MIEDO</b><p>Respuesta ante situaciones percibidas como amenazantes.</p></article></div><h4>Emociones secundarias</h4><p>Surgen a partir de las emociones básicas y están influenciadas por nuestras experiencias, pensamientos y aprendizajes sociales. Son más complejas y dependen de cómo interpretamos las situaciones.</p><ul><li><strong>Culpa y vergüenza:</strong> relacionadas con la valoración de nuestras acciones.</li><li><strong>Orgullo y satisfacción:</strong> aparecen al reconocer nuestros logros.</li><li><strong>Celos y envidia:</strong> surgen en las relaciones y la comparación con otros.</li><li><strong>Frustración y resentimiento:</strong> relacionados con obstáculos, expectativas o situaciones que generan malestar.</li></ul><div class="question-box"><strong>¿Por qué se llaman secundarias?</strong><p>Porque se desarrollan a partir de las emociones básicas, nuestros pensamientos y las experiencias personales y sociales. Su interpretación puede variar según el contexto y los aprendizajes de cada persona.</p></div></div></details>
-<details class="lesson"><summary><span class="lesson-num">04</span><h3>Modelo R.E.G.: reconocer, explorar y gestionar</h3></summary><div class="lesson-content"><p>El modelo R.E.G. propone tres procesos fundamentales para reconocer, comprender y gestionar las emociones.</p><div class="reg-grid"><div><b>R</b><strong>RECONOCER</strong><span>Identificar lo que sentimos.</span></div><div><b>E</b><strong>EXPLORAR</strong><span>Comprender de dónde viene y cómo se manifiesta.</span></div><div><b>G</b><strong>GESTIONAR</strong><span>Responder de manera consciente.</span></div></div><h4>R · Reconocer</h4><p>Es la capacidad de identificar y comprender lo que sentimos y lo que sienten los demás, teniendo en cuenta:</p><ul><li>Las sensaciones del cuerpo.</li><li>Los pensamientos.</li><li>La expresión facial.</li><li>El tono de voz.</li><li>Los comportamientos.</li></ul><p><strong>Preguntas orientadoras</strong></p><ol><li>¿Qué estoy sintiendo en este momento?</li><li>¿Es una emoción o estoy sintiendo varias?</li><li>¿Cómo puedo nombrar lo que siento?</li></ol><div class="example"><span>EJEMPLO APLICADO A LA LÍNEA 123</span><p>Un operador recibe varias llamadas consecutivas con situaciones de alta intensidad emocional. Comienza a identificar tensión corporal, irritabilidad y dificultad para mantener la concentración. El primer paso consiste en reconocer esas manifestaciones y ponerles nombre.</p></div><h4>E · Explorar</h4><p>Significa profundizar en lo que sentimos para comprender su origen, cómo se manifiesta, qué pensamientos la acompañan y cómo influye en nuestra conducta.</p><p>Para ello, tenemos en cuenta la situación, las reacciones del cuerpo, los pensamientos y la manera en que actuamos.</p><p><strong>Preguntas orientadoras</strong></p><ol><li>¿Qué pensamientos tengo?</li><li>¿En qué situación se presentó?</li><li>¿Qué acciones realizo o cómo puedo responder?</li><li>¿Qué necesito?</li></ol><div class="example"><span>EJEMPLO APLICADO A LA LÍNEA 123</span><p>Después de reconocer la irritabilidad, el operador explora qué pudo influir en ella: la acumulación de llamadas complejas, el cansancio o las dificultades experimentadas durante el turno. Esta exploración permite comprender mejor la experiencia emocional y su influencia en la atención.</p></div><h4>G · Gestionar</h4><p>Gestionar las emociones implica reconocer, comprender y regular lo que sentimos, sin reprimirlo, para responder de manera consciente y evitar reacciones impulsivas.</p><p><strong>Preguntas orientadoras</strong></p><ul><li>¿Qué me ha funcionado antes?</li><li>¿Qué pautas o hábitos me ayudan a soportar las emociones intensas?</li></ul><p>En el siguiente apartado encontrarás dos herramientas prácticas para apoyar este proceso.</p></div></details>
-<details class="lesson"><summary><span class="lesson-num">05</span><h3>Herramientas para gestionar las emociones</h3></summary><div class="lesson-content"><h4>Técnica 1. Respiración profunda o diafragmática</h4><p>Es una técnica de relajación que consiste en llevar el aire hacia la parte baja de los pulmones, moviendo principalmente el abdomen en lugar del pecho.</p><div class="breath-steps"><div><b>Al inhalar</b><p>El abdomen se infla, como un globo, porque el diafragma baja para dejar espacio a los pulmones.</p></div><div><b>Al exhalar</b><p>El abdomen se desinfla porque el diafragma sube, ayudando a expulsar el aire.</p></div></div><p><strong>¿Para qué se utiliza?</strong></p><ul><li>Reducir el estrés.</li><li>Regular emociones de alto impacto.</li><li>Mejorar el rendimiento.</li></ul><div class="question-box"><strong>Práctica breve</strong><p>Adopta una postura cómoda. Inhala suavemente llevando el aire hacia el abdomen y observa cómo se expande. Exhala sin forzar y nota cómo el abdomen desciende. Repite a un ritmo cómodo, sin contener la respiración.</p></div><h4>Técnica 2. Conciencia plena a través de los sentidos</h4><p>También conocida como mindfulness sensorial. Consiste en enfocar la atención en lo que estamos percibiendo aquí y ahora mediante los cinco sentidos. Su objetivo es utilizar el cuerpo como ancla al momento presente para orientar la atención hacia la experiencia inmediata.</p><ul><li><strong>Vista:</strong> observar los colores, formas o movimientos de un objeto cercano.</li><li><strong>Oído:</strong> prestar atención a los sonidos del ambiente.</li><li><strong>Tacto:</strong> identificar la textura de la ropa, el viento o la temperatura de un objeto.</li><li><strong>Olfato:</strong> percibir conscientemente los aromas del entorno.</li><li><strong>Gusto:</strong> saborear con calma un alimento e identificar sus características.</li></ul><p><strong>¿Para qué se utiliza?</strong></p><ul><li>Frenar la ansiedad.</li><li>Reducir el estrés.</li><li>Favorecer la conexión inmediata con el momento presente.</li></ul></div></details>
-<details class="lesson"><summary><span class="lesson-num">06</span><h3>Actividad práctica: reconozco, exploro y gestiono</h3></summary><div class="lesson-content"><p><strong>Ejercicio interactivo</strong></p><p>La actividad permite aplicar el modelo R.E.G. a una situación relacionada con el contexto laboral.</p><div class="example"><span>SITUACIÓN PARA ANALIZAR</span><p>Recibes una llamada en la que un ciudadano manifiesta desesperación, eleva el tono de voz y exige una respuesta inmediata.</p></div><div class="practice-reg"><label><b>1. RECONOCER</b><span>¿Qué emoción podrías experimentar ante esta situación?</span><select id="practiceEmotion"><option value="">Selecciona una emoción</option><option>Miedo</option><option>Ira</option><option>Tristeza</option><option>Ansiedad</option><option>Frustración</option><option>Otra emoción</option></select></label><label><b>2. EXPLORAR</b><span>¿Qué manifestaciones corporales y pensamientos podrías identificar?</span><textarea id="practiceExplore" placeholder="Escribe tus observaciones..." rows="3"></textarea></label><label><b>3. GESTIONAR</b><span>¿Qué estrategia utilizarías para responder de manera consciente?</span><textarea id="practiceManage" placeholder="Describe la estrategia que aplicarías..." rows="3"></textarea></label><button class="primary" id="copyPractice" type="button">Copiar mis respuestas</button><p aria-live="polite" class="small-note" id="practiceCopyStatus">Tus respuestas se mantienen en este ejercicio; no se envían a Supabase.</p></div></div></details>
-<details class="lesson"><summary><span class="lesson-num">07</span><h3>Cierre del módulo: idea central</h3></summary><div class="lesson-content"><div class="question-box"><strong>Idea central para recordar</strong><p>Reconocer lo que sentimos, explorar su origen y comprender cómo influye en nuestro comportamiento permite desarrollar respuestas más conscientes ante las situaciones que se presentan durante la atención de llamadas de emergencia.</p></div><p>La gestión emocional no implica dejar de sentir, sino desarrollar herramientas para responder de manera adecuada.</p></div></details>
-</div>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="/operadoresC4/assets/img/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E60B61">
+    <meta name="description" content="Módulo de familiarización con el sistema NUSE para operadores C4.">
 
+    <title>Habilidades para una atención efectiva | Portal C4</title>
 
-</div><div class="learning-unit" id="unidad-comunicativa">
-<div class="module-hero bluehero"><div class="eyebrow">MÓDULO 02 · HABILIDADES COMUNICATIVAS</div><h1>Habilidades comunicativas<br/>desde la escucha activa<br/>y el lenguaje verbal</h1><p>Fortalece la recepción, comprensión, organización y comunicación de información durante las llamadas de emergencia de la Línea 123 de Bogotá.</p><div class="module-meta"><span>◷ 20–25 min sugeridos</span><span>▦ 7 apartados</span><span>✓ evaluación de 10 preguntas</span></div></div>
-<div class="objective"><strong>Objetivo del módulo</strong><p>Brindar información técnica relacionada con las habilidades comunicativas desde la escucha y el lenguaje verbal para promover pautas que faciliten la oportuna atención en las llamadas de la Línea de Emergencias 123 de Bogotá.</p></div>
-<div class="audio-context panel">
-<div class="eyebrow">RECURSO DE CONTEXTUALIZACIÓN</div><h2>Escucha el audio introductorio</h2>
-<p>Antes de explorar los apartados, escucha este recurso y relaciona sus ideas con la recepción de llamadas, la escucha activa y el uso de un lenguaje claro.</p>
-<audio controls="" preload="metadata"><source src="assets/audio/contexto-comunicacion.mp3" type="audio/mpeg"/>Tu navegador no puede reproducir este audio.</audio>
-<p class="small-note">Recurso de audio proporcionado para esta capacitación.</p>
-</div>
-<div class="topic-intro"><strong>Explora los contenidos del módulo</strong><p>Cada apartado funciona de manera independiente. Abre los temas que necesites consultar y avanza a tu propio ritmo.</p></div>
-<div class="lesson-list">
-<details class="lesson"><summary><span class="lesson-num">01</span><h3>Introducción a la comunicación interpersonal</h3></summary><div class="lesson-content">
-<p>La comunicación interpersonal es el proceso mediante el cual las personas intercambian información, pensamientos y emociones. Implica escuchar, interpretar, comprender el contexto y responder adecuadamente.</p>
-<p>En la Línea de Emergencias 123 de Bogotá, permite al operador comprender los reportes, identificar información relevante y facilitar la atención. Al ser telefónica, requiere prestar especial atención a las palabras, el tono de voz, las preguntas y las respuestas, favoreciendo una comunicación clara y efectiva.</p>
-<h4>¿Por qué es importante la comunicación en la Línea 123?</h4><ul><li><strong>Comprender e identificar:</strong> entender la situación reportada y reconocer información relevante para la atención.</li><li><strong>Escuchar y orientar:</strong> facilitar la expresión de necesidades y preocupaciones mediante preguntas claras.</li><li><strong>Reconocer y responder:</strong> identificar dificultades de comprensión y promover una atención respetuosa, empática y oportuna.</li></ul>
-<div class="example"><span>PARA RECORDAR</span><p>Comunicar no consiste únicamente en hablar o transmitir un mensaje. También implica escuchar, interpretar la información, comprender el contexto y responder de manera adecuada.</p></div>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">02</span><h3>Comunicación desde la escucha activa</h3></summary><div class="lesson-content">
-<p>Escuchar no significa únicamente percibir sonidos. Implica prestar atención al mensaje, comprenderlo, interpretarlo y responder adecuadamente. La escucha activa permite reconocer la información y las necesidades que expresa el usuario.</p>
-<p>Durante una llamada de emergencia, facilita que el operador identifique información relevante, reconozca posibles dificultades y comprenda la situación reportada.</p>
-<h4>Oír no es lo mismo que escuchar activamente</h4><p>Una persona puede oír una llamada sin comprender completamente lo que el usuario está expresando. Por ejemplo, el operador puede notar que una persona habla rápidamente, pero si no presta atención al contenido, puede pasar por alto información importante.</p>
-<div class="example"><span>APLICACIÓN</span><p>La escucha activa requiere concentrarse en el contenido, identificar datos importantes y verificar la comprensión del mensaje.</p></div>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">03</span><h3>Importancia de la escucha: recibir, clarificar, clasificar y gestionar</h3></summary><div class="lesson-content">
-<p>En el contexto de las llamadas de emergencia, la escucha es una habilidad fundamental que permite desarrollar las siguientes acciones:</p>
-<h4>1. Recibir la información de la emergencia</h4><p>Es el primer contacto con el ciudadano. Consiste en escuchar atentamente el relato inicial, identificar el motivo de la llamada y recopilar información básica sobre la situación reportada. El operador debe mantener una actitud receptiva, utilizar un tono de voz tranquilo y facilitar la expresión del usuario, especialmente cuando se encuentra angustiado o alterado.</p>
-<div class="example"><span>EJEMPLO</span><p>Una persona reporta una situación de violencia en una vivienda. El operador escucha su relato inicial e identifica el motivo de la emergencia y la necesidad de atención.</p></div>
-<h4>2. Clarificar la información</h4><p>Consiste en profundizar y precisar la información recibida mediante preguntas claras y pertinentes, que permitan comprender mejor la situación, identificar datos incompletos y evitar interpretaciones equivocadas.</p>
-<div class="example"><span>EJEMPLO</span><p>El operador pregunta: «¿Cuál es su emergencia?», «¿Dónde está ocurriendo?» y «¿Hay personas heridas o fallecidas?».</p></div>
-<h4>3. Clasificar la información</h4><p>Consiste en organizar e identificar las características de la situación reportada, reconociendo el tipo de incidente, las condiciones de riesgo y las necesidades de atención, de acuerdo con los criterios y protocolos establecidos para la Línea 123.</p>
-<div class="example"><span>EJEMPLO</span><p>A partir de la información recibida, el operador identifica una situación de violencia, reconoce el posible riesgo para una persona y realiza la clasificación correspondiente para orientar la atención y transferencia a la agencia competente.</p></div>
-<h4>4. Gestionar el incidente</h4><p>Consiste en gestionar la información recopilada y clasificada para realizar los procedimientos necesarios, activar la respuesta correspondiente y orientar la atención según los protocolos institucionales y los recursos disponibles.</p>
-<div class="example"><span>EJEMPLO</span><p>Una vez identificada y clasificada la situación de violencia, el operador realiza la gestión correspondiente y transfiere la llamada a la Policía, de acuerdo con el protocolo establecido.</p></div>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">04</span><h3>Las cinco etapas de la escucha</h3></summary><div class="lesson-content">
-<p>La escucha activa puede comprenderse mediante cinco etapas que orientan la recepción y el procesamiento de la información durante la llamada.</p>
-<div class="steps"><div><b>1</b><span>Recepcionar</span><small>Recibir la información brindada por el ciudadano. Centrar la atención y evitar distracciones.</small></div><div><b>2</b><span>Comprender</span><small>Comprender lo que quiere comunicar. Evitar juzgar o asumir información no suministrada y formular preguntas para clarificar.</small></div><div><b>3</b><span>Recordar</span><small>Identificar la información más importante. Evitar repeticiones inoficiosas que dificulten la comunicación y la gestión.</small></div><div><b>4</b><span>Analizar</span><small>Clasificar la información y mantener objetividad, reconociendo cada llamada como un caso único.</small></div><div><b>5</b><span>Responder</span><small>Responder mientras el ciudadano habla y después de que termina, utilizando expresiones de atención y los guiones establecidos.</small></div></div>
-<p>En las etapas de comprensión y respuesta, se recomienda utilizar las preguntas y expresiones previstas en la guía de tipificación y en los documentos institucionales de guiones para la recepción, atención, trámite y finalización de llamadas.</p>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">05</span><h3>Comunicación desde el lenguaje verbal</h3></summary><div class="lesson-content">
-<p>El lenguaje verbal permite transmitir información, formular preguntas y orientar la comunicación mediante palabras. En la atención telefónica es fundamental utilizar un lenguaje claro, preciso y comprensible, que facilite la comunicación y evite interpretaciones equivocadas.</p>
-<h4>El lenguaje es simbólico</h4><p>Las palabras pueden representar objetos físicos, como galaxias, estrellas, árboles, insectos y personas. También pueden expresar pensamientos y sentimientos, como honestidad, pena y amor.</p><div class="example"><span>EJEMPLO</span><p>Cuando una persona dice «Tengo mucho miedo», la palabra miedo representa una experiencia emocional que está viviendo.</p></div>
-<h4>El lenguaje es subjetivo</h4><p>El significado de las palabras puede variar según la interpretación de cada persona y su contexto. Por ello, es importante verificar la comprensión, parafrasear y aclarar significados, facilitando una comunicación efectiva y la construcción de entendimientos compartidos.</p><div class="example"><span>EJEMPLO</span><p>Ciudadano: «Hay un hombre con un peine». Operador: «¿Se refiere a un peine para el cabello o a un arma?».</p></div>
-<h4>El lenguaje define</h4><p>Usamos el lenguaje para definir y delimitar objetos, personas, pensamientos, sentimientos y experiencias, de modo que podamos compartir su significado de manera más efectiva.</p><div class="example"><span>EJEMPLO</span><p>Ciudadano: «Hay una persona agresiva». Operador: «¿Qué está haciendo exactamente la persona?». Ciudadano: «Está golpeando a otra persona».</p></div>
-<h4>El lenguaje es creativo</h4><p>Permite crear mensajes y combinar palabras para comunicar experiencias, estados de ánimo y actitudes.</p><div class="example"><span>EJEMPLO</span><p>Ciudadano: «Estoy que exploto de la rabia». Operador: «Entiendo que está muy enojado. Cuénteme qué sucedió».</p></div>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">06</span><h3>Sugerencias para un lenguaje verbal apropiado</h3></summary><div class="lesson-content">
-<h4>Claridad</h4><p>Consiste en transmitir mensajes comprensibles y concisos, evitando ambigüedades o expresiones que puedan generar confusión en la interpretación.</p><div class="example"><span>MENSAJE DEL CIUDADANO</span><p>«Hay un señor por ahí que está haciendo cosas raras».</p><span>PREGUNTA CLARA</span><p>«¿En qué lugar se encuentra el señor y qué está haciendo exactamente?».</p></div>
-<h4>Especificidad</h4><p>Es importante evitar insinuaciones que dificulten la claridad. El lenguaje favorece la comunicación cuando describe de manera precisa lo que se quiere expresar o solicitar.</p><div class="example"><span>MENSAJE DEL CIUDADANO</span><p>«Hay alguien que me está molestando».</p><span>PREGUNTA ESPECÍFICA</span><p>«¿Qué está haciendo exactamente esa persona?».</p></div>
-<h4>Congruencia</h4><p>Implica mantener sincronía entre lo que se quiere decir y cómo se dice, mediante el uso adecuado del tono, el volumen, la velocidad y el contenido de las palabras. La falta de coherencia puede generar confusiones.</p><div class="example"><span>MENSAJE DEL CIUDADANO</span><p>«¡Mi mamá se cayó y no sé qué hacer!».</p><span>RESPUESTA CONGRUENTE</span><p>«Estoy aquí para ayudarle. Dígame, ¿su mamá está consciente?».</p></div>
-<p>Utilizar palabras tranquilizadoras, un tono calmado y una velocidad adecuada permite transmitir un mensaje coherente con la intención de brindar ayuda.</p>
-</div></details>
-<details class="lesson"><summary><span class="lesson-num">07</span><h3>Actividad de aplicación: escuchar, clarificar y responder</h3></summary><div class="lesson-content">
-<p>Aplica los conceptos del módulo a la siguiente situación de práctica, teniendo presentes los procedimientos y guiones institucionales.</p>
-<div class="example"><span>SITUACIÓN</span><p>Una persona llama y dice: «Hay un señor por ahí haciendo cosas raras y está molestando a mi mamá». El relato es poco específico y todavía no permite identificar con claridad qué está ocurriendo.</p></div>
-<h4>1. Recepcionar y comprender</h4><p>¿Cuál es el motivo inicial de la llamada? ¿Qué información ha comunicado la persona y qué información todavía no conoces?</p>
-<textarea id="m2PracticeReceive" placeholder="Escribe la información que logras identificar..." rows="3"></textarea>
-<h4>2. Clarificar</h4><p>Formula dos preguntas claras y específicas que permitan precisar la situación, sin asumir el significado de las palabras del ciudadano.</p>
-<textarea id="m2PracticeClarify" placeholder="Escribe dos preguntas de clarificación..." rows="3"></textarea>
-<h4>3. Responder con congruencia</h4><p>Escribe una respuesta verbal breve, respetuosa y clara. Considera también el tono, el volumen y la velocidad con que la comunicarías.</p>
-<textarea id="m2PracticeRespond" placeholder="Escribe una posible respuesta..." rows="3"></textarea>
-<p class="small-note">Esta actividad es de reflexión y práctica. La atención real debe seguir los guiones, criterios de tipificación y protocolos institucionales vigentes.</p>
-</div></details>
-</div>
-<div class="panel"><strong>Referencia bibliográfica</strong><p>Floyd, K. (2011). <em>Comunicación interpersonal</em> (2.ª ed.). McGraw-Hill.</p></div>
+    <link rel="stylesheet" href="../assets/css/style.css">
 
+    <style>
+        :root {
+            --module-pink: #E60B61;
+            --module-dark: #252238;
+            --module-muted: #6B6878;
+            --module-border: #E8E5ED;
+            --module-background: #F8F7FA;
+        }
 
-</div>
-</section><section id="actividades" class="module-content-section"><h2>Actividades</h2><p>Las actividades de aplicación se encuentran integradas en cada unidad. Desarrolla los ejercicios de reflexión y práctica, teniendo presente que los procedimientos de atención real deben seguir los guiones y protocolos institucionales vigentes.</p></section><section id="trabajo-autonomo" class="module-content-section"><h2>Actividades de trabajo autónomo</h2><p>Revisa nuevamente los apartados que consideres necesarios y practica las estrategias de reconocimiento y gestión emocional, así como las pautas de escucha activa, clarificación y comunicación verbal. Puedes utilizar los ejercicios de ambas unidades como guía de reflexión individual.</p></section><section id="evaluacion" class="module-content-section"><h2>Evaluación</h2><div class="question-box"><strong>Autoevaluación de aprendizaje</strong><p>Al finalizar las dos unidades, reflexiona sobre tu aprendizaje y verifica que puedas:</p><ul><li>Identificar emociones propias y reconocer señales emocionales en otras personas.</li><li>Explicar y aplicar los pasos del modelo R.E.G.</li><li>Utilizar alguna estrategia de gestión emocional en una situación de alta intensidad.</li><li>Describir las etapas de la escucha activa.</li><li>Formular preguntas claras y específicas para clarificar información.</li><li>Responder con un lenguaje verbal congruente, respetuoso y comprensible.</li></ul><p>Este apartado es de reflexión personal y no recopila ni almacena datos de participantes.</p></div></section>
-</main></div><div class="module-progress" aria-label="Progreso de lectura"><div class="module-progress-heading"><span>Avance del módulo</span><strong id="progressText">0%</strong></div><div class="module-progress-track" id="progressTrack" role="progressbar" aria-label="Porcentaje de avance del módulo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="module-progress-fill" id="progressFill"></div></div></div><nav class="module-navigation" aria-label="Navegación entre módulos"><a href="tipificacion-incidentes.html">← Módulo anterior</a><a href="../index.html">⌂ Inicio</a><a href="../index.html#formacion">Módulos →</a></nav><script>
-(function(){
- const layout=document.getElementById('moduleLayout');
- const toggle=document.getElementById('toggleSidebar');
- const fill=document.getElementById('progressFill');
- const label=document.getElementById('progressText');
- const track=document.getElementById('progressTrack');
- const sections=[...document.querySelectorAll('.module-content-section')];
- const links=[...document.querySelectorAll('.module-sidebar nav a')];
- if(toggle){toggle.addEventListener('click',()=>{const hidden=layout.classList.toggle('module-sidebar-hidden');toggle.setAttribute('aria-expanded',String(!hidden));toggle.textContent=hidden?'☰ Mostrar navegación':'☰ Ocultar navegación';});}
- function update(){const total=document.documentElement.scrollHeight-innerHeight;const p=total<=0?100:Math.max(0,Math.min(100,Math.round(scrollY/total*100)));fill.style.width=p+'%';label.textContent=p+'%';track.setAttribute('aria-valuenow',p);}
- window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);window.addEventListener('load',update);update();
- const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}}),{rootMargin:'-15% 0px -65% 0px'});
- sections.forEach(sec=>obs.observe(sec));
-})();
-</script></body></html>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 30px;
+        }
+
+        body {
+            margin: 0;
+            padding-bottom: 76px;
+        }
+
+        .module-layout {
+            display: flex;
+            min-height: calc(100vh - 140px);
+        }
+        
+        .module-sidebar {
+            width: 290px;
+            flex-shrink: 0;
+            align-self: flex-start;
+            position: sticky;
+            top: 16px;
+            max-height: calc(100vh - 32px);
+            overflow-y: auto;
+            padding: 28px 20px;
+            border-right: 1px solid var(--module-border);
+            background: var(--module-background);
+            transition: width .25s ease, padding .25s ease;
+        }
+        
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 760px) {
+            .module-layout {
+                display: block;
+            }
+        
+            .module-sidebar {
+                position: relative;
+                top: auto;
+                width: 100%;
+                max-height: none;
+                overflow-y: visible;
+                box-sizing: border-box;
+                border-right: none;
+                border-bottom: 1px solid var(--module-border);
+            }
+        }
+
+        .module-sidebar h2 {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin: 0 0 22px;
+            color: var(--module-dark);
+        }
+
+        .module-sidebar nav {
+            display: grid;
+            gap: 7px;
+        }
+
+        .module-sidebar nav a {
+            display: block;
+            padding: 11px 12px;
+            border-radius: 8px;
+            color: var(--module-dark);
+            text-decoration: none;
+            font-size: .94rem;
+        }
+
+        .module-sidebar nav a:hover,
+        .module-sidebar nav a.active {
+            background: #FCE4EF;
+            color: var(--module-pink);
+        }
+
+        .module-main {
+            min-width: 0;
+            flex: 1;
+            padding: 38px clamp(20px, 5vw, 72px);
+        }
+
+        .module-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .module-toggle {
+            border: 1px solid var(--module-border);
+            background: white;
+            color: var(--module-dark);
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .module-toggle:hover {
+            border-color: var(--module-pink);
+        }
+
+        .module-label {
+            display: inline-block;
+            color: var(--module-pink);
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            margin-bottom: 12px;
+        }
+
+        .module-title {
+            color: var(--module-dark);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.2;
+            margin: 0 0 18px;
+        }
+
+        .module-intro {
+            color: var(--module-muted);
+            line-height: 1.8;
+            max-width: 780px;
+        }
+
+        .module-content-section {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--module-border);
+            scroll-margin-top: 24px;
+        }
+
+        .module-content-section h2 {
+            color: var(--module-dark);
+            font-size: 1.5rem;
+            margin: 0 0 16px;
+        }
+
+        .module-content-section p {
+            color: var(--module-muted);
+            line-height: 1.8;
+        }
+
+        
+        /* Estilo uniforme de hipervínculos de contenido, igual al módulo 3 */
+        .module-content-section a,
+        .module-intro a {
+            color: var(--module-pink);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .module-content-section a strong,
+        .module-intro a strong {
+            color: inherit;
+            font-weight: inherit;
+        }
+
+        .module-content-section a:hover,
+        .module-intro a:hover {
+            color: #A90849;
+        }
+
+        .module-placeholder {
+            padding: 18px 20px;
+            border-left: 4px solid var(--module-pink);
+            background: var(--module-background);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .module-navigation {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 36px;
+            padding-top: 25px;
+        }
+
+        .module-navigation a,
+        .module-navigation button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 46px;
+            padding: 10px;
+            border: 1px solid var(--module-border);
+            border-radius: 9px;
+            background: white;
+            color: var(--module-dark);
+            text-decoration: none;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .module-navigation a:last-child {
+            background: var(--module-pink);
+            border-color: var(--module-pink);
+            color: white;
+        }
+
+        .module-navigation a[aria-disabled="true"] {
+            opacity: .45;
+            pointer-events: none;
+        }
+
+        .module-progress {
+            position: fixed;
+            z-index: 1000;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(680px, calc(100% - 32px));
+            padding: 12px 18px 14px;
+            border: 1px solid var(--module-border);
+            border-bottom: 0;
+            border-radius: 14px 14px 0 0;
+            background: rgba(255, 255, 255, .97);
+            box-shadow: 0 -4px 20px rgba(37, 34, 56, .08);
+        }
+
+        .module-progress-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+            color: var(--module-dark);
+            font-size: .85rem;
+        }
+
+        .module-progress-track {
+            height: 7px;
+            background: #EEEAF1;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .module-progress-fill {
+            width: 0;
+            height: 100%;
+            background: var(--module-pink);
+            border-radius: inherit;
+            transition: width .15s linear;
+        }
+
+        .module-sidebar-hidden .module-sidebar {
+            display: none;
+        }
+
+        .module-sidebar-hidden .module-main {
+            padding-left: clamp(20px, 8vw, 110px);
+            padding-right: clamp(20px, 8vw, 110px);
+        }
+
+        @media (max-width: 760px) {
+            .module-layout {
+                display: block;
+            }
+
+            .module-sidebar {
+                width: auto;
+                border-right: 0;
+                border-bottom: 1px solid var(--module-border);
+                padding: 20px;
+            }
+
+            .module-main {
+                padding: 25px 20px;
+            }
+
+            .module-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .module-sidebar-hidden .module-main {
+                padding: 25px 20px;
+            }
+
+            .module-progress {
+                width: calc(100% - 24px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a class="logo" href="../index.html" aria-label="Volver al Portal C4">
+                <span class="logo-mark" aria-hidden="true">C4</span>
+                <span>Portal de Capacitación C4</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Navegación principal">
+                <a href="../index.html">Inicio</a>
+                <a href="../index.html#formacion">Módulos</a>
+                <a href="../index.html#recursos">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="module-layout" id="moduleLayout">
+        <aside class="module-sidebar" id="moduleSidebar">
+            <h2>Habilidades para una atención efectiva</h2>
+
+            <nav aria-label="Apartados del módulo">
+                <a href="#objetivos" class="active">1. Objetivos</a>
+                <a href="#tematicas">2. Temáticas Abordadas</a>
+                <a href="#actividades">3. Actividades</a>
+                <a href="#trabajo-autonomo">4. Actividades de Trabajo Autónomo</a>
+                <a href="#evaluacion">5. Evaluación</a>
+            </nav>
+        </aside>
+
+        <main class="module-main">
+            <div class="module-toolbar">
+                <button
+                    class="module-toggle"
+                    id="toggleSidebar"
+                    type="button"
+                    aria-controls="moduleSidebar"
+                    aria-expanded="true">
+                    ☰ Ocultar navegación
+                </button>
+            </div>
+
+            <span class="module-label">MÓDULO 05</span>
+            <h1 class="module-title">Habilidades para una atención efectiva</h1>
+
+            <p class="module-intro">
+                <p><strong>¡Bienvenidos y bienvenidas al módulo sobre
+                 habilidades sociemocionales</strong></p>
+                
+                En este módulo adquirirás herramientas para reconocer tus emociones y las 
+                de la ciudadanía que se comunica con la Línea 123, así fortalecerás tu habilidades
+                en la recepción, comprensión, organización y comunicación de información recibida 
+                durante una llamada.
+            </p>
+
+            <section class="module-content-section" id="objetivos">
+                <h2>1. Objetivos</h2>
+
+                <strong>Objetivos generales</strong>
+                    <ul>
+                        <li> Brindar herramientas para la comprensión y conocimiento de las emociones 
+                         propias y de las demás personas.</li>
+                        <li> Proporcionar herramientas para el fortalecimiento de habilidades comunicativas 
+                         (escucha y el lenguaje verbal) para la oportuna atención.</li>
+                   </ul> 
+                <strong> Objetivos específicos</strong>     
+                   <ul>
+                        <li>Identificar las emociones propias y cómo influyen durante la recepción, atención
+                         y gestión de llamadas.</li>
+                        <li>Reconocer las emociones y necesidades emocionales de la ciudadanía que se comunica
+                         con la Línea 123.</li>
+                        <li>Implementar herramientas de reconocimiento y gestión emocional ante situaciones 
+                         de alta intensidad emocional.</li>
+                   </ul>     
+            </section>
+
+            <section class="module-content-section" id="tematicas">
+                <h2>2. Temáticas Abordadas</h2>
+                
+                <ul>
+                    <li>Reconocimiento, exploración y gestión emocional</li>
+                    <li>Habilidades comunicativas desde la escucha activa y el lenguaje verbal</li>
+                </ul>
+
+            </section>
+
+            <section class="module-content-section" id="actividades">
+                <h2>3. Actividades</h2>
+                
+                        <p>Antes de comenzar, ubícate en un lugar cómodo, vas a desarrollar varias lecturas. Consigue un cuaderno, 
+                         lápiz o esfero, o alguna herramienta digital para tomar apuntes.</p>
+                        
+                        <p><strong>¡Comencemos!</strong></p>
+                        
+                        <h3>3.1 Habilidades emocionales</h3>
+                    
+                        <p>
+                           En la atención de llamadas de emergencia pueden aparecer emociones intensas tanto en la ciudadanía como 
+                           en quien recibe la llamada. Comprenderlas permite reconocer señales, explorar lo que ocurre y elegir 
+                           respuestas conscientes que favorezcan una atención empática y adecuada.
+                        </p>
+
+                        <h4>¿Qué son las emociones?</h4>
+                        <p>
+                         Las emociones permiten reconocer e interpretar nuestras propias reacciones y las de los demás, facilitando
+                         una respuesta consciente, empática y adecuada ante las situaciones de emergencia.
+                        </p>
+             
+                       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:22px 0;">
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5>Adaptarnos</h5>
+                                <p>Preparan al organismo para responder ante situaciones del entorno y reconocer posibles amenazas.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5>Comunicar</h5>
+                                <p>Permiten expresar nuestros estados emocionales y comprender las emociones de otras personas, 
+                                 favoreciendo la empatía y las relaciones interpersonales.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5>Orientar la conductas</h5>
+                                <p>Impulsan acciones relacionadas con nuestras necesidades, objetivos y situaciones de bienestar
+                                 o malestar.</p>
+                            </div>
+                        </div>
+                        <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>Idea para recordar:</srong> las emociones aportan información sobre lo que ocurre y pueden orientar 
+                         nuestra respuesta; reconocerlas es un primer paso para actuar de manera consciente.
+                        </div>
+
+                        <h4>¿Cuáles son las emociones?</h4>
+                        <h5>Emociones básicas o primarias</h5>
+                        <p> Son emociones de base biológica e innata que aparecen de manera rápida y automática ante determinados 
+                         estímulos. Cumplen funciones adaptativas relacionadas con la supervivencia y la respuesta al entorno.
+                        </p>
+             
+                       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:22px 0;">
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>😠</span>IRA</h5>
+                                <p>Reacción ante situaciones percibidas como ofensivas o amenazantes.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>😢</span>TRIZTEZA</h5>
+                                <p>Experiencia emocional asociada a pérdidas o situaciones difíciles.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>😊</span>ALEGRÍA</h5>
+                                <p>Experiencia emocional agradable.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>😮</span>SORPRESA</h5>
+                                <p>Respuesta ante acontecimientos inesperados.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>🤢</span>ASCO</h5>
+                                <p>Respuesta de rechazo ante determinados estímulos.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><span>😨</span>MIEDO</h5>
+                                <p>Respuesta ante situaciones percibidas como amenazantes.</p>
+                            </div>
+                        </div>
+                       <h5>Emociones secundarias</h5>
+                        <p>Surgen a partir de las emociones básicas y están influenciadas por nuestras experiencias, pensamientos
+                         y aprendizajes sociales. Son más complejas y dependen de cómo interpretamos las situaciones.</p>
+                        <ul>
+                          <li>Culpa y vergüenza: relacionadas con la valoración de nuestras acciones.</li>
+                          <li> Orgullo y satisfacción: aparecen al reconocer nuestros logros.</li>
+                          <li> Celos y envidia: surgen en las relaciones y la comparación con otros.</li>
+                          <li> Frustración y resentimiento: relacionados con obstáculos, expectativas o situaciones que 
+                           generan malestar.</li>
+                        </ul>
+
+                        <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>¿Por qué se llaman secundarias?</srong> Porque se desarrollan a partir de las emociones básicas, 
+                         nuestros pensamientos y las experiencias personales y sociales. Su interpretación puede variar según 
+                         el contexto y los aprendizajes de cada persona.
+                        </div>
+
+                       <h4>Modelo R.E.G.: reconocer, explorar y gestionar</h4>
+                       <p>El modelo R.E.G. propone tres procesos fundamentales para reconocer, comprender y gestionar las emociones.</p>
+                       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:22px 0;">
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><strogn>R</strogn>ECONOCER</h5>
+                                <p>Identificar lo que sentimos.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><strogn>E</strogn>xplorar</h5>
+                                <p>Comprender de dónde viene y cómo se manifiesta</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5><strogn>G</strogn>estionar</h5>
+                                <p>Responder de manera consciente</p>
+                            </div>
+                        </div>
+                        <h5>R · Reconocer</h5>
+                        <p>Es la capacidad de identificar y comprender lo que sentimos y lo que sienten los demás, teniendo en cuenta:</p>
+                        <ul> 
+                           <li>Las sensaciones del cuerpo.</li>
+                           <li>Los pensamientos.</li>
+                           <li>La expresión facial.</li>
+                           <li>El tono de voz.</li>
+                           <li>Los comportamientos.</li>
+                        </ul>
+                        <strogn>Preguntas orientadoras</strogn>
+                        <ol>
+                           <li>¿Qué estoy sintiendo en este momento?</li>
+                           <li>¿Es una emoción o estoy sintiendo varias?</li>
+                           <li>¿Cómo puedo nombrar lo que siento?</li>
+                        </ol>
+                        
+                        <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>EJEMPLO APLICADO A LA LÍNEA 123</srong> 
+                         <p>Un operador recibe varias llamadas consecutivas con situaciones de alta intensidad emocional.
+                          Comienza a identificar tensión corporal, irritabilidad y dificultad para mantener la concentración. 
+                          El primer paso consiste en reconocer esas manifestaciones y ponerles nombre.</p>
+                        </div>
+  
+                        <h5>E · Explorar</h5>
+                        <p>Significa profundizar en lo que sentimos para comprender su origen, cómo se manifiesta, qué pensamientos la acompañan
+                         y cómo influye en nuestra conducta.</p>
+                        <p>Para ello, tenemos en cuenta la situación, las reacciones del cuerpo, los pensamientos y la manera en que 
+                         actuamos.</p>
+                        <strogn>Preguntas orientadoras</strogn>
+                        <ol>
+                           <li>¿Qué pensamientos tengo?</li>
+                           <li>¿En qué situación se presentó?</li>
+                           <li>¿Qué acciones realizo o cómo puedo responder?</li>
+                           <li>¿Qué necesito?</li>
+                        </ol>
+                        
+                       <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>EJEMPLO APLICADO A LA LÍNEA 123</srong> 
+                         <p> Después de reconocer la irritabilidad, el operador explora qué pudo influir en ella: la acumulación de llamadas 
+                          complejas, el cansancio o las dificultades experimentadas durante el turno. Esta exploración permite comprender 
+                          mejor la experiencia emocional y su influencia en la atención.</p>
+                        </div>
+             
+                        <h5>G · Gestionar</h5>
+                        <p>Gestionar las emociones implica reconocer, comprender y regular lo que sentimos, sin reprimirlo,
+                         para responder de manera consciente y evitar reacciones impulsivas.</p>
+                         <strogn>Preguntas orientadoras</strogn>
+                        <ul>
+                          <li>¿Qué me ha funcionado antes?</li>
+                          <li>¿Qué pautas o hábitos me ayudan a soportar las emociones intensas?</li>
+                        </ul>
+                        <p>
+                         En el siguiente apartado encontrarás dos herramientas prácticas para apoyar este proceso.
+                        </p>
+
+                       <h4>Herramientas para gestionar las emociones</h4>
+             
+                       <h5>Técnica 1. Respiración profunda o diafragmáticas</h5>
+             
+                       <p>Es una técnica de relajación que consiste en llevar el aire hacia la parte baja de los 
+                        pulmones, moviendo principalmente el abdomen en lugar del pecho.</p>
+             
+                       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:22px 0;">
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5>Al inhalar</h5>
+                                <p>PEl abdomen se infla, como un globo, porque el diafragma baja para dejar espacio a los pulmones.</p>
+                            </div>
+                            <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px;">
+                                <h5>Al exhalar</h5>
+                                <p>El abdomen se desinfla porque el diafragma sube, ayudando a expulsar el aire.</p>
+                            </div>
+                        </div>
+
+                        <strogn>¿Para qué se utiliza?</strogn>
+                        <ul>
+                           <li>Reducir el estrés.</li>
+                           <li>Regular emociones de alto impacto.</li>
+                           <li>Mejorar el rendimiento.</li>
+                        </ul>
+                        <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>Práctica breve</srong> 
+                          <p>                        
+                            Adopta una postura cómoda. Inhala suavemente llevando el aire hacia el abdomen y observa cómo se expande. 
+                            Exhala sin forzar y nota cómo el abdomen desciende. Repite a un ritmo cómodo, sin contener la respiración.
+                          </p>
+                        </div>
+                        <h5>Técnica 2. Conciencia plena a través de los sentidos</h5>
+                        <p>También conocida como mindfulness sensorial. Consiste en enfocar la atención en lo que estamos percibiendo
+                         aquí y ahora mediante los cinco sentidos. Su objetivo es utilizar el cuerpo como ancla al momento presente 
+                         para orientar la atención hacia la experiencia inmediata.</p>
+                        <ul>
+                           <li>Vista: observar los colores, formas o movimientos de un objeto cercano.</li>
+                           <li>Oído: prestar atención a los sonidos del ambiente.</li>
+                           <li>Tacto: identificar la textura de la ropa, el viento o la temperatura de un objeto.</li>
+                           <li>Olfato: percibir conscientemente los aromas del entorno.</li>
+                           <li>Gusto: saborear con calma un alimento e identificar sus características.</li>
+                        </ul>
+                        <strogn>¿Para qué se utiliza?</strogn>
+                        <ul>
+                           <li>Frenar la ansiedad.</li>
+                           <li>Reducir el estrés.</li>
+                           <li>Favorecer la conexión inmediata con el momento presente.</li>
+                        </ul>
+                        
+                        <h4>Actividad práctica: reconozco, exploro y gestiono</h4>
+                        
+                        <p>Aplica el modelo R.E.G. a una situación relacionada con el contexto laboral.</p>
+             
+                        <div style="padding:20px; border:1px solid #E8E5ED; border-radius:12px; margin:24px 0;">
+                            <span style="display:inline-block; padding:5px 10px; background:#FCE4EF; color:#E60B61; border-radius:20px; font-size:.85rem; font-weight:700;">SITUACIÓN PARA ANALIZAR</span>
+                        
+                            <p>Recibes una llamada en la que un ciudadano manifiesta desesperación, eleva el tono de voz 
+                             y exige una respuesta inmediata</p>
+                        
+                            <ol>
+                                <li>RECONOCER ¿Qué emoción podrías experimentar ante esta situación?</li>
+                                <li>EXPLORAR ¿Qué manifestaciones corporales y pensamientos podrías identificar?</li>
+                                <li>GESTIONAR ¿Qué estrategia utilizarías para responder de manera consciente?</li>
+                            </ol>
+                        
+                            <label for="respuestaCaso1" style="display:block; font-weight:600; margin:18px 0 8px;">
+                                Registra tus respuestas
+                            </label>
+                            <textarea id="respuestaCaso1" rows="4" placeholder="Escribe aquí tus respuestas..." style="width:100%; box-sizing:border-box; padding:12px; border:1px solid #E8E5ED; border-radius:8px;"></textarea>
+                            <p style="font-size:.85rem; color:#6B6878;">
+                                Esta respuesta es temporal y no se envía ni se guarda en el servidor.
+                                Consérvala en tus apuntes.
+                            </p>
+                        </div>
+                        
+                       <h4>Cierre del módulo: idea central</h4>
+                       <div style="padding:18px; border-left:4px solid #E60B61; background:#F8F7FA; border-radius:0 8px 8px 0;">
+                        <srong>Idea central para recordar</srong> 
+                          <p>                        
+                             Reconocer lo que sentimos, explorar su origen y comprender cómo influye en nuestro comportamiento 
+                             permite desarrollar respuestas más conscientes ante las situaciones que se presentan durante la 
+                             atención de llamadas de emergencia.
+                          </p>
+                        </div>
+                        <p>
+                         La gestión emocional no implica dejar de sentir, sino desarrollar herramientas para responder de 
+                         manera adecuada.
+                        </p>
+         </section>
+        <section class="module-content-section" id="trabajo-autonomo">
+            <h2>4. Actividades de Trabajo Autónomo</h2>
+            <div class="module-placeholder">
+                <p>Si llegaste hasta acá, has finalizado el módulo <strong>Habilidades para una atención efectiva</strong>.</p>
+                <p>Envía por correo electrónico al Equipo de Capacitación todas las respuestas y actividades realizadas a la siguiente dirección:</p>
+                <p><a class="module-link" href="mailto:equipocapacitacionc4@scj.gov.co">equipocapacitacionc4@scj.gov.co</a></p>
+                <p>Utiliza como asunto: Modulo 5 – Nombres y apellidos</p>
+            </div>
+        </section>
+
+            </section>
+
+            <section class="module-content-section" id="evaluacion">
+                <h2>5. Evaluación</h2>
+
+                <div class="module-placeholder" style="padding: 30px; background: #F8F7FA; border-left: 6px solid #E60B61; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin: 0 0 12px; color: #252238;">Evaluación del módulo</h3>
+                    <p style="margin: 0; color: #6B6878; line-height: 1.8;">
+                    Ponte a prueba y realiza tu evaluación:
+                    </p>
+
+                    <div style="margin: 72px 0 76px; text-align: center;">
+                        <h4 style="margin: 0 0 8px; color: #252238;">Formulario de evaluación</h4>
+                        <p style="margin: 0 0 22px; color: #6B6878; line-height: 1.8;">Busca un espacio tranquilo, lee cuidadosamente cada pregunta y responde el formulario.</p>
+                        <a href="https://forms.cloud.microsoft/r/BC1dhHYhmH?origin=lprLink"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="display: inline-block; padding: 20px 32px; background: #E60B61; color: #FFFFFF; text-decoration: none; border-radius: 12px; font-weight: 700;">
+                            Presentar evaluación
+                        </a>
+                        <p style="margin: 28px 0 0; font-size: 14px; color: #6B6878;">El formulario se abrirá en una nueva pestaña.</p>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="module-navigation" aria-label="Navegación entre módulos">
+                <a href="#" aria-disabled="true" tabindex="-1">← Módulo anterior</a>
+                <a href="../index.html">⌂ Inicio</a>
+                <a href="recepcion-gestion-incidentes.html">Módulo siguiente →</a>
+            </nav>
+        </main>
+    </div>
+
+    <div class="module-progress" aria-label="Progreso de lectura">
+        <div class="module-progress-heading">
+            <span>Avance del módulo</span>
+            <strong id="progressText">0%</strong>
+        </div>
+        <div
+            class="module-progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-label="Porcentaje de avance del módulo"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0">
+            <div class="module-progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <script>
+        const layout = document.getElementById("moduleLayout");
+        const toggleButton = document.getElementById("toggleSidebar");
+        const progressText = document.getElementById("progressText");
+        const progressFill = document.getElementById("progressFill");
+        const progressTrack = document.getElementById("progressTrack");
+        const sections = document.querySelectorAll(".module-content-section");
+        const sectionLinks = document.querySelectorAll(".module-sidebar nav a");
+
+        toggleButton.addEventListener("click", () => {
+            const hidden = layout.classList.toggle("module-sidebar-hidden");
+            toggleButton.setAttribute("aria-expanded", String(!hidden));
+            toggleButton.textContent = hidden
+                ? "☰ Mostrar navegación"
+                : "☰ Ocultar navegación";
+        });
+
+        function updateProgress() {
+            const scrollableHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
+
+            const progress = scrollableHeight <= 0
+                ? 100
+                : Math.round((window.scrollY / scrollableHeight) * 100);
+
+            const boundedProgress = Math.max(0, Math.min(100, progress));
+
+            progressText.textContent = boundedProgress + "%";
+            progressFill.style.width = boundedProgress + "%";
+            progressTrack.setAttribute("aria-valuenow", boundedProgress);
+        }
+
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        window.addEventListener("load", updateProgress);
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionLinks.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: "-15% 0px -65% 0px" });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        sectionLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                sectionLinks.forEach(item => item.classList.remove("active"));
+                link.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
